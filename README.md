@@ -13,12 +13,15 @@ In this project, the goal is to use an external, real-time dataset of tides or o
 The front-end will remain fairly minimal, showing the location source of the data as well as an audio visualization.
 
 Reference on Sea Organ of Zadar:
+
 Info: http://www.oddmusic.com/gallery/om24550.html
 
 Video: https://www.youtube.com/watch?v=myV3E9uREuI
 
 
-<h2>Functionality</h2>
+---
+
+<h1>Functionality</h1>
 
 Sea Organ should include the following basic functionality.
 
@@ -34,10 +37,11 @@ Sea Organ should include the following basic functionality.
 
 * Web Audio API converts the resulting data into continuous organ-like sounds
 
+
 Bonus: Ideally, the User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
 
 
-<h2>Architectures and Technologies</h2>
+<h1>Architectures and Technologies</h1>
 
 * Architecture and Technologies
     * Technology 1
@@ -54,16 +58,25 @@ Webpack
 Tone.js
 
 
-<h2>Timeline</h2>
+---
 
-**Day 1: Webpack**
 
-* Setup webpack and webpack.config.js. Setup skeleton. Get webpack up and running.
+<h1>Timeline</h1>
+
+
+**Day 1: Skeleton Setup & Webpack**
+
+* Setup webpack and webpack.config.js. 
+* Setup skeleton. 
+* Get webpack up and running.
 
 
 **Day 2: Audio Synthesis**
 
+* Work on understanding Web Audio API and how to add audio to page
+* Research Tone.js and how to add specific instrumentation (e.g. organ)
 * Work on audio synthesis from a local dataset.
+
 
 **Day 3: Dataset Connection**
 
@@ -72,12 +85,14 @@ Tone.js
  Show live graph of rate of infection
  
  
- **Day 4: Touch ups**
+ **Day 4: Translating Data to Audio & UI **
 
 * Add links to GitHub, LinkedIn, and Portfolio Site
 
+* Begin honing user interface presentation
+
  
-**Day 5: Touch ups**
+**Day 5: Complete User Interface **
 
 * Add links to GitHub, LinkedIn, and Portfolio Site
 
