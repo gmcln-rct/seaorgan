@@ -33,6 +33,30 @@ The front-end will remain fairly minimal, showing the location source of the dat
 
 Reference on Sea Organ of Zadar:
 Info: http://www.oddmusic.com/gallery/om24550.html
+
 Video: https://www.youtube.com/watch?v=myV3E9uREuI
 
+
 <h2>Functionality</h2>
+
+Sea Organ should include the following basic functionality.
+
+* User can initiate audio by unmuting.
+
+* User can mute/unmute audio stream.
+
+* App fetches tidal/current data from external source on recurring, consistent basis (depending on dataset requirements)
+
+   * App should be able to handle gaps in data feed
+
+* App 'translates' data into a form to be used by Web Audio API
+
+* Web Audio API converts the resulting data into continuous organ-like sounds
+
+Bonus: Ideally, the User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
+
+
+<h2>Architectures and Technologies</h2>
+
+
+
