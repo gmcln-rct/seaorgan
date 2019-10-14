@@ -1,6 +1,7 @@
-![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg)
+![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg "CC BY-NC-ND 2.0 linssimato")
 
 # Sea Organ
+## (aka seaOrganOf)
 
     
 <h1>Background and Overview</h1>
@@ -46,6 +47,13 @@ Bonus: Ideally, the User should be able to select what geographic location to so
         * Description
         * Justification
 
+
+Vanilla JavaScript
+Web Audio API
+Webpack
+Tone.js
+
+
 <h2>Timeline</h2>
 
 **Day 1: Webpack**
@@ -63,8 +71,16 @@ Bonus: Ideally, the User should be able to select what geographic location to so
  Show count of non-infected and infected particles, along with the total time it took to infect all particles
  Show live graph of rate of infection
  
-Day 5: Touch ups
+ 
+ **Day 4: Touch ups**
 
- Add links to GitHub and LinkedIn
- Update styling 
- Any user experience changes (for example, changing the settings to a modal or adding an about section)
+* Add links to GitHub, LinkedIn, and Portfolio Site
+
+ 
+**Day 5: Touch ups**
+
+* Add links to GitHub, LinkedIn, and Portfolio Site
+
+* Update styling 
+
+* Any user experience changes (for example, changing the settings to a modal or adding an about section)
