@@ -60,3 +60,25 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 
 
 
+<h2>Timeline</h2>
+
+Day 1: Webpack
+
+* Setup webpack and webpack.config.js. Setup skeleton. Get webpack up and running.
+
+
+Day 2: Audio Synthesis
+
+* Work on audio synthesis from a local dataset.
+
+the basic simulation. Particles should spawn in random locations within the canvas, move in random directions, bounce off
+Day 3: Settings and stats. Goals for the day:
+
+ Allow user to the change the settings of the simulation and be able to restart with their settings in place
+ Show count of non-infected and infected particles, along with the total time it took to infect all particles
+ Show live graph of rate of infection
+Day 4: Touching up. Adding GitHub and LinkedIn icons. Styling. Any user experience enhancements. Goals for the day:
+
+ Add links to GitHub and LinkedIn
+ Any styling improvements
+ Any user experience changes (for example, changing the settings to a modal or adding an about section)
