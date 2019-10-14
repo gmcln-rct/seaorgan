@@ -85,14 +85,14 @@ Tone.js
  Show live graph of rate of infection
  
  
- **Day 4: Translating Data to Audio & UI **
+**Day 4: Translating Data to Audio & UI**
 
 * Add links to GitHub, LinkedIn, and Portfolio Site
 
 * Begin honing user interface presentation
 
  
-**Day 5: Complete User Interface **
+**Day 5: Complete User Interface**
 
 * Add links to GitHub, LinkedIn, and Portfolio Site
 
