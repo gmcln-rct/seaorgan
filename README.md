@@ -1,3 +1,5 @@
+![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg)
+
 # Sea Organ
 
     
@@ -34,7 +36,7 @@ Sea Organ should include the following basic functionality.
 Bonus: Ideally, the User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
 
 
-##Architectures and Technologies
+<h2>Architectures and Technologies</h2>
 
 * Architecture and Technologies
     * Technology 1
