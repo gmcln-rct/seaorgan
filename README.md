@@ -1,27 +1,5 @@
 # Sea Organ
 
-
-* Project Title
-* Background and Overview
-    * Motivation for project
-    * High level overview
-* Functionality and MVP Features
-    * Choose carefully
-    * Be especially detailed
-* Architecture and Technologies
-    * Technology 1
-        * Description
-        * Justification
-    * Technology 2
-        * Description
-        * Justification
-    ...
-Implementation Timeline
-    * Most important category
-    * Daily breakdown
-    * Aim to be done by Friday
-    
-    
     
 <h1>Background and Overview</h1>
 
@@ -56,29 +34,35 @@ Sea Organ should include the following basic functionality.
 Bonus: Ideally, the User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
 
 
-<h2>Architectures and Technologies</h2>
+##Architectures and Technologies
 
-
+* Architecture and Technologies
+    * Technology 1
+        * Description
+        * Justification
+    * Technology 2
+        * Description
+        * Justification
 
 <h2>Timeline</h2>
 
-Day 1: Webpack
+**Day 1: Webpack**
 
 * Setup webpack and webpack.config.js. Setup skeleton. Get webpack up and running.
 
 
-Day 2: Audio Synthesis
+**Day 2: Audio Synthesis**
 
 * Work on audio synthesis from a local dataset.
 
-the basic simulation. Particles should spawn in random locations within the canvas, move in random directions, bounce off
-Day 3: Settings and stats. Goals for the day:
+**Day 3: Dataset Connection**
 
  Allow user to the change the settings of the simulation and be able to restart with their settings in place
  Show count of non-infected and infected particles, along with the total time it took to infect all particles
  Show live graph of rate of infection
-Day 4: Touching up. Adding GitHub and LinkedIn icons. Styling. Any user experience enhancements. Goals for the day:
+ 
+Day 5: Touch ups
 
  Add links to GitHub and LinkedIn
- Any styling improvements
+ Update styling 
  Any user experience changes (for example, changing the settings to a modal or adding an about section)
