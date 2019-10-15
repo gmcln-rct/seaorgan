@@ -54,6 +54,7 @@ let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
     filter.gain.value = 0;
     return filter;
 });
+
 let echo = new Tone.FeedbackDelay('16n', 0.2);
 let delay = Tone.context.createDelay(6.0);
 let delayFade = Tone.context.createGain();
