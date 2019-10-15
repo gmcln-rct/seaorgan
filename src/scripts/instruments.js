@@ -1,28 +1,23 @@
-
-
-var SampleLibrary = {
+let SampleLibrary = {
     minify: false,
-    ext: '.[mp3|ogg]', // use setExt to change the extensions on all files // do not change this variable //
+    ext: '.[mp3|ogg]', // use setExtension to change the extensions on all files // do not change this letiable //
     baseUrl: '/samples/',
-    list: ['bass-electric', 'bassoon', 'cello', 'clarinet', 'contrabass', 'flute', 'french-horn', 'guitar-acoustic', 'guitar-electric', 'guitar-nylon', 'harmonium', 'harp', 'organ', 'piano', 'saxophone', 'trombone', 'trumpet', 'tuba', 'violin', 'xylophone'],
+    list: ['bassoon', 'flute', 'french-horn', 'tuba'],
     onload: null,
 
-    setExt: function (newExt) {
-        var i
+    setExtension: function (newExtension) {
+        let i
         for (i = 0; i <= this.list.length - 1; i++) {
-            for (var property in this[this.list[i]]) {
-
-                this[this.list[i]][property] = this[this.list[i]][property].replace(this.ext, newExt)
+            for (let property in this[this.list[i]]) {
+                this[this.list[i]][property] = this[this.list[i]][property].replace(this.ext, newExtension)
             }
-
-
         }
-        this.ext = newExt;
+        this.ext = newExtension;
         return console.log("sample extensions set to " + this.ext)
     },
 
     load: function (arg) {
-        var t, rt, i;
+        let t, rt, i;
         (arg) ? t = arg : t = {};
         t.instruments = t.instruments || this.list;
         t.baseUrl = t.baseUrl || this.baseUrl;
@@ -31,7 +26,7 @@ var SampleLibrary = {
         // update extensions if arg given
         if (t.ext) {
             if (t.ext != this.ext) {
-                this.setExt(t.ext)
+                this.setExtension(t.ext)
             }
             t.ext = this.ext
         }
@@ -41,10 +36,10 @@ var SampleLibrary = {
         // if an array of instruments is passed...
         if (Array.isArray(t.instruments)) {
             for (i = 0; i <= t.instruments.length - 1; i++) {
-                var newT = this[t.instruments[i]];
+                let newT = this[t.instruments[i]];
                 //Minimize the number of samples to load
                 if (this.minify === true || t.minify === true) {
-                    var minBy = 1;
+                    let minBy = 1;
                     if (Object.keys(newT).length >= 17) {
                         minBy = 2
                     }
@@ -55,7 +50,7 @@ var SampleLibrary = {
                         minBy = 6
                     }
 
-                    var filtered = Object.keys(newT).filter(function (_, i) {
+                    let filtered = Object.keys(newT).filter(function (_, i) {
                         return i % minBy != 0;
                     })
                     filtered.forEach(function (f) {
@@ -64,16 +59,11 @@ var SampleLibrary = {
 
                 }
 
-
-
-
                 rt[t.instruments[i]] = new Tone.Sampler(
                     newT, {
                     baseUrl: t.baseUrl + t.instruments[i] + "/",
                     onload: t.onload
-                }
-
-                )
+                })
             }
 
             return rt
@@ -103,10 +93,7 @@ var SampleLibrary = {
                 })
             }
 
-
-
-
-            var s = new Tone.Sampler(
+            let s = new Tone.Sampler(
                 newT, {
                 baseUrl: t.baseUrl + t.instruments + "/",
                 onload: t.onload
@@ -118,6 +105,7 @@ var SampleLibrary = {
 
     },
 
+    
  
     'bassoon': {
         'A3': 'A3.[mp3|ogg]',
@@ -133,21 +121,6 @@ var SampleLibrary = {
 
     },
 
-
-    'clarinet': {
-        'D3': 'D3.[mp3|ogg]',
-        'D4': 'D4.[mp3|ogg]',
-        'D5': 'D5.[mp3|ogg]',
-        'F2': 'F2.[mp3|ogg]',
-        'F3': 'F3.[mp3|ogg]',
-        'F4': 'F4.[mp3|ogg]',
-        'F#5': 'Fs5.[mp3|ogg]',
-        'A#2': 'As2.[mp3|ogg]',
-        'A#3': 'As3.[mp3|ogg]',
-        'A#4': 'As4.[mp3|ogg]',
-        'D2': 'D2.[mp3|ogg]'
-
-    },
 
     'flute': {
         'A5': 'A5.[mp3|ogg]',
@@ -177,88 +150,7 @@ var SampleLibrary = {
 
     },
 
-    'harmonium': {
-        'C2': 'C2.[mp3|ogg]',
-        'C3': 'C3.[mp3|ogg]',
-        'C4': 'C4.[mp3|ogg]',
-        'C5': 'C5.[mp3|ogg]',
-        'C#2': 'Cs2.[mp3|ogg]',
-        'C#3': 'Cs3.[mp3|ogg]',
-        'C#4': 'Cs4.[mp3|ogg]',
-        'C#5': 'Cs5.[mp3|ogg]',
-        'D2': 'D2.[mp3|ogg]',
-        'D3': 'D3.[mp3|ogg]',
-        'D4': 'D4.[mp3|ogg]',
-        'D5': 'D5.[mp3|ogg]',
-        'D#2': 'Ds2.[mp3|ogg]',
-        'D#3': 'Ds3.[mp3|ogg]',
-        'D#4': 'Ds4.[mp3|ogg]',
-        'E2': 'E2.[mp3|ogg]',
-        'E3': 'E3.[mp3|ogg]',
-        'E4': 'E4.[mp3|ogg]',
-        'F2': 'F2.[mp3|ogg]',
-        'F3': 'F3.[mp3|ogg]',
-        'F4': 'F4.[mp3|ogg]',
-        'F#2': 'Fs2.[mp3|ogg]',
-        'F#3': 'Fs3.[mp3|ogg]',
-        'G2': 'G2.[mp3|ogg]',
-        'G3': 'G3.[mp3|ogg]',
-        'G4': 'G4.[mp3|ogg]',
-        'G#2': 'Gs2.[mp3|ogg]',
-        'G#3': 'Gs3.[mp3|ogg]',
-        'G#4': 'Gs4.[mp3|ogg]',
-        'A2': 'A2.[mp3|ogg]',
-        'A3': 'A3.[mp3|ogg]',
-        'A4': 'A4.[mp3|ogg]',
-        'A#2': 'As2.[mp3|ogg]',
-        'A#3': 'As3.[mp3|ogg]',
-        'A#4': 'As4.[mp3|ogg]'
-    },
-
-    'harp': {
-        'C5': 'C5.[mp3|ogg]',
-        'D2': 'D2.[mp3|ogg]',
-        'D4': 'D4.[mp3|ogg]',
-        'D6': 'D6.[mp3|ogg]',
-        'D7': 'D7.[mp3|ogg]',
-        'E1': 'E1.[mp3|ogg]',
-        'E3': 'E3.[mp3|ogg]',
-        'E5': 'E5.[mp3|ogg]',
-        'F2': 'F2.[mp3|ogg]',
-        'F4': 'F4.[mp3|ogg]',
-        'F6': 'F6.[mp3|ogg]',
-        'F7': 'F7.[mp3|ogg]',
-        'G1': 'G1.[mp3|ogg]',
-        'G3': 'G3.[mp3|ogg]',
-        'G5': 'G5.[mp3|ogg]',
-        'A2': 'A2.[mp3|ogg]',
-        'A4': 'A4.[mp3|ogg]',
-        'A6': 'A6.[mp3|ogg]',
-        'B1': 'B1.[mp3|ogg]',
-        'B3': 'B3.[mp3|ogg]',
-        'B5': 'B5.[mp3|ogg]',
-        'B6': 'B6.[mp3|ogg]',
-        'C3': 'C3.[mp3|ogg]'
-
-    },
-
-
-
-    'trumpet': {
-        'C5': 'C5.[mp3|ogg]',
-        'D4': 'D4.[mp3|ogg]',
-        'D#3': 'Ds3.[mp3|ogg]',
-        'F2': 'F2.[mp3|ogg]',
-        'F3': 'F3.[mp3|ogg]',
-        'F4': 'F4.[mp3|ogg]',
-        'G3': 'G3.[mp3|ogg]',
-        'A2': 'A2.[mp3|ogg]',
-        'A4': 'A4.[mp3|ogg]',
-        'A#3': 'As3.[mp3|ogg]',
-        'C3': 'C3.[mp3|ogg]'
-
-    },
-
+    
     'tuba': {
         'A#1': 'As1.[mp3|ogg]',
         'A#2': 'As2.[mp3|ogg]',

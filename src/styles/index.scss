@@ -8,14 +8,14 @@ body {
     font-family: 'Quicksand', sans-serif;
 
     background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
--webkit-animation: bgGradientGenerator 30s ease infinite;
--moz-animation: bgGradientGenerator 30s ease infinite;
-animation: bgGradientGenerator 30s ease infinite;
+    -webkit-animation: bgGradientGenerator 30s ease infinite;
+    -moz-animation: bgGradientGenerator 30s ease infinite;
+    animation: bgGradientGenerator 30s ease infinite;
 
 @-webkit-keyframes bgGradientGenerator {
     0%{background-position:0% 50%}
@@ -43,3 +43,27 @@ body h1 {
     color: white;
 
 }
+
+// TEMP STYLING
+
+        #content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: none;
+        }
+        #keyboard {
+            margin: 2px!important;
+        }
+
+        #Selector {
+            margin: 0 auto;
+        }
+        .container p {
+            text-align:center;
+            color: white;
+        }
