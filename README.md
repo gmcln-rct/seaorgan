@@ -68,6 +68,7 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 * Get webpack up and running.
 
 
+
 **Day 2: Audio Synthesis**
 
 * Work on understanding Web Audio API and how to add audio to page
@@ -80,7 +81,6 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 * Reseach and understand the datasets available related to tides and currents
 * Choose the dataset that allows the greatest flexiblity vis-a-vis the Web Audio API
 * Establish the best means of importing the database to the App for us ein audio synthesis.
- 
  
  
  
