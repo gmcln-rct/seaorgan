@@ -1,14 +1,6 @@
-var sampler = new Tone.Sampler({
-    "C3": "path/to/C3.mp3",
-    "D#3": "path/to/Dsharp3.mp3",
-    "F#3": "path/to/Fsharp3.mp3",
-    "A3": "path/to/A3.mp3",
-}, function () {
-    //sampler will repitch the closest sample
-    sampler.triggerAttack("D3")
-})
 
 
+var player = new Tone.Source('../samples/flute/A3.mp3').toMaster();
 const EQUALIZER_CENTER_FREQUENCIES = [
     100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
     1600, 2000, 2500, 3150, 4000, 5000, 6300, 8000, 10000
