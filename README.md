@@ -44,13 +44,14 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 <h1>Architectures and Technologies</h1>
 
 * Architecture and Technologies
-    * Vanilla Javascript
-        * The plan is to use JavaScript as the core funtionality for the app
+    * JavaScript
+        * Javascript will drive the core functionality of the app.
+        
     * Web Audio API
-        * The plan is to use the Web Audio API, as opposed to the basic HTML 5 Player <video> tag;
+        * The plan is to use the Web Audio API, as opposed to the basic HTML 5 Player <audio> tag;
         * the Web Audio API allows for more flexibiliy in dealing with audio that is received beyond a single, one-time source.
     * Webpack
-        * Webpack will allow for a range of npm-based tools to increase the functionality oif te app.
+        * Webpack will enable the use of a range of npm-based tools to increase the functionality of the app.
     * Tone.js
         * Tone.js will allow for more nuanced, specific representation of sound of a specific instrument.
 
@@ -78,14 +79,20 @@ Below is a basic wireframe of the intended web app:
 **Day 2: Audio Synthesis**
 
 * Work on understanding Web Audio API and how to add audio to page
+
 * Research Tone.js and how to add specific instrumentation (e.g. organ)
+
 * Work on audio synthesis from a local dataset.
+
+* Create basic implementation of audio on page.
 
 
 **Day 3: Dataset Connection**
 
 * Reseach and understand the datasets available related to tides and currents
+
 * Choose the dataset that allows the greatest flexiblity vis-a-vis the Web Audio API
+
 * Establish the best means of importing the database to the App for us ein audio synthesis.
  
  
