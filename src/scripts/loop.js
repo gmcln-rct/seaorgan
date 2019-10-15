@@ -17,7 +17,7 @@ function makeSynth() {
         octaves: 2,
         attack: 0,
         decay: 0,
-        release: 1000
+        release: 2000
     };
 
     return new Tone.DuoSynth({
@@ -77,6 +77,9 @@ echo.connect(delay);
 delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
+
+// var player = new Tone.Player("../samples/flute/A3.mp3").toMaster();
+
 
 // create a synth
 const synth = new Tone.NoiseSynth().toMaster();
