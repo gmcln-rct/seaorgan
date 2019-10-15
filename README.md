@@ -44,18 +44,15 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 <h1>Architectures and Technologies</h1>
 
 * Architecture and Technologies
-    * Technology 1
-        * Description
-        * Justification
-    * Technology 2
-        * Description
-        * Justification
-
-
-Vanilla JavaScript
-Web Audio API
-Webpack
-Tone.js
+    * Vanilla Javascript
+        * The plan is to use JavaScript as the core funtionality for the app
+    * Web Audio API
+        * The plan is to use the Web Audio API, as opposed to the basic HTML 5 Player <video> tag;
+        * the Web Audio API allows for more flexibiliy in dealing with audio that is received beyond a single, one-time source.
+    * Webpack
+        * Webpack will allow for a range of npm-based tools to increase the functionality oif te app.
+    * Tone.js
+        * Tone.js will allow for more nuanced, specific representation of sound of a specific instrument.
 
 
 ---
