@@ -1,38 +1,13 @@
+let instruments = SampleLibrary.load({
+    instruments: ['bassoon', 'flute', 'french-horn', 'tuba']
+});
+
+
 
 const EQUALIZER_CENTER_FREQUENCIES = [
     100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
     1600, 2000, 2500, 3150, 4000, 5000, 6300, 8000, 10000
 ];
-
-function initEqualizerUI(container, equalizer) {
-    equalizer.forEach((equalizerBand, index) => {
-        let frequency = equalizerBand.frequency.value;
-
-        let wrapper = document.createElement('div');
-        let slider = document.createElement('div');
-        let label = document.createElement('label');
-
-        wrapper.classList.add('slider-wrapper');
-        slider.classList.add('slider');
-        label.textContent = frequency >= 1000 ? `${frequency / 1000}K` : frequency;
-
-        noUiSlider.create(slider, {
-            start: 0,
-            range: { min: -12, max: 12 },
-            step: 0.1,
-            direction: 'rtl',
-            orientation: 'vertical',
-        });
-        slider.noUiSlider.on('update', ([value]) => {
-            let gain = +value;
-            equalizerBand.gain.value = gain;
-        });
-
-        wrapper.appendChild(slider);
-        wrapper.appendChild(label);
-        container.appendChild(wrapper);
-    });
-}
 
 function makeSynth() {
     let envelope = {
@@ -70,6 +45,7 @@ let leftSynth = makeSynth();
 let rightSynth = makeSynth();
 let leftPanner = new Tone.Panner(-0.5);
 let rightPanner = new Tone.Panner(0.5);
+
 let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
     let filter = Tone.context.createBiquadFilter();
     filter.type = 'peaking';
@@ -96,8 +72,10 @@ equalizer.forEach((equalizerBand, index) => {
         equalizerBand.connect(echo);
     }
 });
+
 echo.toMaster();
 echo.connect(delay);
+
 delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
@@ -115,6 +93,7 @@ new Tone.Loop(time => {
     leftSynth.setNote('A5', '+19:3:0');
     leftSynth.setNote('G5', '+19:4:2');
 }, '34m').start();
+
 new Tone.Loop(time => {
     rightSynth.triggerAttackRelease('D4', '1:2', '+5:0');
     rightSynth.setNote('E4', '+6:0');
@@ -129,4 +108,7 @@ new Tone.Loop(time => {
 // you can specify when the synth part starts 
 // e.g. .start('8n') will start after 1 eighth note
 // start the transport which controls the main timeline
-Tone.Transport.start();
+// Tone.Transport.start();
+
+//attach a click listener to a play button
+document.querySelector('button').addEventListener('click', () => Tone.Transport.start())

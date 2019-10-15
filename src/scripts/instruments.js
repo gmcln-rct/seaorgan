@@ -1,6 +1,6 @@
 let SampleLibrary = {
     minify: false,
-    ext: '.[mp3|ogg]', // use setExtension to change the extensions on all files // do not change this letiable //
+    ext: '.[mp3|ogg]', // use setExtension to change the extensions on all files //
     baseUrl: '/samples/',
     list: ['bassoon', 'flute', 'french-horn', 'tuba'],
     onload: null,
@@ -106,7 +106,6 @@ let SampleLibrary = {
     },
 
     
- 
     'bassoon': {
         'A3': 'A3.[mp3|ogg]',
         'C2': 'C2.[mp3|ogg]',
