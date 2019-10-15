@@ -56,6 +56,8 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 
 ---
 
+<h1>Wireframe</h1>
+
 Below is a basic wireframe of the intended web app:
 
 ![Sea Organ Wireframe](https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-wireframe.jpg)
