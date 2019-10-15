@@ -8,17 +8,18 @@
     <!-- UI Thin Progress Bar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
         integrity="sha256-pMhcV6/TBDtqH9E9PWKgS+P32PVguLG8IipkPyqMtfY=" crossorigin="anonymous" />
+<link
+    href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
+    rel="icon" type="image/x-icon" />
 
-
+    <!-- Tone Audio Synthesis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
     <title>The Sea Organ</title>
     
 </head>
 <body>
     <h1>The Sea Organ - Index</h1>
 
-<tone-demo autoplay>
-    <tone-keyboard octaves="2"></tone-keyboard>
-</tone-demo>
 
     <div id="content">
         <H3 id="loading">Loading...</H3>
@@ -31,37 +32,35 @@
     
     </div>
 
+<div class="eq">
+</div>
+
+<h1>Play Music</h1>
+<p>Click anywhere to play sound.</p>
+
+<!-- <button value="play" class="eq"></button> -->
 
     <div id="app"></div>
     <script src="./dist/main.js"></script>
 
+
+    <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
     <!-- Build audio interface -->
     <script type="text/javascript" src="./src/scripts/nexusUI.js"></script>
     <!-- Progress Bar -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.js"
         integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
-    <!-- Tone Audio Synthesis -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
+
     <!-- Instruments -->
     <script type="text/javascript" src="./src/scripts/instruments.js"></script>
 
     <!-- Keybaoard -->
     <script type="text/javascript" src="./src/scripts/keyboard.js"></script>
 
+        <script type="text/javascript" src="./src/scripts/song.js"></script>
 
-    <script>
-        const synth = new Tone.AMSynth().toMaster()
-
-            //attach a listener to the keyboard events
-            document.querySelector('tone-keyboard').addEventListener('noteon', e => {
-                synth.triggerAttack(e.detail.name)
-            })
-
-            document.querySelector('tone-keyboard').addEventListener('noteoff', e => {
-                synth.triggerRelease()
-            })
-    </script>
-
+    <!-- <script type="text/javascript" src="./src/scripts/loop.js"></script> -->
 
 </body>
 </html>
