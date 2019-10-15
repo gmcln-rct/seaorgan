@@ -7,7 +7,7 @@
 
 This project is inspired by the Sea Organ of Zadar in Zadar, Croatia, which uses the movement of water to power an audio installation underneath the boardwalk in Zadar, which creates an ethereal, organ-like sound.
 
-In this project, the goal is to use an external, real-time dataset of tides or ocean currents in order to generate organ-like sounds in the browser. The app will not require user input, beyond mute/unmute. If time allows, the project will also include the ability select from different geographic locations.
+In this project, the goal is to use an external, real-time dataset of tides or ocean currents in order to generate organ-like sounds in the browser, creating an audio soundscape for the user. The app will not require user input, beyond mute/unmute. If time allows, the project will also include the ability select from different geographic locations.
 
 The front-end will remain fairly minimal, showing the location source of the data as well as an audio visualization.
 
@@ -113,3 +113,5 @@ Below is a basic wireframe of the intended web app:
 * Add links to GitHub, LinkedIn, and Portfolio Site
 
 * Any user experience changes (for example, changing the settings to a modal or adding an about section)
+
+
