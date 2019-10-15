@@ -54,6 +54,9 @@ Bonus: Ideally, the User should be able to select what geographic location to so
     * Tone.js
         * Tone.js will allow for more nuanced, specific representation of sound of a specific instrument.
 
+---
+
+Below is a basic wireframe of the intended web app:
 
 ![Sea Organ Wireframe](https://swimeo-seeds.s3.amazonaws.com/site-graphics/aA-JSP-wireframe.jpg)
 
