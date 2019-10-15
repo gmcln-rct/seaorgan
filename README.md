@@ -1,7 +1,6 @@
 ![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg "CC BY-NC-ND 2.0 linssimato")
 
 # Sea Organ
-## (aka seaOrganOf)
 
     
 <h1>Background and Overview</h1>
