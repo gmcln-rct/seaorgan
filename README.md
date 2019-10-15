@@ -58,7 +58,7 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 
 Below is a basic wireframe of the intended web app:
 
-![Sea Organ Wireframe](https://swimeo-seeds.s3.amazonaws.com/site-graphics/aA-JSP-wireframe.jpg)
+![Sea Organ Wireframe](https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-wireframe.jpg)
 
 
 ---
