@@ -77,22 +77,27 @@ Bonus: Ideally, the User should be able to select what geographic location to so
 
 **Day 3: Dataset Connection**
 
- Allow user to the change the settings of the simulation and be able to restart with their settings in place
- Show count of non-infected and infected particles, along with the total time it took to infect all particles
- Show live graph of rate of infection
+* Reseach and understand the datasets available related to tides and currents
+* Choose the dataset that allows the greatest flexiblity vis-a-vis the Web Audio API
+* Establish the best means of importing the database to the App for us ein audio synthesis.
  
  
-**Day 4: Translating Data to Audio & UI**
+ 
+ 
+**Day 4: TranslateData to Audio & UI**
 
-* Add links to GitHub, LinkedIn, and Portfolio Site
+* Format current data in format needed for Web Audio API
+
+* Attenuate data, as needed, to suit specific audio needs of Web Audio API / Tone.js
 
 * Begin honing user interface presentation
+
 
  
 **Day 5: Complete User Interface**
 
-* Add links to GitHub, LinkedIn, and Portfolio Site
-
 * Update styling 
+
+* Add links to GitHub, LinkedIn, and Portfolio Site
 
 * Any user experience changes (for example, changing the settings to a modal or adding an about section)
