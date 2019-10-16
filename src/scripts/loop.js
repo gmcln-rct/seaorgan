@@ -112,3 +112,4 @@ synthPart2.start();
 // e.g. .start('8n') will start after 1 eighth note
 // start the transport which controls the main timeline
 Tone.Transport.start();
+

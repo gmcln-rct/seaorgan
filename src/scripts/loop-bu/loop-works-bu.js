@@ -1,7 +1,3 @@
-let instruments = SampleLibrary.load({
-    instruments: ['bassoon', 'flute', 'french-horn', 'tuba']
-});
-
 
 
 const EQUALIZER_CENTER_FREQUENCIES = [
@@ -13,6 +9,7 @@ function makeSynth() {
     let envelope = {
         attack: 0.1,
         release: 4,
+        sustain: 5,
         releaseCurve: 'linear'
     };
     let filterEnvelope = {
@@ -20,14 +17,14 @@ function makeSynth() {
         octaves: 2,
         attack: 0,
         decay: 0,
-        release: 1000
+        release: 5000
     };
 
     return new Tone.DuoSynth({
         harmonicity: 1,
-        volume: -20,
+        volume: -10,
         voice0: {
-            oscillator: { type: 'sawtooth' },
+            oscillator: { type: 'square' },
             envelope,
             filterEnvelope
         },
@@ -43,6 +40,7 @@ function makeSynth() {
 
 let leftSynth = makeSynth();
 let rightSynth = makeSynth();
+
 let leftPanner = new Tone.Panner(-0.5);
 let rightPanner = new Tone.Panner(0.5);
 
@@ -50,16 +48,16 @@ let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
     let filter = Tone.context.createBiquadFilter();
     filter.type = 'peaking';
     filter.frequency.value = frequency;
-    filter.Q.value = 4.31;
+    filter.Q.value = 4.0;
     filter.gain.value = 0;
     return filter;
 });
 
 let echo = new Tone.FeedbackDelay('16n', 0.2);
-let delay = Tone.context.createDelay(6.0);
+let delay = Tone.context.createDelay(12.0);
 let delayFade = Tone.context.createGain();
 
-delay.delayTime.value = 6.0;
+delay.delayTime.value = 10.0;
 delayFade.gain.value = 0.75;
 
 leftSynth.connect(leftPanner);
@@ -81,31 +79,36 @@ delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
 
-new Tone.Loop(time => {
-    leftSynth.triggerAttackRelease('C5', '1:2', time);
-    leftSynth.setNote('D5', '+0:2');
 
-    leftSynth.triggerAttackRelease('E4', '0:2', '+6:0');
 
-    leftSynth.triggerAttackRelease('G4', '0:2', '+11:2');
+// create a synth
+const synth = new Tone.PolySynth().toMaster();
+// create an array of notes to be played
+const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
+// create a new sequence with the synth and notes
+const synthPart1 = new Tone.Sequence(
+    function (time, note) {
+        leftSynth.triggerAttackRelease(note, "10hz", time);
+    },
+    notes,
+    "2n"
+);
 
-    leftSynth.triggerAttackRelease('E5', '2:0', '+19:0');
-    leftSynth.setNote('G5', '+19:1:2');
-    leftSynth.setNote('A5', '+19:3:0');
-    leftSynth.setNote('G5', '+19:4:2');
-}, '34m').start();
+const synthPart2 = new Tone.Sequence(
+    function (time, note) {
+        rightSynth.triggerAttackRelease(note, "100hz", time);
+    },
+    notes,
+    "1n"
+);
 
-new Tone.Loop(time => {
-    rightSynth.triggerAttackRelease('D4', '1:2', '+5:0');
-    rightSynth.setNote('E4', '+6:0');
 
-    rightSynth.triggerAttackRelease('B3', '1m', '+11:2:2');
-    rightSynth.setNote('G3', '+12:0:2');
 
-    rightSynth.triggerAttackRelease('G4', '0:2', '+23:2');
-}, '37m').start();
-
+// Setup the synth to be ready to play on beat 1
+synthPart1.start();
+synthPart2.start();
 // Note that if you pass a time into the start method 
-
-//attach a click listener to a play button
-document.querySelector('button').addEventListener('click', () => Tone.Transport.start())
+// you can specify when the synth part starts 
+// e.g. .start('8n') will start after 1 eighth note
+// start the transport which controls the main timeline
+Tone.Transport.start();
