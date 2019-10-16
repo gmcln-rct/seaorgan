@@ -117,7 +117,6 @@ let SampleLibrary = {
         'G3': 'G3.[mp3|ogg]',
         'A1': 'A1.[mp3|ogg]',
         'A2': 'A2.[mp3|ogg]'
-
     },
 
 
@@ -146,7 +145,6 @@ let SampleLibrary = {
         'A2': 'A2.[mp3|ogg]',
         'C1': 'C1.[mp3|ogg]',
         'C3': 'C3.[mp3|ogg]',
-
     },
 
     

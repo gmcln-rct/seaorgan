@@ -1,12 +1,18 @@
-var sampler = new Tone.Sampler({
-    "C3": "path/to/C3.mp3",
-    "D#3": "path/to/Dsharp3.mp3",
-    "F#3": "path/to/Fsharp3.mp3",
-    "A3": "path/to/A3.mp3",
-}, function () {
-    //sampler will repitch the closest sample
-    sampler.triggerAttack("D3")
-})
+// var sampler = new Tone.Sampler({
+//     "A0": "../samples/french-horn/A0.mp3",
+//     "A2": "../samples/french-horn/A2.mp3",
+//     "C1": "../samples/french-horn/C1.mp3",
+//     "C3": "../samples/french-horn/C3.mp3",
+//     "D2": "../samples/french-horn/D2.mp3",
+//     "D4": "../samples/french-horn/D4.mp3",
+//     "Ds1": "../samples/french-horn/Ds1.mp3",
+//     "F2": "../samples/french-horn/F2.mp3",
+//     "F4": "../samples/french-horn/F4.mp3",
+//     "G1": "../samples/french-horn/G1.mp3",
+// }, function () {
+//     sampler.triggerAttack("D3")
+// })	
+
 
 
 const EQUALIZER_CENTER_FREQUENCIES = [
