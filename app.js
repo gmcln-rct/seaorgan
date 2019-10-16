@@ -17,7 +17,7 @@ app.get('/', (request, res) => {
 // create route to get single book by its isbn
 app.get('/books/:isbn', (request, response) => {
     // make api call using fetch
-    fetch(`http://openlibrary.org/api/books?bibkeys=ISBN:${request.params.isbn}&format=json&jscmd=data`)
+    fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=20130101 10:00&end_date=20130101 10:24&station=280-081&product=water_level&datum=mllw&units=metric&time_zone=gmt&application=web_services&format=json`)
         .then((response) => {
             return response.text();
         }).then((body) => {
