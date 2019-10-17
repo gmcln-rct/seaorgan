@@ -83,12 +83,29 @@ delayFade.connect(delay);
 const synth = new Tone.PolySynth().toMaster();
 // create an array of notes to be played
 const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
-const timing = ['+15:0', '+5.0'];
+const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
+// let timeIndex;
+// let indivTiming;
+// timeIndex = Math.random(timing.length);
+// indivTiming = timing[timeIndex];
+
+function makeTiming() {
+    let timeIndex;
+    let indivTiming;
+    timeIndex = Math.random(timing.length);
+    indivTiming = timing[timeIndex];
+    return indivTiming
+}
+
 // create a new sequence with the synth and notes
 const synthPart1 = new Tone.Sequence(
     function (time, note) {
-        leftSynth.triggerAttackRelease(note, '5:0', timing[0]);
-        leftSynth.setNote(note, '+19:1:2');
+        // timeIndex = Math.random(timing.length);
+        // indivTiming = timing[timeIndex];
+        leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
+        // timeIndex = Math.random(timing.length);
+        // indivTiming = timing[timeIndex];
+        leftSynth.setNote(note, makeTiming);
     },
     notes,
     "2n"
@@ -97,6 +114,7 @@ const synthPart1 = new Tone.Sequence(
 
 // CREATE SEQUENCE
 const synthPart2 = new Tone.Sequence(
+
     function (time, note) {
         // rightSynth.triggerAttackRelease(note, "100hz", time);
         rightSynth.triggerAttackRelease(note, '1:2', timing[1]);

@@ -20,7 +20,6 @@ export const ydayCurrents = (stationID = "8638901") => {
     let ydyDateString = ydyFullYear.toString() + month + date.toString();
 
     const list = [];
-    const newObj = {};
 
     fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`)
         .then(response => response.json())
