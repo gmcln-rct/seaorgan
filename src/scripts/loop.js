@@ -85,10 +85,11 @@ delayFade.connect(delay);
 const synth = new Tone.PolySynth().toMaster();
 // create an array of notes to be played
 const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
+const timing = ['+15:0', '+5.0'];
 // create a new sequence with the synth and notes
 const synthPart1 = new Tone.Sequence(
     function (time, note) {
-        leftSynth.triggerAttackRelease(note, '2:0', '+19:0');
+        leftSynth.triggerAttackRelease(note, '5:0', timing[0]);
         leftSynth.setNote(note, '+19:1:2');
     },
     notes,
@@ -98,7 +99,7 @@ const synthPart1 = new Tone.Sequence(
 const synthPart2 = new Tone.Sequence(
     function (time, note) {
         // rightSynth.triggerAttackRelease(note, "100hz", time);
-        rightSynth.triggerAttackRelease(note, '1:2', '+5:0');
+        rightSynth.triggerAttackRelease(note, '1:2', timing[1]);
         rightSynth.setNote(note, '+6:0');
     },
     notes,
