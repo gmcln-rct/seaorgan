@@ -1,4 +1,4 @@
-export const ydayCurrents = (stationID = "8638901") => {
+export const ydayCurrents = async (stationID = "8638901") => {
 
     // const fetch = require('node-fetch');
     
@@ -11,7 +11,7 @@ export const ydayCurrents = (stationID = "8638901") => {
     let ydyDate = yesterday.getDate();
     // let ydyDateString = ydyFullYear.toString() + ydyMonth.toString() + ydyDate.toString();
 
-    // ACCOUNT FOR SINGLE DIDGIT MONTH AND DAY
+    // ACCOUNT FOR SINGLE  MONTH AND DAY
     let month = (ydyMonth < 10) ? `0${ydyMonth}` : ydyMonth.toString();
     let date = (ydyDate < 10) ? `0${ydyDate}` : ydyDate.toString();
 
@@ -19,17 +19,32 @@ export const ydayCurrents = (stationID = "8638901") => {
 
     let ydyDateString = ydyFullYear.toString() + month + date.toString();
 
-    const list = [];
+    const stats = [];
+    // let statCopy = [];
 
-    fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`)
-        .then(response => response.json())
+    let data = await getData(ydyDateString, stationID)
+     
+
         
-        .then(data => {
-            data["data"].forEach(currStats => {
-                return list.push(currStats)
-            });
-            // return (list);
-        });
-    return (list);
+    
+
+    data["data"].forEach(currStats => {
+            stats.push([currStats.v, currStats.s])
+    })
+    
+    // return stats;
+        
+    return (stats);
 };
+
+
+async function getData(ydyDateString, stationID) {
+    let response = await fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`);
+    let data = await response.json();
+    return data;
+        // .then(async (response) => {
+        //     return await response.json()
+        // })
+};
+
 

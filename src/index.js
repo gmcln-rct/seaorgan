@@ -2,10 +2,9 @@ import "./styles/index.scss";
 // import currents20191016 from '../src/data/currents20191016';
 
 import {ydayCurrents} from './scripts/fetchCurrentsData';
-import {makeNoteList} from './scripts/notesMaker';
 import {dropdownBlock} from './scripts/dropdown';
 import "./scripts/loop";
-import "./scripts/fetchCurrentsData";
+// import "./scripts/fetchCurrentsData";
 
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("app").innerText = "Hello World!";
@@ -16,14 +15,24 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(ydayCurrents());
     // window.ydayCurrent = ydayCurrents;
 
+    ydayCurrents()
+    .then( 
+        tideObj => {
+            
+            console.log("Tide Obj:", tideObj);
+            console.log("tide Obj 1: ", tideObj[0]);
+            setUpSounds(tideObj)
+        }
+    
+    
 
-    let tideObj = ydayCurrents();
-    window.tideObj = tideObj;
+    
+    )
+    
+    // window.tideObj = tideObj;
 
-    console.log( typeof tideObj);
-    let tideArray = Array.from(tideObj);
-    console.log("Tide Obj:", tideObj);
-    console.log("tide obj 1: ", tideObj["0"]);
+    // console.log( typeof tideObj);
+
 
 
 });

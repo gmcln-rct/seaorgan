@@ -8,6 +8,7 @@
     "@babel/preset-env": "^7.6.3",
     "autoprefixer": "^9.6.5",
     "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
     "cors": "^2.8.5",
     "css-loader": "^3.2.0",
     "express": "^4.17.1",

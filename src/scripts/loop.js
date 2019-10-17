@@ -105,7 +105,7 @@ const synthPart1 = new Tone.Sequence(
         leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
         // timeIndex = Math.random(timing.length);
         // indivTiming = timing[timeIndex];
-        leftSynth.setNote(note, makeTiming);
+        leftSynth.setNote(note, makeTiming());
     },
     notes,
     "2n"
@@ -117,8 +117,8 @@ const synthPart2 = new Tone.Sequence(
 
     function (time, note) {
         // rightSynth.triggerAttackRelease(note, "100hz", time);
-        rightSynth.triggerAttackRelease(note, '1:2', timing[1]);
-        rightSynth.setNote(note, '+6:0');
+        rightSynth.triggerAttackRelease(note, '1:2', makeTiming());
+        rightSynth.setNote(note, makeTiming());
     },
     notes,
     "1n"
