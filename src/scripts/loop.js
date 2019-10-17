@@ -88,7 +88,8 @@ const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
 // create a new sequence with the synth and notes
 const synthPart1 = new Tone.Sequence(
     function (time, note) {
-        leftSynth.triggerAttackRelease(note, "10hz", time);
+        leftSynth.triggerAttackRelease(note, '2:0', '+19:0');
+        leftSynth.setNote(note, '+19:1:2');
     },
     notes,
     "2n"
@@ -96,7 +97,9 @@ const synthPart1 = new Tone.Sequence(
 
 const synthPart2 = new Tone.Sequence(
     function (time, note) {
-        rightSynth.triggerAttackRelease(note, "100hz", time);
+        // rightSynth.triggerAttackRelease(note, "100hz", time);
+        rightSynth.triggerAttackRelease(note, '1:2', '+5:0');
+        rightSynth.setNote(note, '+6:0');
     },
     notes,
     "1n"
@@ -108,8 +111,6 @@ const synthPart2 = new Tone.Sequence(
 synthPart1.start();
 synthPart2.start();
 // Note that if you pass a time into the start method 
-// you can specify when the synth part starts 
-// e.g. .start('8n') will start after 1 eighth note
-// start the transport which controls the main timeline
+
 Tone.Transport.start();
 
