@@ -1,11 +1,7 @@
-import { ydayCurrents } from './fetchCurrentsData';
 
+export const setUpSounds = (tideObj) => {
 
-export const makeNoteList = () => {
-    let currObj = ydayCurrents();
-    let noteList = [];
-
-
+    let allNotes = ["A1", "A2", "A3", "A4", "b1", "b2", "b3", "b4", "b5", "C2", "C3", "C4", "C5", "D2", "D3", "D4", "E2", "E3", "E4", "F2", "F3", "F4", "G2", "G3", "G4"];
     // for (let i=0; 0 < currObj.length; i++) {
     //     noteList.push(currObj[i])
     // }

@@ -3,6 +3,7 @@ import "./styles/index.scss";
 
 import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {dropdownBlock} from './scripts/dropdown';
+import {setUpSounds} from './scripts/setUpSounds';
 import "./scripts/loop";
 // import "./scripts/fetchCurrentsData";
 
@@ -24,9 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
             setUpSounds(tideObj)
         }
     
-    
 
-    
     )
     
     // window.tideObj = tideObj;

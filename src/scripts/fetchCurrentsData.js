@@ -15,18 +15,12 @@ export const ydayCurrents = async (stationID = "8638901") => {
     let month = (ydyMonth < 10) ? `0${ydyMonth}` : ydyMonth.toString();
     let date = (ydyDate < 10) ? `0${ydyDate}` : ydyDate.toString();
 
-    // minutes = (minutes < 10) ? `0${minutes}` : minutes;
-
     let ydyDateString = ydyFullYear.toString() + month + date.toString();
 
     const stats = [];
     // let statCopy = [];
 
-    let data = await getData(ydyDateString, stationID)
-     
-
-        
-    
+    let data = await getData(ydyDateString, stationID);
 
     data["data"].forEach(currStats => {
             stats.push([currStats.v, currStats.s])
