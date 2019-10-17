@@ -1,13 +1,23 @@
 export const ydayCurrents = (stationID = "8638901") => {
 
-    const fetch = require('node-fetch');
+    // const fetch = require('node-fetch');
+    
+    // THIS SCRIPT IS FOR FETCHING FROM FRONTEND
 
     // Establish Yesterday's Date
     let yesterday = new Date(Date.now() - 864e5);
     let ydyFullYear = yesterday.getFullYear();
     let ydyMonth = yesterday.getMonth() + 1;
     let ydyDate = yesterday.getDate();
-    let ydyDateString = ydyFullYear.toString() + ydyMonth.toString() + ydyDate.toString();
+    // let ydyDateString = ydyFullYear.toString() + ydyMonth.toString() + ydyDate.toString();
+
+    // ACCOUNT FOR SINGLE DIDGIT MONTH AND DAY
+    let month = (ydyMonth < 10) ? `0${ydyMonth}` : ydyMonth.toString();
+    let date = (ydyDate < 10) ? `0${ydyDate}` : ydyDate.toString();
+
+    // minutes = (minutes < 10) ? `0${minutes}` : minutes;
+
+    let ydyDateString = ydyFullYear.toString() + month + date.toString();
 
     const list = [];
     const newObj = {};
@@ -19,6 +29,7 @@ export const ydayCurrents = (stationID = "8638901") => {
             data["data"].forEach(currStats => {
                 return list.push(currStats)
             });
+            // return (list);
         });
     return (list);
 };

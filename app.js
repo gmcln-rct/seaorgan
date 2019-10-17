@@ -12,14 +12,28 @@ const router = express.Router();
 app.use(cors());
 app.use(express.static('public'))
 
-app.get('/', (request, res) => {
-    res.sendFile(path.join(__dirname, './index.html'))
-})
+// app.get('/', (request, res) => {
+//     res.sendFile(path.join(__dirname, './index.html'))
+// })
+
+// Establish Yesterday's Date
+let yesterday = new Date(Date.now() - 864e5);
+let ydyFullYear = yesterday.getFullYear();
+let ydyMonth = yesterday.getMonth() + 1;
+let ydyDate = yesterday.getDate();
+
+month = (ydyMonth < 10) ? `0${ydyMonth}` : ydyMonth.toString;
+minutes = (minutes < 10) ? `0${minutes}` : minutes;
+
+let ydyDateString = ydyFullYear.toString() + ydyMonth.toString() + ydyDate.toString();
+
+// let ydyDateString = ydyFullYear.toString() + ydyMonth.toString() + ydyDate.toString();
+const list = [];
 
 // Backend data fetch
 app.get('/gov', (request, response) => {
     // make api call using fetch
-    fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=20191014&end_date=20191015&station=8638901&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`)
+    fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`)
         .then((response) => {
             return response.text();
         }).then((body) => {

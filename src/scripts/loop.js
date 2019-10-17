@@ -79,8 +79,7 @@ delay.connect(delayFade);
 delayFade.connect(delay);
 
 
-
-// create a synth
+// CREATE SYNTH
 const synth = new Tone.PolySynth().toMaster();
 // create an array of notes to be played
 const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
@@ -95,6 +94,8 @@ const synthPart1 = new Tone.Sequence(
     "2n"
 );
 
+
+// CREATE SEQUENCE
 const synthPart2 = new Tone.Sequence(
     function (time, note) {
         // rightSynth.triggerAttackRelease(note, "100hz", time);
