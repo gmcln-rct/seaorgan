@@ -1,3 +1,17 @@
+// FROM INDEX.HTML
+
+// <script type="text/javascript" src="./src/scripts/nexusUI.js"></script>
+//     <!--Progress Bar-- >
+//         <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.js"
+//             integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
+
+//         <!--Instruments -->
+//             <script type="text/javascript" src="./src/scripts/instruments.js"></script>
+
+//             <!--Keybaoard -->
+//                 <script type="text/javascript" src="./src/scripts/keyboard.js"></script>
+
+
 NProgress.start();
 // load samples //
 let samples = SampleLibrary.load({
