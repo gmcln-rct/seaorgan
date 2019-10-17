@@ -15,5 +15,5 @@ window.addEventListener("DOMContentLoaded", () => {
     window.ydayCurrents = ydayCurrents;
     
     // console.log(currents20191016);
-    console.log(ydayCurrents());
+    // console.log(ydayCurrents());
 });
