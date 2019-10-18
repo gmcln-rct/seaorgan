@@ -7,9 +7,10 @@ export const loopSounds = (notesList) => {
 
     function makeSynth() {
         let envelope = {
-            attack: 0.1,
+            attack: 1.5,
             release: 4,
             sustain: 5,
+            attackCurve: 'exponential',
             releaseCurve: 'linear'
         };
         let filterEnvelope = {
@@ -21,7 +22,7 @@ export const loopSounds = (notesList) => {
         };
 
         return new Tone.PolySynth({
-            harmonicity: 5,
+            harmonicity: 12,
             volume: -10,
             voice0: {
                 oscillator: { type: 'ripple' },
@@ -39,7 +40,7 @@ export const loopSounds = (notesList) => {
                 filterEnvelope
             },
 
-            vibratoRate: 0.5,
+            vibratoRate: 0.2,
             vibratoAmount: 0.1
         });
     }
@@ -97,7 +98,6 @@ export const loopSounds = (notesList) => {
     const notes = notesList;
 
     
-
     function makeTiming() {
         let timeIndex;
         let indivTiming;
@@ -109,8 +109,7 @@ export const loopSounds = (notesList) => {
     // create a new sequence with the synth and notes
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
-            leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
-            leftSynth.setNote(note, makeTiming());
+            leftSynth.triggerAttackRelease(note, '10:0', makeTiming());
         },
         notes,
         "2m"
@@ -123,9 +122,8 @@ export const loopSounds = (notesList) => {
         function (time, note) {
             // rightSynth.triggerAttackRelease(note, "100hz", time);
             rightSynth.triggerAttackRelease(note, '1:2', makeTiming());
-            rightSynth.setNote(note, makeTiming());
-            // rightSynth.setNote('G3', '+12:0:2');
-            // rightSynth.triggerAttackRelease('G4', '0:2', '+23:2');
+
+
         },
         notes,
         "8m"

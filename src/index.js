@@ -9,19 +9,42 @@ import "./scripts/loop";
 // import "./scripts/fetchCurrentsData";
 
 window.addEventListener("DOMContentLoaded", () => {
-
     let result;
     let notesList;
     // document.getElementById("dropdown-container").innerHTML = dropdownBlock;
 
-    ydayCurrents(result)
-    .then( 
-        tideObj => {
-            console.log("Tide Obj: ", tideObj);
-            notesList = setUpSounds(tideObj);
-            loopSounds(notesList);
-        }
-        );
+    let selection = document.getElementById('station_id');
+    let el = document.getElementById('select-button');
+
+
+    // function getSelectedOption(selection) {
+    //     let opt;
+    //     for (let i = 0, len = selection.options.length; i < len; i++) {
+    //         opt = selection.options[i];
+    //         if (opt.selected === true) {
+    //             break;
+    //         }
+    //     }
+    //     return opt;
+    // }
+
+    // assign onclick handlers to the buttons
+    document.getElementById('select-button').onclick = function (e) {
+        e.preventDefault();
+        el.value = selection.value;
+         result = el.value;
+        debugger
+        ydayCurrents(result)
+            .then(
+                tideObj => {
+                    console.log("Tide Obj: ", tideObj);
+                    notesList = setUpSounds(tideObj);
+                    loopSounds(notesList);
+                }
+            );
+    }
+
+    
         
         // window.tideObj = tideObj;
         
