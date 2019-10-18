@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Open+Sans:300,400,600,700,800|Quicksand:300,400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Sarala:400,700&display=swap');
 
 
 body {
 
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Questrial', sans-serif;
 
     background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -36,11 +38,15 @@ body {
 }
 
 body h1 {
-    font-family: 'Lato', sans-serif;
+
+    font-family: 'Questrial', sans-serif;
+
     font-size: 2em;
+    font-weight: 200;
     text-align: center;
 
     color: white;
+    opacity: 0.7;
 
 }
 
@@ -69,13 +75,6 @@ body h1 {
         }
 
 
-        // Song Test
-
-        #song-test {
-            width: 400px;
-            background: fuchsia;
-        }
-
 // ------------------------------------------------------------
 // Dropdown
 // ------------------------------------------------------------
@@ -84,6 +83,5 @@ body h1 {
 #dropdown-container {
     width: 20rem;
     margin: 0 auto;
-
     font-size: 1em;
 }

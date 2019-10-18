@@ -4,6 +4,7 @@ import "./styles/index.scss";
 import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {dropdownBlock} from './scripts/dropdown';
 import {setUpSounds} from './scripts/setUpSounds';
+import {loopSounds} from './scripts/loop';
 import "./scripts/loop";
 // import "./scripts/fetchCurrentsData";
 
@@ -23,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
             console.log("Tide Obj: ", tideObj);
             console.log("tide Obj 1: ", tideObj[0]);
             notesList = setUpSounds(tideObj);
+            loopSounds(notesList);
         }
     
 

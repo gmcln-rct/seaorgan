@@ -62,4 +62,4 @@ export const dropdownBlock = `<select id="station_id">
 <option value ="Port Manatee">Port Manatee - FL</option>
 </select>
 <br>
-<button type="button" onclick="selectStation()">Submit Current</button>`
+<button type="button" id="select-button" onclick="selectStation()">Submit Current</button>`
