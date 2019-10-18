@@ -9,33 +9,21 @@ import "./scripts/loop";
 // import "./scripts/fetchCurrentsData";
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("app").innerText = "Hello World, I'm index.js!";
 
-    document.getElementById("dropdown-container").innerHTML = dropdownBlock;
-    
-    // window.ydayCurrent = ydayCurrents;
+    let result;
     let notesList;
+    // document.getElementById("dropdown-container").innerHTML = dropdownBlock;
 
-    // let selected = document.getElementById("station_id");
-
-
-    // let selectedValue = selected.options[selectedIdx].value;
-    // Need idx!!!
-
-    // document.querySelector('button').onClick('submit', 
-
-        ydayCurrents()
-        .then( 
-            tideObj => {
-                console.log("Tide Obj: ", tideObj);
-
-                notesList = setUpSounds(tideObj);
-
-                loopSounds(notesList);
-
-            }
+    ydayCurrents(result)
+    .then( 
+        tideObj => {
+            console.log("Tide Obj: ", tideObj);
+            notesList = setUpSounds(tideObj);
+            loopSounds(notesList);
+        }
         );
-    
-    // window.tideObj = tideObj;
-
+        
+        // window.tideObj = tideObj;
+        
+        document.getElementById("app").innerText = "Hello World, I'm index.js!";
 });
