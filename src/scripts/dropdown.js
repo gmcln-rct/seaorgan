@@ -62,4 +62,18 @@ export const dropdownBlock = `<form><select id="station_id">
 <option value ="Port Manatee">Port Manatee - FL</option>
 </select>
 <br>
-<button type="submit" id="select-button">Submit Current</button></form>`
+<button type="submit" id="select-button" onClick='fetchEvent()'>Play The Sea</button>
+<script>
+   function callThisFunction() {
+       let dropdown = document.getElementById("metric");
+       let unit = dropdown.options[dropdown.selectedIndex].value;
+       let nameOfUnit = dropdown.options[dropdown.selectedIndex].text;
+
+       if (unit == "cm") {
+           // do stuff
+       } else if (unit == "ml") {
+           // do stuff
+       }
+       // etc.
+   }
+</script>`

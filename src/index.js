@@ -16,16 +16,15 @@ window.addEventListener("DOMContentLoaded", () => {
     // window.ydayCurrent = ydayCurrents;
     let notesList;
 
-    let selection = document.getElementById("station_id");
+    // let selected = document.getElementById("station_id");
 
-    debugger
 
-    let selectionValue = selection.value;
+    // let selectedValue = selected.options[selectedIdx].value;
+    // Need idx!!!
 
-    debugger
-    document.querySelector('button').onClick('submit', 
+    // document.querySelector('button').onClick('submit', 
 
-        ydayCurrents(selectionValue)
+        ydayCurrents()
         .then( 
             tideObj => {
                 console.log("Tide Obj: ", tideObj);
@@ -35,8 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 loopSounds(notesList);
 
             }
-        ));
+        );
     
-    window.tideObj = tideObj;
+    // window.tideObj = tideObj;
 
 });
