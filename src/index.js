@@ -21,8 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
     .then( 
         tideObj => {
             console.log("Tide Obj: ", tideObj);
-            console.log("tide Obj 1: ", tideObj[0]);
+            console.log("Tide Obj 1: ", tideObj[0]);
             notesList = setUpSounds(tideObj);
+            console.log("notesList: ", notesList);
         }
     
 
@@ -31,7 +32,4 @@ window.addEventListener("DOMContentLoaded", () => {
     window.tideObj = tideObj;
 
     // console.log( typeof tideObj);
-
-
-
 });

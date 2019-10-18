@@ -1,57 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Open+Sans:300,400,600,700,800|Quicksand:300,400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900&display=swap);
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed;
-  background-size: cover;
-  -webkit-animation: bgGradientGenerator 30s ease infinite;
-  animation: bgGradientGenerator 30s ease infinite; }
-
-@-webkit-keyframes bgGradientGenerator {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@keyframes bgGradientGenerator {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-body h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 2em;
-  text-align: center;
-  color: white; }
-
-#content {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.container {
-  display: none; }
-
-#keyboard {
-  margin: 2px !important; }
-
-#Selector {
-  margin: 0 auto; }
-
-.container p {
-  text-align: center;
-  color: white; }
-
-#song-test {
-  width: 400px;
-  background: fuchsia; }
+body{font-family:'Quicksand', sans-serif;background:linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed;background-size:cover;-webkit-animation:bgGradientGenerator 30s ease infinite;animation:bgGradientGenerator 30s ease infinite}@-webkit-keyframes bgGradientGenerator{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes bgGradientGenerator{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}body h1{font-family:'Lato', sans-serif;font-size:2em;text-align:center;color:white}#content{height:100%;width:100%;display:flex;align-items:center;justify-content:center}.container{display:none}#keyboard{margin:2px !important}#Selector{margin:0 auto}.container p{text-align:center;color:white}#song-test{width:400px;background:fuchsia}#dropdown-container{width:20rem;margin:0 auto;font-size:1em}
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc3R5bGVzL2luZGV4LnNjc3MgKDEpIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsbURBQW1EOztBQUVuRDtBQUNBO0FBQ0EsZ0NBQWdDO0FBQ2hDO0FBQ0Esa0NBQWtDO0FBQ2xDO0FBQ0EsZ0NBQWdDLEVBQUU7O0FBRWxDO0FBQ0E7QUFDQSxnQ0FBZ0M7QUFDaEM7QUFDQSxrQ0FBa0M7QUFDbEM7QUFDQSxnQ0FBZ0MsRUFBRTs7QUFFbEM7QUFDQTtBQUNBO0FBQ0E7QUFDQSxlQUFlOztBQUVmO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSwwQkFBMEI7O0FBRTFCO0FBQ0EsZ0JBQWdCOztBQUVoQjtBQUNBLHlCQUF5Qjs7QUFFekI7QUFDQSxpQkFBaUI7O0FBRWpCO0FBQ0E7QUFDQSxlQUFlOztBQUVmO0FBQ0E7QUFDQSxzQkFBc0IiLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgZm9udC1mYW1pbHk6ICdRdWlja3NhbmQnLCBzYW5zLXNlcmlmO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMzU4ZGVnLCAjMDE2Njk5LCAjMjRiNGE0LCAjMWY4YWNjKSBuby1yZXBlYXQgY2VudGVyIGNlbnRlciBmaXhlZDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgLXdlYmtpdC1hbmltYXRpb246IGJnR3JhZGllbnRHZW5lcmF0b3IgMzBzIGVhc2UgaW5maW5pdGU7XG4gIGFuaW1hdGlvbjogYmdHcmFkaWVudEdlbmVyYXRvciAzMHMgZWFzZSBpbmZpbml0ZTsgfVxuXG5ALXdlYmtpdC1rZXlmcmFtZXMgYmdHcmFkaWVudEdlbmVyYXRvciB7XG4gIDAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwJSA1MCU7IH1cbiAgNTAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAxMDAlIDUwJTsgfVxuICAxMDAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwJSA1MCU7IH0gfVxuXG5Aa2V5ZnJhbWVzIGJnR3JhZGllbnRHZW5lcmF0b3Ige1xuICAwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCUgNTAlOyB9XG4gIDUwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMTAwJSA1MCU7IH1cbiAgMTAwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCUgNTAlOyB9IH1cblxuYm9keSBoMSB7XG4gIGZvbnQtZmFtaWx5OiAnTGF0bycsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMmVtO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiB3aGl0ZTsgfVxuXG4jY29udGVudCB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyOyB9XG5cbi5jb250YWluZXIge1xuICBkaXNwbGF5OiBub25lOyB9XG5cbiNrZXlib2FyZCB7XG4gIG1hcmdpbjogMnB4ICFpbXBvcnRhbnQ7IH1cblxuI1NlbGVjdG9yIHtcbiAgbWFyZ2luOiAwIGF1dG87IH1cblxuLmNvbnRhaW5lciBwIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogd2hpdGU7IH1cblxuI3NvbmctdGVzdCB7XG4gIHdpZHRoOiA0MDBweDtcbiAgYmFja2dyb3VuZDogZnVjaHNpYTsgfVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/
+/*# sourceMappingURL=main.css.map*/
