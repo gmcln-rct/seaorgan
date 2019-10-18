@@ -135,8 +135,7 @@ export const loopSounds = (notesList) => {
     synthPart2.start();
 
     // Start audio transport
-    // Tone.Transport.start();
+    Tone.Transport.start();
 
-    document.querySelector('button').addEventListener('click', () => Tone.Transport.start())
 
 };

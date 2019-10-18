@@ -1,4 +1,4 @@
-export const dropdownBlock = `<select id="station_id">
+export const dropdownBlock = `<form><select id="station_id">
 <option value="None">-- Select U.S. Tides & Currents Station --</option>
 <option value ="Cape Henry LB 2CH">Cape Henry LB 2CH - VA</option>
 <option value ="York Spit LBB 22">York Spit LBB 22 - VA</option>
@@ -62,4 +62,4 @@ export const dropdownBlock = `<select id="station_id">
 <option value ="Port Manatee">Port Manatee - FL</option>
 </select>
 <br>
-<button type="button" id="select-button" onclick="selectStation()">Submit Current</button>`
+<button type="submit" id="select-button">Submit Current</button></form>`

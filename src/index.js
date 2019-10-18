@@ -9,31 +9,34 @@ import "./scripts/loop";
 // import "./scripts/fetchCurrentsData";
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("app").innerText = "Hello World!";
+    document.getElementById("app").innerText = "Hello World, I'm index.js!";
 
     document.getElementById("dropdown-container").innerHTML = dropdownBlock;
     
-    // console.log(currents20191016);
-    // console.log(ydayCurrents());
     // window.ydayCurrent = ydayCurrents;
     let notesList;
 
-    ydayCurrents()
-    .then( 
-        tideObj => {
-            console.log("Tide Obj: ", tideObj);
-            console.log("tide Obj 1: ", tideObj[0]);
-            notesList = setUpSounds(tideObj);
-            loopSounds(notesList);
-        }
-    
+    let selection = document.getElementById("station_id");
 
-    )
+    debugger
+
+    let selectionValue = selection.value;
+
+    debugger
+    document.querySelector('button').onClick('submit', 
+
+        ydayCurrents(selectionValue)
+        .then( 
+            tideObj => {
+                console.log("Tide Obj: ", tideObj);
+
+                notesList = setUpSounds(tideObj);
+
+                loopSounds(notesList);
+
+            }
+        ));
     
     window.tideObj = tideObj;
-
-    // console.log( typeof tideObj);
-
-
 
 });
