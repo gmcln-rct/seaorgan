@@ -15,13 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(currents20191016);
     // console.log(ydayCurrents());
     // window.ydayCurrent = ydayCurrents;
+    let notesList;
 
     ydayCurrents()
     .then( 
         tideObj => {
             console.log("Tide Obj: ", tideObj);
             console.log("tide Obj 1: ", tideObj[0]);
-            setUpSounds(tideObj);
+            notesList = setUpSounds(tideObj);
         }
     
 
