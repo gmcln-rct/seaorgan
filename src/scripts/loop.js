@@ -19,7 +19,7 @@ function makeSynth() {
         release: 5000
     };
 
-    return new Tone.DuoSynth({
+    return new Tone.PolySynth({
         harmonicity: 1,
         volume: -10,
         voice0: {
@@ -29,6 +29,11 @@ function makeSynth() {
         },
         voice1: {
             oscillator: { type: 'sine' },
+            envelope,
+            filterEnvelope
+        },
+        voice2: {
+            oscillator: { type: 'triangle' },
             envelope,
             filterEnvelope
         },
@@ -47,7 +52,7 @@ let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
     let filter = Tone.context.createBiquadFilter();
     filter.type = 'peaking';
     filter.frequency.value = frequency;
-    filter.Q.value = 4.0;
+    filter.Q.value = 1.0;
     filter.gain.value = 0;
     return filter;
 });
@@ -63,6 +68,7 @@ leftSynth.connect(leftPanner);
 rightSynth.connect(rightPanner);
 leftPanner.connect(equalizer[0]);
 rightPanner.connect(equalizer[0]);
+
 equalizer.forEach((equalizerBand, index) => {
     if (index < equalizer.length - 1) {
         equalizerBand.connect(equalizer[index + 1]);
@@ -84,27 +90,20 @@ const synth = new Tone.PolySynth().toMaster();
 // create an array of notes to be played
 const notes = ["C3", "Eb3", "G3", "Bb3", "G3", "C4"];
 const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
-// let timeIndex;
-// let indivTiming;
-// timeIndex = Math.random(timing.length);
-// indivTiming = timing[timeIndex];
+
 
 function makeTiming() {
     let timeIndex;
     let indivTiming;
     timeIndex = Math.random(timing.length);
     indivTiming = timing[timeIndex];
-    return indivTiming
+    return indivTiming;
 }
 
 // create a new sequence with the synth and notes
 const synthPart1 = new Tone.Sequence(
     function (time, note) {
-        // timeIndex = Math.random(timing.length);
-        // indivTiming = timing[timeIndex];
         leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
-        // timeIndex = Math.random(timing.length);
-        // indivTiming = timing[timeIndex];
         leftSynth.setNote(note, makeTiming());
     },
     notes,

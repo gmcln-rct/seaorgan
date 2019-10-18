@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
             
             console.log("Tide Obj:", tideObj);
             console.log("tide Obj 1: ", tideObj[0]);
-            setUpSounds(tideObj)
+            setUpSounds(tideObj);
         }
     
 
