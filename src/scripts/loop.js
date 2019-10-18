@@ -2,7 +2,7 @@ export const loopSounds = (notesList) => {
 
     const EQUALIZER_CENTER_FREQUENCIES = [
         100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
-        1600, 2000, 2500, 3150, 4000, 5000, 6300, 8000, 10000
+        1600, 2000, 2500, 3150, 4000, 5000
     ];
 
     function makeSynth() {

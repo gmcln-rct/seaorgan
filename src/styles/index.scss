@@ -118,7 +118,7 @@ body h1 {
     border: 2px solid #16BCCC;
 }
 
-button {
+input {
     width: 12rem;
     margin: 15px auto;
     padding: 10px 10px;
@@ -137,7 +137,7 @@ button {
 
 }
 
-button:hover, button:active {
+input:hover, button:active {
     border: 2px solid white;
     transition: 0.4s;
 }
