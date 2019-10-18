@@ -19,8 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ydayCurrents()
     .then( 
         tideObj => {
-            
-            console.log("Tide Obj:", tideObj);
+            console.log("Tide Obj: ", tideObj);
             console.log("tide Obj 1: ", tideObj[0]);
             setUpSounds(tideObj);
         }
@@ -28,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     )
     
-    // window.tideObj = tideObj;
+    window.tideObj = tideObj;
 
     // console.log( typeof tideObj);
 
