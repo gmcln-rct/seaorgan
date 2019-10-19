@@ -15,10 +15,10 @@ export const setUpSounds = (tideObj) => {
         noteRefNum = parseFloat(noteRef);
         // Create a number between 0 and 1, then multiply by length of notes array
         noteIdx = Math.floor(((noteRefNum + 1) / 2) * allNotesLength);
-        newNote = newNote > 5 ? allNotes[noteIdx - 5] : allNotes[noteIdx];
+        newNote = newNote > 10 ? allNotes[noteIdx - 10] : allNotes[noteIdx];
         notesList.push(newNote);
-        if (i === 1) {
-            notesList.push(allNotes[noteIdx + 1]);
+        if (i === 1 && newNote > 5) {
+            notesList.push(allNotes[noteIdx - 5]);
         }
         // if (i % 5 === 0) {
         //     notesList.push([null]);

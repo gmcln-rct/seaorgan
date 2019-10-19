@@ -26,7 +26,7 @@ export const makeSynth = () => {
             filterEnvelope
         },
         voice1: {
-            oscillator: { type: 'bounce' },
+            oscillator: { type: 'triangle' },
             envelope,
             filterEnvelope
         },

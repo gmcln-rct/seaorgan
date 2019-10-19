@@ -135,3 +135,18 @@ input:hover, button:active {
 input:visited, input:focus {
     outline: none;
 }
+
+// ---------------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------------
+
+#footer-logo {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    width: 7rem;
+    height: auto;
+    opacity: 0.9;
+
+
+}
