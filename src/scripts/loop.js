@@ -1,3 +1,5 @@
+import {makeSynth} from './makeSynth';
+
 export const loopSounds = (notesList) => {
 
     const EQUALIZER_CENTER_FREQUENCIES = [
@@ -5,46 +7,7 @@ export const loopSounds = (notesList) => {
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
-    function makeSynth() {
-        let envelope = {
-            attack: 1.5,
-            release: 4,
-            sustain: 5,
-            attackCurve: 'exponential',
-            releaseCurve: 'linear'
-        };
-        let filterEnvelope = {
-            baseFrequency: 200,
-            octaves: 2,
-            attack: 0,
-            decay: 0,
-            release: 5000
-        };
-
-        return new Tone.PolySynth({
-            harmonicity: 12,
-            volume: -10,
-            voice0: {
-                oscillator: { type: 'ripple' },
-                envelope,
-                filterEnvelope
-            },
-            voice1: {
-                oscillator: { type: 'bounce' },
-                envelope,
-                filterEnvelope
-            },
-            voice2: {
-                oscillator: { type: 'triangle' },
-                envelope,
-                filterEnvelope
-            },
-
-            vibratoRate: 0.2,
-            vibratoAmount: 0.1
-        });
-    }
-
+    
     let leftSynth = makeSynth();
     let rightSynth = makeSynth();
 

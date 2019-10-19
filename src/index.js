@@ -17,23 +17,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let el = document.getElementById('select-button');
 
 
-    // function getSelectedOption(selection) {
-    //     let opt;
-    //     for (let i = 0, len = selection.options.length; i < len; i++) {
-    //         opt = selection.options[i];
-    //         if (opt.selected === true) {
-    //             break;
-    //         }
-    //     }
-    //     return opt;
-    // }
-
-    // assign onclick handlers to the buttons
+    // assign onclick handlers to the input
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
         el.value = selection.value;
          result = el.value;
-        debugger
+        
         ydayCurrents(result)
             .then(
                 tideObj => {
@@ -44,9 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
             );
     }
 
-    
-        
         // window.tideObj = tideObj;
         
-        document.getElementById("app").innerText = "Hello World, I'm index.js!";
+    document.getElementById("app").innerText = "Hello World, I'm index.js!";
 });
