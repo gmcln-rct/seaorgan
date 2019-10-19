@@ -36,9 +36,7 @@ async function getData(ydyDateString, stationID) {
     let response = await fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`);
     let data = await response.json();
     return data;
-        // .then(async (response) => {
-        //     return await response.json()
-        // })
+
 };
 
 

@@ -11,7 +11,7 @@ export const makeSynth = () => {
         octaves: 2,
         attack: 0,
         decay: 0,
-        release: 5000
+        release: 2000
     };
 
     return new Tone.PolySynth({

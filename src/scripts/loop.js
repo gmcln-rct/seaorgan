@@ -50,6 +50,8 @@ export const loopSounds = (notesList) => {
     delay.connect(delayFade);
     delayFade.connect(delay);
 
+    Tone.Transport.bpm.value = 100;
+
 
     // CREATE SYNTH
     const synth = new Tone.PolySynth().toMaster();
