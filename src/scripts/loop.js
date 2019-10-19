@@ -4,7 +4,7 @@ export const loopSounds = (notesList) => {
 
     const EQUALIZER_CENTER_FREQUENCIES = [
         100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
-        1600, 2000, 2500, 3150, 4000, 5000
+        1600, 2000, 2500, 3150, 4000, 5000, 10000
     ];
 
     
@@ -74,7 +74,7 @@ export const loopSounds = (notesList) => {
     // create a new sequence with the synth and notes
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
-            leftSynth.triggerAttackRelease(note, '10:0', makeTiming());
+            leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
         },
         notes,
         "2m"
@@ -86,9 +86,7 @@ export const loopSounds = (notesList) => {
 
         function (time, note) {
             // rightSynth.triggerAttackRelease(note, "100hz", time);
-            rightSynth.triggerAttackRelease(note, '1:2', makeTiming());
-
-
+            rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
         notes,
         "8m"
@@ -99,6 +97,4 @@ export const loopSounds = (notesList) => {
 
     // Start audio transport
     Tone.Transport.start();
-
-
 };

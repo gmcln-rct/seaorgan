@@ -1,9 +1,10 @@
+// SETS UP SYNTHESIZER FOR LOP
+
 export const makeSynth = () => {
     let envelope = {
         attack: 1.5,
         release: 4,
         sustain: 5,
-        attackCurve: 'exponential',
         releaseCurve: 'linear'
     };
     let filterEnvelope = {
@@ -14,11 +15,13 @@ export const makeSynth = () => {
         release: 2000
     };
 
+    let chorus = new Tone.Chorus(4, 2.5, 0.5);
+
     return new Tone.PolySynth({
-        harmonicity: 12,
+        harmonicity: 10,
         volume: -10,
         voice0: {
-            oscillator: { type: 'ripple' },
+            oscillator: { type: 'sine' },
             envelope,
             filterEnvelope
         },
@@ -34,5 +37,5 @@ export const makeSynth = () => {
         },
 
 
-    });
+    }).connect(chorus);
 }

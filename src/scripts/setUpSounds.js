@@ -1,3 +1,4 @@
+// CORRELATES TIDAL DATA TO SPECIFIC NOTES
 
 export const setUpSounds = (tideObj) => {
     let notesList = []
@@ -16,6 +17,9 @@ export const setUpSounds = (tideObj) => {
         noteIdx = Math.floor(((noteRefNum + 1) / 2) * allNotesLength);
         newNote = newNote > 5 ? allNotes[noteIdx - 5] : allNotes[noteIdx];
         notesList.push(newNote);
+        if (i === 1) {
+            notesList.push(allNotes[noteIdx + 1]);
+        }
         // if (i % 5 === 0) {
         //     notesList.push([null]);
         // }

@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css?family=Sarala:400,700&display=swap');
 
 
+// ---------------------------------------------------------------------------------
+
 body {
     font-family: 'Questrial', sans-serif;
 
@@ -36,12 +38,20 @@ body {
 
 }
 
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+
 body h1 {
-    width: 20%;
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-bottom: 0;
-    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 
     font-family: 'Questrial', sans-serif;
     font-size: 3em;
@@ -60,40 +70,17 @@ body h1 {
     
 }
 
-// TEMP STYLING
-
-    #content {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .container {
-        display: none;
-    }
-    #keyboard {
-        margin: 2px!important;
-    }
-
-    #Selector {
-        margin: 0 auto;
-    }
-    .container p {
-        text-align:center;
-        color: white;
-    }
 
 
-// ------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------
 // Dropdown
-// ------------------------------------------------------------
-
+// ---------------------------------------------------------------------------------
 
 #dropdown-container {
-    width: 20rem;
+    width: 30rem;
     margin: 0 auto;
-
+    background-color: fuchsia;
     font-family: 'Lato', sans-serif;
 }
 
@@ -118,6 +105,10 @@ body h1 {
     border: 2px solid #16BCCC;
 }
 
+#station_id:focus {
+    outline: none;
+}
+
 input {
     width: 12rem;
     margin: 15px auto;
@@ -140,4 +131,8 @@ input {
 input:hover, button:active {
     border: 2px solid white;
     transition: 0.4s;
+}
+
+input:visited, input:focus {
+    outline: none;
 }
