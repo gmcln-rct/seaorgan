@@ -1,57 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Open+Sans:300,400,600,700,800|Quicksand:300,400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900&display=swap);
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed;
-  background-size: cover;
-  -webkit-animation: bgGradientGenerator 30s ease infinite;
-  animation: bgGradientGenerator 30s ease infinite; }
-
-@-webkit-keyframes bgGradientGenerator {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@keyframes bgGradientGenerator {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-body h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 2em;
-  text-align: center;
-  color: white; }
-
-#content {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.container {
-  display: none; }
-
-#keyboard {
-  margin: 2px !important; }
-
-#Selector {
-  margin: 0 auto; }
-
-.container p {
-  text-align: center;
-  color: white; }
-
-#song-test {
-  width: 400px;
-  background: fuchsia; }
+@import url(https://fonts.googleapis.com/css?family=Questrial&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Sarala:400,700&display=swap);
+body{font-family:'Questrial', sans-serif;background:linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed;background-size:cover;-webkit-animation:bgGradientGenerator 30s ease infinite;animation:bgGradientGenerator 30s ease infinite}@-webkit-keyframes bgGradientGenerator{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes bgGradientGenerator{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}.main-content-container{display:flex;flex-direction:column;justify-content:flex-start;align-content:center;width:100%;height:100vh}body h1{margin-top:40px;margin-bottom:20px;margin-left:-50px;font-family:'Questrial', sans-serif;font-size:3em;font-weight:200;text-align:center;color:white;opacity:0.8;-webkit-animation:fadein 2s ease-in;animation:fadein 2s ease-in}#app{position:fixed;bottom:10px;color:lightgray}#dropdown-container{width:30rem;margin:0 auto;font-family:'Lato', sans-serif}#station_id{width:28rem;height:2.2em;margin-bottom:5px;padding:10px 30px;color:#084769;background-color:#084769;font-size:1.5em;font-weight:700;text-align:center;border-color:#838f96;border-radius:10px;opacity:0.8}#station-id:hover{border:2px solid #16BCCC}#station_id:focus{outline:none}.select-css{box-sizing:border-box;box-shadow:0 1px 0 1px rgba(0,0,0,0.04);border-radius:.5em;-moz-appearance:none;-webkit-appearance:none;appearance:none;background-color:#fff;background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),linear-gradient(to bottom, #fff 0%, #e5e5e5 100%);background-repeat:no-repeat, repeat;background-position:right .7em top 50%, 0 0;background-size:.65em auto, 100%}.select-css::-ms-expand{display:none}.select-css:hover{border-color:#888}.select-css option{font-weight:normal}.select-css:focus{outline:none}#select-button{width:10rem;margin:1rem 8rem;padding:10px 5px;color:white;background-color:#084769;font-size:1.2em;font-weight:600;text-align:center;border-color:#084769;border-radius:10px;border-radius:10px;opacity:0.8}input:hover,button:active{border:2px solid white;transition:0.4s}input:visited,input:focus{outline:none}#footer-logo{position:fixed;bottom:2rem;right:2rem;width:7rem;height:auto;-webkit-filter:saturate(0);filter:saturate(0);opacity:0.8}@keyframes fadein{from{opacity:0}to{opacity:0.8}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:0.8}}
 
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc3R5bGVzL2luZGV4LnNjc3MgKDEpIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsbURBQW1EOztBQUVuRDtBQUNBO0FBQ0EsZ0NBQWdDO0FBQ2hDO0FBQ0Esa0NBQWtDO0FBQ2xDO0FBQ0EsZ0NBQWdDLEVBQUU7O0FBRWxDO0FBQ0E7QUFDQSxnQ0FBZ0M7QUFDaEM7QUFDQSxrQ0FBa0M7QUFDbEM7QUFDQSxnQ0FBZ0MsRUFBRTs7QUFFbEM7QUFDQTtBQUNBO0FBQ0E7QUFDQSxlQUFlOztBQUVmO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSwwQkFBMEI7O0FBRTFCO0FBQ0EsZ0JBQWdCOztBQUVoQjtBQUNBLHlCQUF5Qjs7QUFFekI7QUFDQSxpQkFBaUI7O0FBRWpCO0FBQ0E7QUFDQSxlQUFlOztBQUVmO0FBQ0E7QUFDQSxzQkFBc0IiLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgZm9udC1mYW1pbHk6ICdRdWlja3NhbmQnLCBzYW5zLXNlcmlmO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMzU4ZGVnLCAjMDE2Njk5LCAjMjRiNGE0LCAjMWY4YWNjKSBuby1yZXBlYXQgY2VudGVyIGNlbnRlciBmaXhlZDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgLXdlYmtpdC1hbmltYXRpb246IGJnR3JhZGllbnRHZW5lcmF0b3IgMzBzIGVhc2UgaW5maW5pdGU7XG4gIGFuaW1hdGlvbjogYmdHcmFkaWVudEdlbmVyYXRvciAzMHMgZWFzZSBpbmZpbml0ZTsgfVxuXG5ALXdlYmtpdC1rZXlmcmFtZXMgYmdHcmFkaWVudEdlbmVyYXRvciB7XG4gIDAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwJSA1MCU7IH1cbiAgNTAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAxMDAlIDUwJTsgfVxuICAxMDAlIHtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwJSA1MCU7IH0gfVxuXG5Aa2V5ZnJhbWVzIGJnR3JhZGllbnRHZW5lcmF0b3Ige1xuICAwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCUgNTAlOyB9XG4gIDUwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMTAwJSA1MCU7IH1cbiAgMTAwJSB7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCUgNTAlOyB9IH1cblxuYm9keSBoMSB7XG4gIGZvbnQtZmFtaWx5OiAnTGF0bycsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMmVtO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiB3aGl0ZTsgfVxuXG4jY29udGVudCB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyOyB9XG5cbi5jb250YWluZXIge1xuICBkaXNwbGF5OiBub25lOyB9XG5cbiNrZXlib2FyZCB7XG4gIG1hcmdpbjogMnB4ICFpbXBvcnRhbnQ7IH1cblxuI1NlbGVjdG9yIHtcbiAgbWFyZ2luOiAwIGF1dG87IH1cblxuLmNvbnRhaW5lciBwIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogd2hpdGU7IH1cblxuI3NvbmctdGVzdCB7XG4gIHdpZHRoOiA0MDBweDtcbiAgYmFja2dyb3VuZDogZnVjaHNpYTsgfVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/
+/*# sourceMappingURL=main.css.map*/
