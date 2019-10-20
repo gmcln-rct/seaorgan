@@ -4,8 +4,8 @@ import "./styles/index.scss";
 import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {dropdownBlock} from './scripts/dropdown';
 import {setUpSounds} from './scripts/setUpSounds';
-import {loopSounds} from './scripts/loop';
-import "./scripts/loop";
+import {generateOrgan} from './scripts/generateOrgan';
+import "./scripts/generateOrgan";
 // import "./scripts/fetchCurrentsData";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
 
-                    loopSounds(notesList);
+                    generateOrgan(notesList);
                 }
             );
     }

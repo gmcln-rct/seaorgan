@@ -140,8 +140,6 @@ export const makeSamples = () => {
     })
 
 
-    // show keyboard on load //
-    let current
     Tone.Buffer.on('load', function () {
 
         // loop through instruments and set release, connect to master output
@@ -155,7 +153,5 @@ export const makeSamples = () => {
 
 
     })
-
-
 
 };

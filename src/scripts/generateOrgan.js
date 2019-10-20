@@ -1,7 +1,7 @@
 import {makeSynth} from './makeSynth';
 import {makeSamples} from './makeSamples';
 
-export const loopSounds = (notesList) => {
+export const generateOrgan = (notesList) => {
 
 
     const EQUALIZER_CENTER_FREQUENCIES = [
@@ -71,12 +71,12 @@ export const loopSounds = (notesList) => {
     // Use imported list from SetUpSounds
     const notes = notesList;
     
-    makeSamples();
+    // makeSamples();
     // create a new sequence with the synth and notes
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
             event.humanize = true;
-  
+            
             leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
         },
         notes,
