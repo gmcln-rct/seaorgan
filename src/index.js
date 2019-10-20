@@ -20,14 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
     // assign onclick handlers to the input
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
-        el.value = selection.value;
-         result = el.value;
+        result = selection.value;
+        // result = el.value;
         
         ydayCurrents(result)
             .then(
                 tideObj => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
+
                     loopSounds(notesList);
                 }
             );

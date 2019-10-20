@@ -1,9 +1,11 @@
 import {makeSynth} from './makeSynth';
+import {makeSamples} from './makeSamples';
 
 export const loopSounds = (notesList) => {
 
+
     const EQUALIZER_CENTER_FREQUENCIES = [
-        100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
+        125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
@@ -16,10 +18,10 @@ export const loopSounds = (notesList) => {
 
     let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
         let filter = Tone.context.createBiquadFilter();
-        filter.type = 'peaking';
+        filter.type = 'lowpass';
         filter.frequency.value = frequency;
         filter.Q.value = 1.0;
-        filter.gain.value = 0;
+        filter.gain.value = 1;
         return filter;
     });
 
@@ -52,17 +54,11 @@ export const loopSounds = (notesList) => {
 
     Tone.Transport.bpm.value = 100;
 
-
     // CREATE SYNTH
     const synth = new Tone.PolySynth().toMaster();
 
     // Create an array of notes to be played
     const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
-    // const notes = ["A1", "A2", "A3", "A4", "b1", "b2", "b3", "b4", "b5", "C2", "C3", "C4", "C5", "D2", "D3", "D4", "E2", "E3", "E4", "F2", "F3", "F4", "G2", "G3", "G4"];
-
-    const notes = notesList;
-
-    
     function makeTiming() {
         let timeIndex;
         let indivTiming;
@@ -70,10 +66,17 @@ export const loopSounds = (notesList) => {
         indivTiming = timing[timeIndex];
         return indivTiming;
     }
-
+    
+    // const notes = ["A1", "A2", "A3", "A4", "b1", "b2", "b3", "b4", "b5", "C2", "C3", "C4", "C5", "D2", "D3", "D4", "E2", "E3", "E4", "F2", "F3", "F4", "G2", "G3", "G4"];
+    // Use imported list from SetUpSounds
+    const notes = notesList;
+    
+    makeSamples();
     // create a new sequence with the synth and notes
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
+            event.humanize = true;
+  
             leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
         },
         notes,
@@ -85,7 +88,7 @@ export const loopSounds = (notesList) => {
     const synthPart2 = new Tone.Sequence(
 
         function (time, note) {
-            // rightSynth.triggerAttackRelease(note, "100hz", time);
+            event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
         notes,

@@ -15,13 +15,15 @@ export const makeSynth = () => {
         release: 2000
     };
 
-    let chorus = new Tone.Chorus(4, 2.5, 0.5);
+    // let chorus = new Tone.Chorus(4, 2.5, 0.5);
 
+    let tremolo = new Tone.Tremolo(20, 3);
+    
     return new Tone.PolySynth({
-        harmonicity: 10,
-        volume: -10,
+        harmonicity: 2,
+        volume: -15,
         voice0: {
-            oscillator: { type: 'sine' },
+            oscillator: { type: 'triangle' },
             envelope,
             filterEnvelope
         },
@@ -31,11 +33,11 @@ export const makeSynth = () => {
             filterEnvelope
         },
         voice2: {
-            oscillator: { type: 'triangle' },
+            oscillator: { type: 'bounce' },
             envelope,
             filterEnvelope
         },
 
 
-    }).connect(chorus);
+    }).connect(tremolo);
 }
