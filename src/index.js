@@ -10,7 +10,6 @@ import Tone from 'tone';
 window.addEventListener("DOMContentLoaded", () => {
     let result;
     let notesList;
-    // document.getElementById("dropdown-container").innerHTML = dropdownBlock;
 
     let selection = document.getElementById('station_id');
     let el = document.getElementById('select-button');
@@ -27,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 tideObj => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
-
+                    
                     generateOrgan(notesList);
                 }
             );

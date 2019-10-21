@@ -5,7 +5,6 @@ import Tone from 'tone';
 
 export const generateOrgan = (notesList) => {
 
-
     const EQUALIZER_CENTER_FREQUENCIES = [
         125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
@@ -47,6 +46,7 @@ export const generateOrgan = (notesList) => {
         }
     });
 
+
     echo.toMaster();
     echo.connect(delay);
 
@@ -74,11 +74,11 @@ export const generateOrgan = (notesList) => {
     const notes = notesList;
     
     // makeSamples();
-    // create a new sequence with the synth and notes
+    // CREATE SEQUENCE 1
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
+            console.log('synthPart 1 starting');
             event.humanize = true;
-            
             leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
         },
         notes,
@@ -86,7 +86,7 @@ export const generateOrgan = (notesList) => {
     );
 
 
-    // CREATE SEQUENCE
+    // CREATE SEQUENCE 2
     const synthPart2 = new Tone.Sequence(
 
         function (time, note) {
@@ -100,6 +100,7 @@ export const generateOrgan = (notesList) => {
     synthPart1.start();
     synthPart2.start();
 
-    // Start audio transport
+    // START AUDIO TRANSPORT
     Tone.Transport.start();
+
 };
