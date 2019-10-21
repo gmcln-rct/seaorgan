@@ -1,5 +1,4 @@
 import {makeSynth} from './makeSynth';
-import {makeSamples} from './makeSamples';
 
 import Tone from 'tone';
 
@@ -73,7 +72,8 @@ export const generateOrgan = (notesList) => {
     // Use imported list from SetUpSounds
     const notes = notesList;
     
-    // makeSamples();
+
+
     // CREATE SEQUENCE 1
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
