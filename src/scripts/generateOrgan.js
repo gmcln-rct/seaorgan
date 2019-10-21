@@ -1,6 +1,8 @@
 import {makeSynth} from './makeSynth';
 import {makeSamples} from './makeSamples';
 
+import Tone from 'tone';
+
 export const generateOrgan = (notesList) => {
 
 

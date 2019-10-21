@@ -2,11 +2,10 @@ import "./styles/index.scss";
 // import currents20191016 from '../src/data/currents20191016';
 
 import {ydayCurrents} from './scripts/fetchCurrentsData';
-import {dropdownBlock} from './scripts/dropdown';
 import {setUpSounds} from './scripts/setUpSounds';
+import {makeSynth} from './scripts/makeSynth';
 import {generateOrgan} from './scripts/generateOrgan';
-import "./scripts/generateOrgan";
-// import "./scripts/fetchCurrentsData";
+import Tone from 'tone';
 
 window.addEventListener("DOMContentLoaded", () => {
     let result;

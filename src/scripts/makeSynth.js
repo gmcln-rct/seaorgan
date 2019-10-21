@@ -1,3 +1,5 @@
+import Tone from 'tone';
+
 // SETS UP SYNTHESIZER FOR LOP
 
 export const makeSynth = () => {
