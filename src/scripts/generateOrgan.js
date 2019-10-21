@@ -33,6 +33,7 @@ export const generateOrgan = (notesList) => {
 
     leftSynth.connect(leftPanner);
     rightSynth.connect(rightPanner);
+
     leftPanner.connect(equalizer[0]);
     rightPanner.connect(equalizer[0]);
 
@@ -52,11 +53,10 @@ export const generateOrgan = (notesList) => {
     delay.connect(delayFade);
     delayFade.connect(delay);
 
-    // Slow Transport Down
+    // Slow Transport bpw Down
     Tone.Transport.bpm.value = 100;
 
-    // CREATE SYNTH
-    const synth = new Tone.PolySynth().toMaster();
+
 
     // Create an array of notes to be played
     const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
@@ -73,7 +73,6 @@ export const generateOrgan = (notesList) => {
     // Use imported list from SetUpSounds
     const notes = notesList;
     
-
 
     // CREATE SEQUENCE 1
     const synthPart1 = new Tone.Sequence(
@@ -98,8 +97,8 @@ export const generateOrgan = (notesList) => {
         "8m"
     );
 
-    synthPart1.humanizer = true;
-    synthPart2.humanizer = true;
+    synthPart1.humanize = true;
+    synthPart2.humanize = true;
 
 
     synthPart1.start();

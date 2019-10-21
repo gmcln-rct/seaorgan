@@ -230,3 +230,25 @@ input:visited, input:focus {
     from { opacity: 0; }
     to   { opacity: 0.8; }
 }
+
+
+
+// ---------------------------------------------------------------------------------
+// MEDIA QUERIES
+// ---------------------------------------------------------------------------------
+
+
+@media only screen and (max-width: 710px) {
+    #dropdown-container {
+
+
+    }
+
+    #station_id {
+        width: 25rem;
+        height: 2.2em;
+
+        font-size: 1.3em;
+        opacity: 0.8;
+    }
+}
