@@ -9,7 +9,6 @@ export const generateOrgan = (notesList) => {
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
-    
     let leftSynth = makeSynth();
     let rightSynth = makeSynth();
 
@@ -26,7 +25,7 @@ export const generateOrgan = (notesList) => {
     });
 
     let echo = new Tone.FeedbackDelay('16n', 0.2);
-    let delay = Tone.context.createDelay(12.0);
+    let delay = Tone.context.createDelay(11.0);
     let delayFade = Tone.context.createGain();
 
     delay.delayTime.value = 10.0;
@@ -53,6 +52,7 @@ export const generateOrgan = (notesList) => {
     delay.connect(delayFade);
     delayFade.connect(delay);
 
+    // Slow Transport Down
     Tone.Transport.bpm.value = 100;
 
     // CREATE SYNTH
@@ -60,6 +60,7 @@ export const generateOrgan = (notesList) => {
 
     // Create an array of notes to be played
     const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
+
     function makeTiming() {
         let timeIndex;
         let indivTiming;
@@ -96,6 +97,10 @@ export const generateOrgan = (notesList) => {
         notes,
         "8m"
     );
+
+    synthPart1.humanizer = true;
+    synthPart2.humanizer = true;
+
 
     synthPart1.start();
     synthPart2.start();
