@@ -4,8 +4,7 @@ import "./styles/index.scss";
 import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {setUpSounds} from './scripts/setUpSounds';
 import {makeSynth} from './scripts/makeSynth';
-import {generateOrgan} from './scripts/generateOrgan';
-import {stopOrgan} from './scripts/generateOrgan';
+import {generateOrgan, stopOrgan, _isPlaying} from './scripts/generateOrgan';
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -15,25 +14,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let selection = document.getElementById('station_id');
     let el = document.getElementById('select-button');
 
-
     // assign onclick handlers to the input
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
         result = selection.value;
-        // result = el.value;
-        
+        if (_isPlaying) {
+            stopOrgan();
+        }
+
         ydayCurrents(result)
             .then(
                 tideObj => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
                     generateOrgan(notesList);
-
                 }
             );
     }
-
-        // window.tideObj = tideObj;
         
     // document.getElementById("app").innerText = "Hello World, I'm index.js!";
 });

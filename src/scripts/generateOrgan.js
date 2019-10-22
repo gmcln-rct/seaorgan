@@ -11,20 +11,31 @@ export let _isPlaying = false;
 export const stopOrgan = () => {
     if (_isPlaying) {
         console.log("trying to stop...")
+
+
+        synthPart1 = new Tone.Sequence();
+        synthPart2 = new Tone.Sequence();
+ 
+        
         synthPart1.removeAll();
         synthPart1.stop();
+
         synthPart2.removeAll();
         synthPart2.stop();
+
         // transport
         Tone.Transport.stop();
+
         // synths
         console.log("disconnecting synths....")
         leftSynth.disconnect();
         rightSynth.disconnect();
+
         console.log("disconnecting effects....")
         echo.disconnect();
         delay.disconnect();
         delayFade.disconnect();
+
         // debugger
         console.log("transport state: " + Tone.Transport.state)
         if (Tone.Transport.state !== "started") {
@@ -33,6 +44,7 @@ export const stopOrgan = () => {
         } else {
             console.log("Transport didn't stop");
         }
+
         console.log('disposing....')
         synthPart1.dispose();
         synthPart2.dispose();
@@ -43,15 +55,14 @@ export const stopOrgan = () => {
 
 export const generateOrgan = (notesList) => {
     
+
     const EQUALIZER_CENTER_FREQUENCIES = [
         125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
-
-
-    let leftSynth = makeSynth();
-    let rightSynth = makeSynth();
+     leftSynth = makeSynth();
+     rightSynth = makeSynth();
 
     let leftPanner = new Tone.Panner(-0.5);
     let rightPanner = new Tone.Panner(0.5);
@@ -65,9 +76,9 @@ export const generateOrgan = (notesList) => {
         return filter;
     });
 
-    let echo = new Tone.FeedbackDelay('16n', 0.2);
-    let delay = Tone.context.createDelay(11.0);
-    let delayFade = Tone.context.createGain();
+    echo = new Tone.FeedbackDelay('16n', 0.2);
+    delay = Tone.context.createDelay(11.0);
+    delayFade = Tone.context.createGain();
 
     delay.delayTime.value = 10.0;
     delayFade.gain.value = 0.75;
@@ -131,6 +142,8 @@ export const generateOrgan = (notesList) => {
     const synthPart2 = new Tone.Sequence(
 
         function (time, note) {
+            console.log('synthPart 2 starting');
+
             event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
@@ -148,5 +161,7 @@ export const generateOrgan = (notesList) => {
     // START AUDIO TRANSPORT
     Tone.Transport.start();
 
+    _isPlaying = true;
 
+    
 };
