@@ -1,6 +1,7 @@
 import {makeSynth} from './makeSynth';
 
 import Tone from 'tone';
+import { makeViz } from './viztest';
 
 export const generateOrgan = (notesList) => {
 
@@ -8,6 +9,9 @@ export const generateOrgan = (notesList) => {
         125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
     ];
+
+    // Tone.context.state = "stopped";
+    // debugger
 
     let leftSynth = makeSynth();
     let rightSynth = makeSynth();
@@ -19,8 +23,8 @@ export const generateOrgan = (notesList) => {
         let filter = Tone.context.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.value = frequency;
-        filter.Q.value = 1.0;
-        filter.gain.value = 1;
+        filter.Q.value = 4.31;
+        filter.gain.value = 4;
         return filter;
     });
 
@@ -104,7 +108,22 @@ export const generateOrgan = (notesList) => {
     synthPart1.start();
     synthPart2.start();
 
+
+  /**
+   * Play Controls
+   */
+//   let playing = false;
+//   document.querySelector("body").addEventListener("click", function() {
+//     if (!playing) {
+//       Tone.Transport.start();
+//       playing = true;
+//     } else {
+//       Tone.Transport.stop();
+//     }
+//   });
+
     // START AUDIO TRANSPORT
     Tone.Transport.start();
+
 
 };

@@ -1,52 +1,54 @@
-function draw() {
-    let WIDTH = visualizer.width
-    let HEIGHT = visualizer.height
+export const makeViz = () => {
 
-    // loop this
-    window.requestAnimationFrame(draw)
+    let audioCtx = new Tone.Context();
+    let analyser = audioCtx.createAnalyser();
+    // ...
 
-    // get the current Data (gets placed into array arg)
-    player.getAnalyzerTimeBytes(1, f1visualData)
-    player.getAnalyzerTimeBytes(2, f2visualData)
-    player.getAnalyzerTimeBytes(3, f3visualData)
+    analyser.fftSize = 2048;
+    let bufferLength = analyser.frequencyBinCount;
+    let dataArray = new Uint8Array(bufferLength);
+    analyser.getByteTimeDomainData(dataArray);
 
-    // set the canvas style
-    vCtx.fillStyle = '#EEE'
-    vCtx.fillRect(0, 0, WIDTH, HEIGHT)
-    vCtx.lineWidth = 2
+    // Get a canvas defined with ID "oscilloscope"
+    let canvas = document.getElementById("viz-canvas");
+    let canvasCtx = canvas.getContext("2d");
 
-    // now that we have the current Data for each wave, loop
-    // through each and draw each point value
-    drawWave(player.getAnalyzerFFTSize(1), '#26a69a', f1visualData)
-    drawWave(player.getAnalyzerFFTSize(2), '#ec407a', f2visualData)
-    drawWave(player.getAnalyzerFFTSize(3), '#29b6f6', f3visualData)
+    // draw an oscilloscope of the current audio source
 
-    function drawWave(bufferLength, color, dataArray) {
-        // draw the path - loop through
-        // the Uint8Array and draw each pt
-        vCtx.beginPath()
-        vCtx.strokeStyle = color
+    function draw() {
 
-        // space between each point
-        let sliceWidth = WIDTH * 0.75 / bufferLength
+        requestAnimationFrame(draw);
 
-        // x position to draw current pt
-        // incremented by sliceWidth
-        let x = 0
+        analyser.getByteTimeDomainData(dataArray);
 
-        dataArray.forEach(soundVal => {
-            // (0, 255) / 256.0 -> (0.0, 1.0]
-            let y = (dataArray[soundVal] / 256.0) * HEIGHT
+        canvasCtx.fillStyle = "rgb(200, 200, 200)";
+        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // on first value, go to beginning
-            soundVal === 0
-                ? vCtx.moveTo(x, y)
-                : vCtx.lineTo(x, y)
+        canvasCtx.lineWidth = 2;
+        canvasCtx.strokeStyle = "rgb(0, 0, 0)";
 
-            x += sliceWidth
-        })
+        canvasCtx.beginPath();
 
-        vCtx.lineTo(WIDTH, HEIGHT / 2)
-        vCtx.stroke()
+        let sliceWidth = canvas.width * 1.0 / bufferLength;
+        let x = 0;
+
+        for (let i = 0; i < bufferLength; i++) {
+
+            let v = dataArray[i] / 128.0;
+            let y = v * canvas.height / 2;
+
+            if (i === 0) {
+                canvasCtx.moveTo(x, y);
+            } else {
+                canvasCtx.lineTo(x, y);
+            }
+
+            x += sliceWidth;
+        }
+
+        canvasCtx.lineTo(canvas.width, canvas.height / 2);
+        canvasCtx.stroke();
     }
-}
+    draw();
+
+};

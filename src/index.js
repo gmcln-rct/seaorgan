@@ -26,7 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 tideObj => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
-                    
                     generateOrgan(notesList);
                 }
             );
