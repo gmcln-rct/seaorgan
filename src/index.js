@@ -5,7 +5,7 @@ import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {setUpSounds} from './scripts/setUpSounds';
 import {makeSynth} from './scripts/makeSynth';
 import {generateOrgan} from './scripts/generateOrgan';
-import Tone from 'tone';
+import {stopOrgan} from './scripts/generateOrgan';
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -27,7 +27,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 tideObj => {
                     console.log("Tide Obj: ", tideObj);
                     notesList = setUpSounds(tideObj);
+                    stopOrgan();
                     generateOrgan(notesList);
+
                 }
             );
     }
