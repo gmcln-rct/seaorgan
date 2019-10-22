@@ -7,6 +7,7 @@ import {makeSynth} from './scripts/makeSynth';
 import {generateOrgan} from './scripts/generateOrgan';
 import Tone from 'tone';
 
+
 window.addEventListener("DOMContentLoaded", () => {
     let result;
     let notesList;
@@ -33,5 +34,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // window.tideObj = tideObj;
         
-    document.getElementById("app").innerText = "Hello World, I'm index.js!";
+    // document.getElementById("app").innerText = "Hello World, I'm index.js!";
 });

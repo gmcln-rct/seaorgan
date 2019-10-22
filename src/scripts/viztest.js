@@ -1,4 +1,4 @@
-export const makeViz = () => {
+function makeViz () {
 
     let audioCtx = new Tone.Context();
     let analyser = audioCtx.createAnalyser();
