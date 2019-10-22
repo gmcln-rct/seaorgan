@@ -23,6 +23,7 @@ export const makeSynth = () => {
     
     return new Tone.PolySynth({
         harmonicity: 2,
+        resonance: 100,
         volume: -15,
         voice0: {
             oscillator: { type: 'triangle' },

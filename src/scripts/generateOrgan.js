@@ -3,24 +3,52 @@ import {makeSynth} from './makeSynth';
 import Tone from 'tone';
 import { makeViz } from './viztest';
 
-export const stopOrgan = () => {
-    if (Tone.context === 'running') {
-        Tone.Transport.dispose();
+let synthPart1, synthPart2;
+let leftSynth, rightSynth, echo, delay, delayFade;
 
+export let _isPlaying = false;
+
+export const stopOrgan = () => {
+    if (_isPlaying) {
+        console.log("trying to stop...")
+        synthPart1.removeAll();
+        synthPart1.stop();
+        synthPart2.removeAll();
+        synthPart2.stop();
+        // transport
+        Tone.Transport.stop();
+        // synths
+        console.log("disconnecting synths....")
+        leftSynth.disconnect();
+        rightSynth.disconnect();
+        console.log("disconnecting effects....")
+        echo.disconnect();
+        delay.disconnect();
+        delayFade.disconnect();
+        // debugger
+        console.log("transport state: " + Tone.Transport.state)
+        if (Tone.Transport.state !== "started") {
+            _isPlaying = false;
+            console.log("Transport stopped")
+        } else {
+            console.log("Transport didn't stop");
+        }
+        console.log('disposing....')
+        synthPart1.dispose();
+        synthPart2.dispose();
+        echo.dispose();
+        console.log("disposed")
     }
-}
+};
 
 export const generateOrgan = (notesList) => {
-
+    
     const EQUALIZER_CENTER_FREQUENCIES = [
         125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
-    // Tone.context.state = "stopped";
-    // debugger
 
-    stopOrgan();
 
     let leftSynth = makeSynth();
     let rightSynth = makeSynth();
