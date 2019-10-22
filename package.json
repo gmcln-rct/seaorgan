@@ -21,6 +21,7 @@
     "requirejs": "^2.3.6",
     "sass": "^1.23.0",
     "sass-loader": "^8.0.0",
+    "startaudiocontext": "^1.2.1",
     "style-loader": "^1.0.0",
     "tone": "^13.8.25",
     "webpack": "^4.41.1",
