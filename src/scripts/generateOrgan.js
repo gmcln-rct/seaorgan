@@ -3,6 +3,7 @@ import {makeSynth} from './makeSynth';
 import Tone from 'tone';
 import { makeViz } from './viztest';
 
+
 let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;
 
@@ -80,7 +81,7 @@ export const generateOrgan = (notesList) => {
     delay = Tone.context.createDelay(11.0);
     delayFade = Tone.context.createGain();
 
-    delay.delayTime.value = 10.0;
+    delay.delayTime.value = 5.0;
     delayFade.gain.value = 0.75;
 
     leftSynth.connect(leftPanner);
@@ -160,6 +161,8 @@ export const generateOrgan = (notesList) => {
 
     // START AUDIO TRANSPORT
     Tone.Transport.start();
+    Tone.Draw();
+
 
     _isPlaying = true;
 

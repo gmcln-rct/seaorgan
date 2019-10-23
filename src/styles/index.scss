@@ -202,9 +202,16 @@ input:visited, input:focus {
 #viz-canvas {
     width: 700px;
     height: 300px;
+    margin: 0 auto;
     background-color:black;
 }
 
+#tone-viz {
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    background-color:lightgrey;
+}
 
 // ---------------------------------------------------------------------------------
 // ANIMATIONS
