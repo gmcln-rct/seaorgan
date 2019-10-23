@@ -23,7 +23,7 @@ export const stopOrgan = () => {
         synthPart2.removeAll();
         synthPart2.stop();
 
-        // transport
+        // Stop Transport
         Tone.Transport.stop();
 
         // synths
@@ -148,7 +148,7 @@ export const generateOrgan = (notesList) => {
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
         notes,
-        "8m"
+        "4m"
     );
 
     synthPart1.humanize = true;
