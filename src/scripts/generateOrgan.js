@@ -2,7 +2,7 @@ import {makeSynth} from './makeSynth';
 
 import Tone from 'tone';
 import { makeViz } from './viztest';
-
+import {drawCircle} from './drawCircles';
 
 let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;
@@ -165,6 +165,8 @@ export const generateOrgan = (notesList) => {
 
 
     _isPlaying = true;
+
+    Tone.Draw.schedule(drawCircle, "+0.4");
 
     
 };
