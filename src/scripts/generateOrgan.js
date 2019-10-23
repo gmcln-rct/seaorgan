@@ -144,7 +144,7 @@ export const generateOrgan = (notesList) => {
 
         function (time, note) {
             console.log('synthPart 2 starting');
-
+            Tone.Draw.schedule(drawCircle, "+0.4");
             event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
@@ -161,12 +161,12 @@ export const generateOrgan = (notesList) => {
 
     // START AUDIO TRANSPORT
     Tone.Transport.start();
-    Tone.Draw();
-
+    makeViz();
 
     _isPlaying = true;
 
-    Tone.Draw.schedule(drawCircle, "+0.4");
+
+
 
     
 };

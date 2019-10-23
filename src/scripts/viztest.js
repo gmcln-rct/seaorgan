@@ -1,17 +1,24 @@
-function makeViz () {
 
-    let audioCtx = new Tone.Context();
-    let analyser = audioCtx.createAnalyser();
-    // ...
+import Tone from 'tone';
+let audioCtx, analyser, bufferLength, dataArray, canvas, canvasCtx;
+
+
+export const makeViz = () => {
+
+
+     audioCtx = new Tone.Context();
+     analyser = audioCtx.createAnalyser();
 
     analyser.fftSize = 2048;
-    let bufferLength = analyser.frequencyBinCount;
-    let dataArray = new Uint8Array(bufferLength);
+     bufferLength = analyser.frequencyBinCount;
+     dataArray = new Uint8Array(bufferLength);
     analyser.getByteTimeDomainData(dataArray);
 
     // Get a canvas defined with ID "oscilloscope"
-    let canvas = document.getElementById("viz-canvas");
-    let canvasCtx = canvas.getContext("2d");
+    
+    canvas = document.getElementById("viz-canvas");
+    
+    canvasCtx = canvas.getContext("2d");
 
     // draw an oscilloscope of the current audio source
 

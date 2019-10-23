@@ -2,10 +2,8 @@ import Tone from 'tone';
 
 
 // graphics
-
 let canvas = document.getElementById("viz-canvas");
 let ctx = canvas.getContext("2d");
-
 
 let width = canvas.getAttribute("width");
 let height = canvas.getAttribute("height");
@@ -18,36 +16,36 @@ let randy = new Tone.CtrlRandom(0, height);
 // for random radii
 let randrad = new Tone.CtrlRandom(10, 30);
 
-// this is the function we'll call from Tone.Draw.schedule to put up
-// the random circles
+let docircle;
+let countdown;
+let alphaval;
+let red, blue, green;
+let xloc, yloc, rad;
+
 export const drawCircle = () => {
-    ctx.beginPath();
-    ctx.fillStyle = "rgb(" + parseInt(randcolor.value) + "," + parseInt(randcolor.value) + "," + parseInt(randcolor.value) + ")";
-    // params are: Xlocation, Ylocation, radiues,  start arc, end arc (radians)
-    ctx.arc(randx.value, randy.value, randrad.value, 0, 2 * Math.PI);
-    ctx.fill();
+    if (docircle == 1) {
+        // set these here so we can use them as we 'fade' the circle
+        // red = parseInt(randcolor.value);
+        // blue = parseInt(randcolor.value);
+        // green = parseInt(randcolor.value);
+        xloc = randx.value;
+        yloc = randy.value;
+        rad = randrad.value;
+        alphaval = 1.0; // set this initially, and then use it to fade
+        countdown = 30; // 'countdown' is the thing we increment for the fade
+        docircle = 0;
+    }
+    if (countdown-- > 0) {
+        ctx.clearRect(0, 0, width, height);
+        ctx.beginPath();
+        ctx.fillStyle = "blue";
+        ctx.arc(xloc, yloc, rad, 0, 2 * Math.PI);
+        ctx.fill();
+        alphaval -= (1 / countdown); // here's where we fade the alphaval
+    }
+    if (countdown == 0) {
+        ctx.clearRect(0, 0, width, height);
+    }
+
+    requestAnimationFrame(drawCircle);
 }
-
-
-// sound
-// var notesynth = new Tone.MonoSynth().toMaster();
-
-// function startit() {
-//     Tone.Transport.start(); // start the transport for timing
-
-//     // play a note 0.4 seconds from now
-//     Tone.Transport.schedule(playnote, "+0.4");
-// }
-
-// function stopit() {
-//     Tone.Transport.stop();
-// }
-
-// function playnote() {
-//     notesynth.triggerAttackRelease("C2", 0.2);
-//     // schedule the next note
-//     Tone.Transport.schedule(playnote, "+0.4");
-
-//     // ok, we'll use the Tone system to call the drawing function
-//     Tone.Draw.schedule(drawcirc, "+0.4");
-// }
