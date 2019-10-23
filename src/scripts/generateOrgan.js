@@ -2,7 +2,7 @@ import {makeSynth} from './makeSynth';
 
 import Tone from 'tone';
 import { makeViz } from './viztest';
-import {drawCircle} from './drawCircles';
+import {drawCircle} from './bu/drawCircles';
 
 let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;

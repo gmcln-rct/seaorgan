@@ -1,9 +1,7 @@
 import "./styles/index.scss";
-// import currents20191016 from '../src/data/currents20191016';
 
 import {ydayCurrents} from './scripts/fetchCurrentsData';
 import {setUpSounds} from './scripts/setUpSounds';
-import {makeSynth} from './scripts/makeSynth';
 import {generateOrgan, stopOrgan, _isPlaying} from './scripts/generateOrgan';
 import StartAudioContext from 'startaudiocontext';
 
