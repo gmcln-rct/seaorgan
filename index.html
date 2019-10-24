@@ -65,47 +65,41 @@
                 
             <canvas id="viz-canvas"> </canvas>
 
-            <div id="infobtn">
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"
-                        style=" fill:#000000;">
-                        <path
-                            d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z">
-                        </path>
-                    </svg>
 
-                </a>
-            </div>
             
-            <div id="infowall">
-                <div id="infobtn-quit">
-                    <a href="#">
-                        <img draggable="false" src="./res/img/info-quit.png" />
-                    </a>
-                </div>
-            
-                <div id="infowall-content">
-                    <h1>Chromatic</h1>
-            
-                    <p>Chromatic VR is an WebVR audiovisual experiment created using realtime shaders and generative audio. Watch
-                        iridescent shards of light unfurl into procedurally generated prismatic realms and meditative soundscapes.
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <h1>seaOrganOf</h1>
+                    
+                    <p>This project is inspired by the Sea Organ of Zadar in Zadar, Croatia, which uses the movement of water to power an audio
+                    installation underneath the boardwalk in Zadar, which creates an ethereal, organ-like sound.
+                    
+                    The project uses tides & currents data from NOAA for various locations around the U.S. using NOAA to generate audio unique audio soundscapes an external, real-time dataset of tides or ocean currents in order to generate
+                    organ-like sounds in the browser.
                     </p>
-            
-                    <p>(Audio optimized for Android and desktop, disabled on iOS)</p>
-            
-                    <p>Contributors: <a href="https://www.eddietree.com/" target="_blank">Eddie Lee</a>, <a
-                            href="https://www.tetramid.co/" target="_blank">Tetra Von Orden</a>, <a
-                            href="https://soundcloud.com/eric_cheng/" target="_blank">Eric Cheng</a></p>
-                    <p>Technologies: <a href="https://threejs.org/" target="_blank">three.js</a>, <a
-                            href="https://tonejs.github.io/" target="_blank">Tone.js</a>, <a
-                            href="https://googlevr.github.io/webvr-ui/" target="_blank">webvr-ui</a>
-            
+                    
+                    <p>(Audio optimized for desktop/laptop, disabled on iOS)</p>
+                    
+                    <p>Created by: <a href="https://www.riocreate.com" target="_blank">Glenn McClanan</a></p>
+                    <p>Technologies: <a href="https://tonejs.github.io/"
+                            target="_blank">Tone.js</a>
+
+                    <p>Inspirations: <a href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js" target="_blank">discreetmusic.js by Tero Parviainen</a>
                         <br />
-                        Source: <a href="https://github.com/eddietree/chromatic/" target="_blank">Github</a>. See other <a
-                            href="https://webvrexperiments.com/" target="_blank">WebVR Experiments</a></p>
+                        Source Data: <a href="https://tidesandcurrents.noaa.gov/web_services_info.html" target="_blank">NOAA</a></p>
                 </div>
             </div>
-            
+           
+            <span id="open-about" onclick="openNav()">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+                    style=" fill:#1765A5;">
+                    <path fill="#135183" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+                    <path fill="#fff"
+                        d="M22 22h4v11h-4V22zM26.5 16.5c0 1.379-1.121 2.5-2.5 2.5s-2.5-1.121-2.5-2.5S22.621 14 24 14 26.5 15.121 26.5 16.5z">
+                    </path>
+                </svg>
+            </span>
         </div>
         
         
@@ -138,7 +132,17 @@
     <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   
-
+    <script>
+        /* Open */
+        function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+        }
+        
+        /* Close */
+        function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
     <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 
 </body>

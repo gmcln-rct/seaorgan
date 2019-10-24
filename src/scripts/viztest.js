@@ -8,8 +8,8 @@ export const makeViz = () => {
     
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     analyser = audioCtx.createAnalyser();
-    audioCtx = new Tone.Context();
-    analyser = new Tone.FFT;
+    // audioCtx = new Tone.Context();
+    // analyser = new Tone.FFT;
 
     analyser.fftSize = 256;
     bufferLength = analyser.frequencyBinCount;
