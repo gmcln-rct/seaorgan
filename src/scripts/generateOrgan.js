@@ -1,11 +1,13 @@
 import {makeSynth} from './makeSynth';
 
 import Tone from 'tone';
-import { makeViz } from './viztest';
-import {drawCircle} from './bu/drawCircles';
+// import { makeViz } from './viztest';
 
 let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;
+
+let audioCtx, analyser, bufferLength, dataArray, canvas, canvasCtx, drawVisual;
+
 
 export let _isPlaying = false;
 
@@ -161,12 +163,53 @@ export const generateOrgan = (notesList) => {
 
     // START AUDIO TRANSPORT
     Tone.Transport.start();
-    makeViz();
+    // makeViz();
 
     _isPlaying = true;
 
+// ------------------
+    // VISUALIZER TEST
+    // audioCtx = new Tone.Context();
+    // analyser = new Tone.Analyser();
+
+    // analyser.fftSize = 2048;
+    // var bufferLength = analyser.frequencyBinCount;
+    // var dataArray = new Tone.FFT();
 
 
+    canvas = document.getElementById("viz-canvas");
+    canvasCtx = canvas.getContext("2d");
+    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 
+    const analyser = audioContext.createAnalyser();
+    masterGain.connect(analyser);
+
+    const waveform = new Float32Array(analyser.frequencyBinCount);
+    analyser.getFloatTimeDomainData(waveform);
+
+        ; (function updateWaveform() {
+            requestAnimationFrame(updateWaveform);
+            analyser.getFloatTimeDomainData(waveform);
+        })()
+    const scopeCanvas = document.getElementById("viz - canvas");
+    scopeCanvas.width = waveform.length;
+    scopeCanvas.height = 200;
+    const scopeContext = scopeCanvas.getContext('2d');
+
+        ; (function drawOscilloscope() {
+            requestAnimationFrame(drawOscilloscope)
+            scopeContext.clearRect(0, 0, scopeCanvas.width, scopeCanvas.height)
+            scopeContext.beginPath()
+            for (let i = 0; i < waveform.length; i++) {
+                const x = i
+                const y = (0.5 + waveform[i] / 2) * scopeCanvas.height;
+                if (i == 0) {
+                    scopeContext.moveTo(x, y)
+                } else {
+                    scopeContext.lineTo(x, y)
+                }
+            }
+            scopeContext.stroke()
+        })()
     
 };
