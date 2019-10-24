@@ -177,6 +177,17 @@ export const generateOrgan = (notesList) => {
     // var dataArray = new Tone.FFT();
 
         
+    function doIt() {
+        var buffer = generateAudioOffline().then(decodeBuffer => {
+            console.log(decodeBuffer);
+            var source = audioCtx.createBufferSource(); // creates a sound source
+            source.buffer = decodeBuffer._buffer;       // tell the source which sound to play
+            source.connect(audioCtx.destination);       // connect the source to the context's destination (the speakers)
+            console.log('starting');
+            source.start(0);                            // play the source now
+        });
+    }
+
     canvas = document.getElementById("viz-canvas");
     canvasCtx = canvas.getContext("2d");
     canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
