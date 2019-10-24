@@ -220,6 +220,57 @@ input:visited, input:focus {
 			background-color: black;
 		}
 
+
+// INFO BUTTON
+    #infobtn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px; }
+
+
+        #infobtn-quit {
+        position: fixed;
+        right: 10px;
+        top: 10px; }
+
+        #infobtn-quit img {
+        width: 24px; }
+
+        #infowall {
+        position: fixed;
+        background: -webkit-linear-gradient(#e078bf, #6cb8fe);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#e078bf, #6cb8fe);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#e078bf, #6cb8fe);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#e078bf, #6cb8fe);
+        /* Standard syntax */
+        height: 100%;
+        width: 100%;
+        z-index: 50;
+        display: none;
+        font-family: 'Roboto Mono', monospace; }
+
+        #infowall-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center; }
+
+        #infowall-content h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em; }
+
+        #infowall-content p {
+        font-size: 0.7em;
+        line-height: 1.5em;
+        margin-top: 1.5em; }
+
+        #infowall-content a {
+        color: #00ffe7; }
 // ---------------------------------------------------------------------------------
 // ANIMATIONS
 // ---------------------------------------------------------------------------------

@@ -64,6 +64,47 @@
             
                 
             <canvas id="viz-canvas"> </canvas>
+
+            <div id="infobtn">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"
+                        style=" fill:#000000;">
+                        <path
+                            d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z">
+                        </path>
+                    </svg>
+
+                </a>
+            </div>
+            
+            <div id="infowall">
+                <div id="infobtn-quit">
+                    <a href="#">
+                        <img draggable="false" src="./res/img/info-quit.png" />
+                    </a>
+                </div>
+            
+                <div id="infowall-content">
+                    <h1>Chromatic</h1>
+            
+                    <p>Chromatic VR is an WebVR audiovisual experiment created using realtime shaders and generative audio. Watch
+                        iridescent shards of light unfurl into procedurally generated prismatic realms and meditative soundscapes.
+                    </p>
+            
+                    <p>(Audio optimized for Android and desktop, disabled on iOS)</p>
+            
+                    <p>Contributors: <a href="https://www.eddietree.com/" target="_blank">Eddie Lee</a>, <a
+                            href="https://www.tetramid.co/" target="_blank">Tetra Von Orden</a>, <a
+                            href="https://soundcloud.com/eric_cheng/" target="_blank">Eric Cheng</a></p>
+                    <p>Technologies: <a href="https://threejs.org/" target="_blank">three.js</a>, <a
+                            href="https://tonejs.github.io/" target="_blank">Tone.js</a>, <a
+                            href="https://googlevr.github.io/webvr-ui/" target="_blank">webvr-ui</a>
+            
+                        <br />
+                        Source: <a href="https://github.com/eddietree/chromatic/" target="_blank">Github</a>. See other <a
+                            href="https://webvrexperiments.com/" target="_blank">WebVR Experiments</a></p>
+                </div>
+            </div>
             
         </div>
         
@@ -97,7 +138,6 @@
     <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   
-<script type="text/javascript" src="https://tonejs.github.io/build/r6/p5.Tone.min.js"></script>
 
     <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 

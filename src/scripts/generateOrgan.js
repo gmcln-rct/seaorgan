@@ -176,7 +176,7 @@ export const generateOrgan = (notesList) => {
     // var bufferLength = analyser.frequencyBinCount;
     // var dataArray = new Tone.FFT();
 
-
+        
     canvas = document.getElementById("viz-canvas");
     canvasCtx = canvas.getContext("2d");
     canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
