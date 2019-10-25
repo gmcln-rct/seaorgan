@@ -182,9 +182,8 @@ export const generateOrgan = (notesList) => {
     const fft = new Tone.Analyser("fft", 2048);
     const waveform = new Tone.Analyser("waveform", 1024);
 
-
     leftSynth.fan(waveform, fft);
-
+    rightSynth.fan(waveform, fft);
 
     let canvasWidth, canvasHeight;
 
@@ -212,14 +211,16 @@ export const generateOrgan = (notesList) => {
     function drawWaveform(values) {
         //draw the waveform
         waveContext.clearRect(0, 0, canvasWidth, canvasHeight);
-        var values = waveform;
+
+        // var values = waveform;
         waveContext.beginPath();
         waveContext.lineJoin = "round";
         waveContext.lineWidth = 3;
-        waveContext.strokeStyle = "#000";
-        waveContext.moveTo(0, (values[0] / 255) * canvasHeight);
+        waveContext.strokeStyle = "#rgb(19,81,131);";
+        waveContext.moveTo(0, ((values[0] )/ 255) * canvasHeight);
+
         for (var i = 1, len = values.length; i < len; i++) {
-            var val = values[i] / 255;
+            var val = Math.abs((values[i] * 1000) / 255);
             var x = canvasWidth * (i / len);
             var y = val * canvasHeight;
             waveContext.lineTo(x, y);
@@ -240,15 +241,13 @@ export const generateOrgan = (notesList) => {
     function loop() {
         requestAnimationFrame(loop);
             //get the fft data and draw it
-            let audioCtx = new Tone.Context();
-            var fftValues = new Tone.FFT(1024);
-            drawFFT(fft.getValue());
-            //get the waveform valeus and draw it
-            var waveformValues = new Tone.Waveform();
-            // drawWaveform(waveformValues());
+            // drawFFT(fft.getValue());
             // console.log(fft.getValue());
-            
-            console.log("drawing")
+
+            //get the waveform valeus and draw it
+            drawWaveform(waveform.getValue());
+            console.log(waveform.getValue());
+            // console.log("drawing")
 
     }
 
