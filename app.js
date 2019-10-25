@@ -1,5 +1,8 @@
 const express = require('express');
 
+
+// NOTE APP.JS CURRENT NOTE BEING UTILIZED
+
 // Gives access to express methods
 const app = express();
 const cors = require('cors');
@@ -12,9 +15,6 @@ const router = express.Router();
 app.use(cors());
 app.use(express.static('public'))
 
-// app.get('/', (request, res) => {
-//     res.sendFile(path.join(__dirname, './index.html'))
-// })
 
 // Establish Yesterday's Date
 let yesterday = new Date(Date.now() - 864e5);
@@ -43,17 +43,6 @@ app.get('/gov', (request, response) => {
         });
 });
 
-// create a search route
-// app.get('/search', (request, response) => {
-//     fetch(`http://openlibrary.org/search.json?q=${request.query.string}`)
-//         .then((response) => {
-//             return response.text();
-//         }).then((body) => {
-//             let results = JSON.parse(body)
-//             console.log(results)
-//             response.send(results)
-//         });
-// });
 
 app.listen(PORT, () => {
     console.log(__dirname);

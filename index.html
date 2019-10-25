@@ -23,7 +23,7 @@
     <title>seaOrganOf</title>
 =======
     <script src="./src/scripts/tonejs-ui.js"></script>
-    
+
 
     <title>The Sea Organ</title>
 >>>>>>> master
@@ -80,7 +80,7 @@
             </footer>
             
             <div id="about-overlay" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeAbout()">&times;</a>
                 <div class="overlay-content">
                     <h1>seaOrganOf</h1>
                     
@@ -96,13 +96,14 @@
                     <p>Inspirations: <a href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js" target="_blank">discreetmusic.js by Tero Parviainen</a>
                         <br />
                         Source Data: <a href="https://tidesandcurrents.noaa.gov/web_services_info.html" target="_blank">NOAA</a></p>
-
-                                            <p>(Audio optimized for desktop/laptop, disabled on iOS)</p>
+                        <div id="about-footer">Best experienced with headphones. <br>
+                        (Audio optimized for desktop/laptop, disabled on iOS</div>
+                  
 
                 </div>
             </div>
            
-            <span id="open-about" onclick="openNav()">
+            <span id="open-about" onclick="openAbout()">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
                     <path id="open-about-bg" fill="#135183" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
                     <path fill="#fff"
@@ -135,26 +136,25 @@
             
     <!-- KEEP FOR APP -->
     <div id="app"></div>
-    <script src="./src/scripts/viztest.js"></script>
+
     <script src="./dist/main.js"></script>
 
-    <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   
     <script>
+
+        // ABOUT OVERLAY
         /* Open */
-        function openNav() {
+        function openAbout() {
             document.getElementById("about-overlay").style.height = "100%";
         }
         
         /* Close */
-        function closeNav() {
+        function closeAbout() {
             document.getElementById("about-overlay").style.height = "0%";
         }
     </script>
 
 
-    <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 
 </body>
 </html>

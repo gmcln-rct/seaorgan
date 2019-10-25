@@ -129,7 +129,6 @@ export const generateOrgan = (notesList) => {
     // CREATE SEQUENCE 1
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
-            console.log('synthPart 1 starting');
             event.humanize = true;
             leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
             synthStart = true;
@@ -143,7 +142,6 @@ export const generateOrgan = (notesList) => {
     const synthPart2 = new Tone.Sequence(
 
         function (time, note) {
-            console.log('synthPart 2 starting');
 
             event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
@@ -253,5 +251,32 @@ export const generateOrgan = (notesList) => {
                 clearInterval(synthInterval);
             }
         }, 10);
+
+    Tone.BufferSource.prototype.start = function (time, offset, duration, gain) {
+
+        // Prevent buffer playback if we have exceeded max # buffers playing
+        // (or if there's no volume... what's the point?
+        if (_playingBuffers.length >= MAX_BUFFERS || gain <= 0) return this;
+
+        // // shut down the samples FIFO-style
+        // while (_playingBuffers.length >= MAX_POLYPHONY){
+        // 	let oldestSampleSource = _playingBuffers.shift(); // pulls it off early - onended won't find it
+        // 	oldestSampleSource.stop(Tone.now());
+        // 	//console.log("stopping", oldestSampleSource);
+        // }
+
+        _playingBuffers.push(this);
+        _numPlayedNotesThisInterval++;
+
+        this.onended = function (buffer) {
+            buffer.dispose();
+            let index = _playingBuffers.indexOf(buffer);
+            if (index > -1) {
+                _playingBuffers.splice(index, 1);
+            }
+        };
+
+        return bufferSourceStart.bind(this)(time, offset, duration, gain);
+    };
     
 };
