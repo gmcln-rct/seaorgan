@@ -7,6 +7,8 @@
 
 // ---------------------------------------------------------------------------------
 
+
+
 body {
     font-family: 'Questrial', sans-serif;
 
@@ -50,12 +52,12 @@ body {
 
 
 body h1 {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 40px;
     margin-left: -50px;
 
     font-family: 'Questrial', sans-serif;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 200;
     text-align: center;
 
@@ -88,7 +90,6 @@ body h1 {
     width: 30rem;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
-
 }
 
 #station_id {
@@ -118,10 +119,7 @@ body h1 {
 }
 
 .select-css {
-
-
     box-sizing: border-box;
-
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
     border-radius: .5em;
     -moz-appearance: none;
@@ -156,42 +154,147 @@ body h1 {
     padding: 10px 5px;
 
     color: white;
-    background-color: #084769;
+    background-color: #135183;
 
-
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 600;
+    letter-spacing: 1.5px;
     text-align: center;
 
-    border-color: #084769;
-    border-radius: 10px;
+    border-color:#135183;
     border-radius: 10px;
 
     opacity: 0.8;
-
 }
 
-input:hover, button:active {
-    border: 2px solid white;
+#select-button:hover {
+    background-color: #16BCCC;
+    border: 1px solid white;
+
+    transition-timing-function: ease-out;
     transition: 0.4s;
 }
+
 
 input:visited, input:focus {
     outline: none;
 }
 
-
 #footer-logo {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
-    width: 7rem;
+    left: 2rem;
+    width: 5rem;
     height: auto;
 
     opacity: 0.8;
 
 }
 
+// ---------------------------------------------------------------------------------
+// VISUALIZER
+// ---------------------------------------------------------------------------------
+
+#viz-canvas {
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+#tone-viz {
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    background-color:lightgrey;
+}
+
+tone-oscilloscope, tone-fft {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    background-color: black;
+}
+
+
+// ABOUT OVERLAY
+
+#open-about {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#open-about-bg:hover {
+    fill: #16BCCC;
+    transition-timing-function: ease-out;
+    transition: 0.4s;
+}
+
+
+.overlay {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 0%;
+    width: 100%;
+    z-index: 20;
+
+    
+    background-color: rgb(19,81,131);
+    background-color: rgba(19,81,131, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 60%;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-align: center;
+
+    color: white;
+}
+
+.overlay h1 {
+    margin-bottom: 40px;
+
+    font-family: 'Questrial', sans-serif;
+    font-size: 3em;
+
+    color: #24b4a4;
+}
+
+.overlay a {
+    display: block;
+    padding: 8px;
+
+    font-size: 1.3em;
+    text-decoration: none;
+
+    color: #24b4a4;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
 
 
 
@@ -227,4 +330,36 @@ input:visited, input:focus {
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 0.8; }
+}
+
+
+
+// ---------------------------------------------------------------------------------
+// MEDIA QUERIES
+// ---------------------------------------------------------------------------------
+
+
+@media only screen and (max-width: 710px) {
+    #dropdown-container {
+
+
+    }
+
+    #station_id {
+        width: 25rem;
+        height: 2.2em;
+
+        font-size: 1.3em;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }

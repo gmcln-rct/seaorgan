@@ -1,3 +1,5 @@
+import Tone from 'tone';
+
 // SETS UP SYNTHESIZER FOR LOP
 
 export const makeSynth = () => {
@@ -21,9 +23,10 @@ export const makeSynth = () => {
     
     return new Tone.PolySynth({
         harmonicity: 2,
+        resonance: 800,
         volume: -15,
         voice0: {
-            oscillator: { type: 'triangle' },
+            oscillator: { type: 'cosine' },
             envelope,
             filterEnvelope
         },
