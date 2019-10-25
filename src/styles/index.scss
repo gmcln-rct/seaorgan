@@ -111,8 +111,6 @@ body h1 {
     border-radius: 10px;
 
     opacity: 0.8;
-
-
 }
 
 #station-id:hover {
@@ -192,6 +190,43 @@ input:visited, input:focus {
     outline: none;
 }
 
+.button-explanation {
+
+
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+    opacity: 0;
+
+    color: white;
+    z-index: 2;
+
+}
+
+.intro-explanation {
+    position: relative;
+    top: 5%;
+    width: 60%;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: center;
+    opacity: 0;
+
+    color: white;
+    z-index: 2;
+
+    animation-name: fadeInOut;
+    animation-delay: 1s;
+    animation-duration: 20s;
+    animation-iteration-count: 1;
+}
+
+
+
 #footer-logo {
     position: fixed;
     bottom: 2rem;
@@ -202,7 +237,6 @@ input:visited, input:focus {
     opacity: 0.7;
 
     z-index: 2;
-
 }
 
 // ---------------------------------------------------------------------------------
@@ -321,6 +355,8 @@ a#inner-overlay-link {
 // ANIMATIONS
 // ---------------------------------------------------------------------------------
 
+// FADEIN
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -350,6 +386,24 @@ a#inner-overlay-link {
     from { opacity: 0; }
     to   { opacity: 0.8; }
 }
+
+// FADEINOUT
+
+@keyframes fadeInOut {
+    from {
+      animation-timing-function: ease;
+      opacity: 0;
+    }
+    50% {
+      animation-timing-function: ease-in;
+      opacity: 0.8;
+    }
+    to {
+      animation-timing-function: ease-out;
+      opacity: 0;
+    }
+}
+
 
 
 

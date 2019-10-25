@@ -31,7 +31,7 @@
 
         <h1>seaOrganOf</h1>
     
-    <!-- DROPDOWN CONTAINER FOR STATIONS -->
+        <!-- DROPDOWN CONTAINER FOR STATIONS -->
         <form id="dropdown-container">
             <select id="station_id" class="select-css">
                 <option value="" selected>Select U.S. Coastal Station</option>
@@ -61,10 +61,21 @@
                 <br>
                 <input type="button" value="Play Organ" name="submit" id="select-button">
             </form>
+            <section class="button-explanation">
+            </section>
+
+
             
+            <section class="intro-explanation">
+                seaOrganOf uses Tides & Currents data from NOAA to generate unique audio soundscape for a specific location. 
+                The organ translates 24 hours of sea level data to create a unique set of notes for that location. <br> <br>
+                Select a U.S. coastal station, then click Play Organ to begin.
+
+            </section>
 
             <canvas id="viz-canvas"> </canvas>
-                
+            
+
         
             <div class="loader"></div>
             
@@ -98,6 +109,8 @@
 
                 </div>
             </div>
+
+            <!-- END OF CONTENT CONTAINER -->
            
             <span id="open-about" onclick="openAbout()">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">

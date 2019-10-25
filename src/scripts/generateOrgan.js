@@ -155,7 +155,6 @@ export const generateOrgan = (notesList) => {
     synthPart1.humanize = true;
     synthPart2.humanize = true;
 
-
     synthPart1.start();
     synthPart2.start();
 
