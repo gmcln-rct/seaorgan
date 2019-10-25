@@ -100,7 +100,6 @@ export const generateOrgan = (notesList) => {
         }
     });
 
-
     echo.toMaster();
     echo.connect(delay);
 
@@ -110,8 +109,6 @@ export const generateOrgan = (notesList) => {
 
     // Slow Transport bpw Down
     Tone.Transport.bpm.value = 100;
-
-
 
     // Create an array of notes to be played
     const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
@@ -146,7 +143,7 @@ export const generateOrgan = (notesList) => {
 
         function (time, note) {
             console.log('synthPart 2 starting');
-            Tone.Draw.schedule(drawCircle, "+0.4");
+
             event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
         },
@@ -163,64 +160,22 @@ export const generateOrgan = (notesList) => {
 
     // START AUDIO TRANSPORT
     Tone.Transport.start();
-    // makeViz();
 
     _isPlaying = true;
+
+
+
 
 // ------------------
     // VISUALIZER TEST
     // audioCtx = new Tone.Context();
     // analyser = new Tone.Analyser();
+    let toneSource = new Tone.FFT();
 
-    // analyser.fftSize = 2048;
-    // var bufferLength = analyser.frequencyBinCount;
-    // var dataArray = new Tone.FFT();
+    //connect the UI with the components
+    document.querySelector("tone-oscilloscope").bind(toneSource);
+    document.querySelector("tone-fft").bind(toneSource);
 
-        
-    function doIt() {
-        var buffer = generateAudioOffline().then(decodeBuffer => {
-            console.log(decodeBuffer);
-            var source = audioCtx.createBufferSource(); // creates a sound source
-            source.buffer = decodeBuffer._buffer;       // tell the source which sound to play
-            source.connect(audioCtx.destination);       // connect the source to the context's destination (the speakers)
-            console.log('starting');
-            source.start(0);                            // play the source now
-        });
-    }
-
-    canvas = document.getElementById("viz-canvas");
-    canvasCtx = canvas.getContext("2d");
-    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const analyser = audioContext.createAnalyser();
-    masterGain.connect(analyser);
-
-    const waveform = new Float32Array(analyser.frequencyBinCount);
-    analyser.getFloatTimeDomainData(waveform);
-
-        ; (function updateWaveform() {
-            requestAnimationFrame(updateWaveform);
-            analyser.getFloatTimeDomainData(waveform);
-        })()
-    const scopeCanvas = document.getElementById("viz - canvas");
-    scopeCanvas.width = waveform.length;
-    scopeCanvas.height = 200;
-    const scopeContext = scopeCanvas.getContext('2d');
-
-        ; (function drawOscilloscope() {
-            requestAnimationFrame(drawOscilloscope)
-            scopeContext.clearRect(0, 0, scopeCanvas.width, scopeCanvas.height)
-            scopeContext.beginPath()
-            for (let i = 0; i < waveform.length; i++) {
-                const x = i
-                const y = (0.5 + waveform[i] / 2) * scopeCanvas.height;
-                if (i == 0) {
-                    scopeContext.moveTo(x, y)
-                } else {
-                    scopeContext.lineTo(x, y)
-                }
-            }
-            scopeContext.stroke()
-        })()
+   
     
 };

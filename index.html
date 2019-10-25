@@ -19,7 +19,9 @@
 
     <!-- Tone Audio Synthesis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
-    <script src="https://unpkg.com/@tonejs/ui"></script>
+    <script src="./src/scripts/tonejs-ui.js"></script>
+    
+
     <title>The Sea Organ</title>
     
 </head>
@@ -27,7 +29,7 @@
     
     <div class="main-content-container">
 
- <h1>seaOrganOf</h1>
+        <h1>seaOrganOf</h1>
     
     <!-- DROPDOWN CONTAINER FOR STATIONS -->
         <form id="dropdown-container">
@@ -62,6 +64,10 @@
                 <!-- <input type="submit" id="select-button"> -->
             </form>
             
+            <tone-content id="tone-viz">
+                <tone-oscilloscope></tone-oscilloscope>
+                <tone-fft></tone-fft>
+            </tone-content>
                 
             <canvas id="viz-canvas"> </canvas>
             
@@ -73,7 +79,7 @@
                     <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Zadar, Croatia, which uses the movement of water to power an audio
                     installation underneath large marble steps on the boardwalk in Zadar, creating ethereal, organ-like sounds.</p>
                     <p>                    The project uses NOAA's tides & currents data for locations around the coastal U.S. to generate audio soundscapes specific to location. Select your location, click play and enjoy!
-</p>
+                    </p>
                     
                     <p>Created by: <a href="https://www.riocreate.com" target="_blank">Glenn McClanan</a></p>
                     <p>Technologies: <a href="https://tonejs.github.io/"
@@ -138,6 +144,15 @@
         function closeNav() {
             document.getElementById("about-overlay").style.height = "0%";
         }
+    </script>
+
+    <script type="text/javascript">
+        let toneSource = new Tone.FFT().toMaster();
+
+        //connect the UI with the components
+            document.querySelector("tone-oscilloscope").bind(toneSource);
+            document.querySelector("tone-fft").bind(toneSource);
+
     </script>
     <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 
