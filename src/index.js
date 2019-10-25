@@ -11,9 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let notesList;
 
     let selection = document.getElementById('station_id');
-    // let el = document.getElementById('select-button');
 
-    // assign onclick handler  s to the input
     StartAudioContext(Tone.context, 'select-button')
 
     document.getElementById('select-button').onclick = function (e) {
