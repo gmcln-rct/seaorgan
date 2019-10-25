@@ -100,7 +100,6 @@ export const generateOrgan = (notesList) => {
         }
     });
 
-
     echo.toMaster();
     echo.connect(delay);
 
@@ -110,8 +109,6 @@ export const generateOrgan = (notesList) => {
 
     // Slow Transport bpw Down
     Tone.Transport.bpm.value = 100;
-
-
 
     // Create an array of notes to be played
     const timing = ['+0:2', '+6:0', '+11:2','+15:0', '+5.0', '+19:4:2', '+19:3:0'];
@@ -128,13 +125,14 @@ export const generateOrgan = (notesList) => {
     // Use imported list from SetUpSounds
     const notes = notesList;
     
-
+    let synthStart = false;
     // CREATE SEQUENCE 1
     const synthPart1 = new Tone.Sequence(
         function (time, note) {
             console.log('synthPart 1 starting');
             event.humanize = true;
             leftSynth.triggerAttackRelease(note, '5:0', makeTiming());
+            synthStart = true;
         },
         notes,
         "2m"
@@ -146,9 +144,11 @@ export const generateOrgan = (notesList) => {
 
         function (time, note) {
             console.log('synthPart 2 starting');
-            Tone.Draw.schedule(drawCircle, "+0.4");
+
             event.humanize = true;
             rightSynth.triggerAttackRelease(note, '1:1', makeTiming());
+            synthStart = true;
+
         },
         notes,
         "4m"
@@ -163,64 +163,95 @@ export const generateOrgan = (notesList) => {
 
     // START AUDIO TRANSPORT
     Tone.Transport.start();
-    // makeViz();
 
     _isPlaying = true;
 
+
 // ------------------
-    // VISUALIZER TEST
-    // audioCtx = new Tone.Context();
-    // analyser = new Tone.Analyser();
+    // VISUALIZER 
+    // Currently just doing FFT
 
-    // analyser.fftSize = 2048;
-    // var bufferLength = analyser.frequencyBinCount;
-    // var dataArray = new Tone.FFT();
+    let fftNum = 4096;
+    const fft = new Tone.Analyser("fft", fftNum);
+    const waveform = new Tone.Analyser("waveform", 1024);
 
-        
-    function doIt() {
-        var buffer = generateAudioOffline().then(decodeBuffer => {
-            console.log(decodeBuffer);
-            var source = audioCtx.createBufferSource(); // creates a sound source
-            source.buffer = decodeBuffer._buffer;       // tell the source which sound to play
-            source.connect(audioCtx.destination);       // connect the source to the context's destination (the speakers)
-            console.log('starting');
-            source.start(0);                            // play the source now
-        });
+    leftSynth.fan(waveform, fft);
+    rightSynth.fan(waveform, fft);
+
+    let canvasWidth, canvasHeight;
+
+    const fftCanvas = document.getElementById("viz-canvas");
+    const fftContext = fftCanvas.getContext("2d");
+
+    const waveCanvas = document.getElementById("viz-canvas");
+    const waveContext = waveCanvas.getContext("2d");
+
+    // drawing the FFT
+    function drawFFT(values) {
+        fftContext.clearRect(0, 0, canvasWidth, canvasHeight);
+        let x, y, barWidth, val;
+        for (let i = 0, len = values.length; i < len - 1; i++) {
+            barWidth = canvasWidth / len;
+            x = barWidth * i;
+            
+            val = Math.abs(values[i] / 255);
+            y = val * canvasHeight;
+            fftContext.fillStyle = "rgba(255, 255, 204, " + val + ")";
+
+            // fftContext.fillStyle = "rgba(31, 178, 204, " + val + ")";
+            fftContext.fillRect(x, canvasHeight - y, barWidth, canvasHeight);
+        }
     }
 
-    canvas = document.getElementById("viz-canvas");
-    canvasCtx = canvas.getContext("2d");
-    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+    //the waveform data
+    // function drawWaveform(values) {
+    //     //draw the waveform
+    //     waveContext.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    const analyser = audioContext.createAnalyser();
-    masterGain.connect(analyser);
+    //     waveContext.beginPath();
+    //     waveContext.lineJoin = "round";
+    //     waveContext.lineWidth = 3;
+    //     waveContext.strokeStyle = "#24b4a4;";
+    //     waveContext.moveTo(0, ((values[0] )/ 255) * canvasHeight);
 
-    const waveform = new Float32Array(analyser.frequencyBinCount);
-    analyser.getFloatTimeDomainData(waveform);
+    //     for (let i = 1, len = values.length; i < len; i++) {
+    //         let val = Math.abs((values[i] * 1000) / 255);
+    //         let x = canvasWidth * (i / len);
+    //         let y = val * canvasHeight;
+    //         waveContext.lineTo(x, y);
+    //     }
+    //     waveContext.stroke();
+    // }
 
-        ; (function updateWaveform() {
-            requestAnimationFrame(updateWaveform);
-            analyser.getFloatTimeDomainData(waveform);
-        })()
-    const scopeCanvas = document.getElementById("viz - canvas");
-    scopeCanvas.width = waveform.length;
-    scopeCanvas.height = 200;
-    const scopeContext = scopeCanvas.getContext('2d');
+    //size the canvases
+    function sizeCanvases() {
+        canvasWidth = fftCanvas.offsetWidth;
+        canvasHeight = fftCanvas.offsetHeight;
+        fftContext.canvas.width = canvasWidth;
+        fftContext.canvas.height = canvasHeight;
+        // waveContext.canvas.width = canvasWidth;
+        // waveContext.canvas.height = canvasHeight;
+    }
 
-        ; (function drawOscilloscope() {
-            requestAnimationFrame(drawOscilloscope)
-            scopeContext.clearRect(0, 0, scopeCanvas.width, scopeCanvas.height)
-            scopeContext.beginPath()
-            for (let i = 0; i < waveform.length; i++) {
-                const x = i
-                const y = (0.5 + waveform[i] / 2) * scopeCanvas.height;
-                if (i == 0) {
-                    scopeContext.moveTo(x, y)
-                } else {
-                    scopeContext.lineTo(x, y)
-                }
+    function loop() {
+        requestAnimationFrame(loop);
+            //get the fft data and draw it
+            drawFFT(fft.getValue());
+            // console.log(fft.getValue());
+
+            //get the waveform valeus and draw it
+            // drawWaveform(waveform.getValue());
+            // console.log(waveform.getValue());
+
+    }
+
+ 
+    let synthInterval = setInterval( () => {
+            if (synthStart) {
+                sizeCanvases();
+                loop();
+                clearInterval(synthInterval);
             }
-            scopeContext.stroke()
-        })()
+        }, 10);
     
 };

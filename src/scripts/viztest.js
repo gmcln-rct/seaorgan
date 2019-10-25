@@ -53,13 +53,12 @@ function draw() {
 }
 =======
 
-import Tone from 'tone';
 
 let audioCtx, analyser, bufferLength, dataArray, canvas, canvasCtx, drawVisual;
 
 
 export const makeViz = () => {
-    
+
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     analyser = audioCtx.createAnalyser();
     // audioCtx = new Tone.Context();

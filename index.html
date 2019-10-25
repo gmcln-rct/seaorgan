@@ -19,14 +19,21 @@
 
     <!-- Tone Audio Synthesis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
+<<<<<<< HEAD
     <title>seaOrganOf</title>
+=======
+    <script src="./src/scripts/tonejs-ui.js"></script>
+    
+
+    <title>The Sea Organ</title>
+>>>>>>> master
     
 </head>
 <body>
     
     <div class="main-content-container">
 
- <h1>seaOrganOf</h1>
+        <h1>seaOrganOf</h1>
     
     <!-- DROPDOWN CONTAINER FOR STATIONS -->
         <form id="dropdown-container">
@@ -57,26 +64,30 @@
 
                 <br>
                 <input type="button" value="Play Organ" name="submit" id="select-button">
-
-                <!-- <input type="submit" id="select-button"> -->
             </form>
             
-                
+
             <canvas id="viz-canvas"> </canvas>
+                
+        
+            <div class="loader"></div>
             
-            <div id="myNav" class="overlay">
+            
+            <div class="eq"></div>
+            
+            <footer>
+                <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo-v5.png" alt="seaOrganOf" id="footer-logo">
+            </footer>
+            
+            <div id="about-overlay" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <h1>seaOrganOf</h1>
                     
-                    <p>This project is inspired by the Sea Organ of Zadar in Zadar, Croatia, which uses the movement of water to power an audio
-                    installation underneath the boardwalk in Zadar, which creates an ethereal, organ-like sound.</p>
-                    <p></p>
-                    The project uses tides & currents data from NOAA for various locations around the U.S. using NOAA to generate audio unique audio soundscapes an external, real-time dataset of tides or ocean currents in order to generate
-                    organ-like sounds in the browser.
+                    <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Zadar, Croatia, which uses the movement of water to power an audio
+                    installation underneath large marble steps on the boardwalk in Zadar, creating ethereal, organ-like sounds.</p>
+                    <p>                    The project uses NOAA's tides & currents data for locations around the coastal U.S. to generate audio soundscapes specific to location. Select your location, click play and enjoy!
                     </p>
-                    
-                    <p>(Audio optimized for desktop/laptop, disabled on iOS)</p>
                     
                     <p>Created by: <a href="https://www.riocreate.com" target="_blank">Glenn McClanan</a></p>
                     <p>Technologies: <a href="https://tonejs.github.io/"
@@ -85,6 +96,9 @@
                     <p>Inspirations: <a href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js" target="_blank">discreetmusic.js by Tero Parviainen</a>
                         <br />
                         Source Data: <a href="https://tidesandcurrents.noaa.gov/web_services_info.html" target="_blank">NOAA</a></p>
+
+                                            <p>(Audio optimized for desktop/laptop, disabled on iOS)</p>
+
                 </div>
             </div>
            
@@ -97,6 +111,7 @@
                 </svg>
             </span>
         </div>
+<<<<<<< HEAD
         
         
         <tone-content id="tone-viz">
@@ -114,7 +129,10 @@
         <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo-v5.png" alt="seaOrganOf" id="footer-logo">
     </footer>
 
+=======
+>>>>>>> master
 
+            
     <!-- KEEP FOR APP -->
     <div id="app"></div>
     <script src="./src/scripts/viztest.js"></script>
@@ -126,14 +144,16 @@
     <script>
         /* Open */
         function openNav() {
-        document.getElementById("myNav").style.height = "100%";
+            document.getElementById("about-overlay").style.height = "100%";
         }
         
         /* Close */
         function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
+            document.getElementById("about-overlay").style.height = "0%";
         }
     </script>
+
+
     <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 
 </body>
