@@ -196,8 +196,12 @@ input:visited, input:focus {
 // ---------------------------------------------------------------------------------
 
 #viz-canvas {
-    width: 700px;
+    position: fixed;
+    top: 250px;
+    width: 100%;
     height: 300px;
+    margin: 0 auto;
+    background-color:gray;
     margin: 0 auto;
     z-index: 1;
 }
@@ -217,8 +221,9 @@ tone-oscilloscope, tone-fft {
 }
 
 
+// ---------------------------------------------------------------------------------
 // ABOUT OVERLAY
-
+// ---------------------------------------------------------------------------------
 #open-about {
     position: fixed;
     bottom: 2rem;

@@ -23,8 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
             stopOrgan();
         };
 
-
-
         ydayCurrents(result)
             .then(
                 tideObj => {

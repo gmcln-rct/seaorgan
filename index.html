@@ -60,17 +60,25 @@
 
                 <br>
                 <input type="button" value="Play Organ" name="submit" id="select-button">
-
-                <!-- <input type="submit" id="select-button"> -->
             </form>
             
-            <tone-content id="tone-viz">
+            <!-- <tone-content id="tone-viz">
                 <tone-oscilloscope></tone-oscilloscope>
                 <tone-fft></tone-fft>
-            </tone-content>
-                
+            </tone-content> -->
             <canvas id="viz-canvas"> </canvas>
+                
             
+        
+
+            <div class="loader"></div>
+            
+            
+            <div class="eq"></div>
+            
+            <footer>
+                <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo-v5.png" alt="seaOrganOf" id="footer-logo">
+            </footer>
             <div id="about-overlay" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
@@ -103,29 +111,8 @@
                 </svg>
             </span>
         </div>
-        
-        
-        <tone-content id="tone-viz">
-            <tone-oscilloscope></tone-oscilloscope>
-            <tone-fft></tone-fft>
-        </tone-content>
 
-
-    <div class="loader"></div>
-
-
-    <div class="eq"></div>
-
-    <footer>
-        <!-- <details open>
-            <summary>About The Sea Organ</summary>
-            <p>Title</p>
-            <div>IDescirption.</div>
-        </details> -->
-        <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo-v5.png" alt="seaOrganOf" id="footer-logo">
-    </footer>
-
-
+            
     <!-- KEEP FOR APP -->
     <div id="app"></div>
     <script src="./src/scripts/viztest.js"></script>
@@ -146,14 +133,7 @@
         }
     </script>
 
-    <script type="text/javascript">
-        let toneSource = new Tone.FFT().toMaster();
 
-        //connect the UI with the components
-            document.querySelector("tone-oscilloscope").bind(toneSource);
-            document.querySelector("tone-fft").bind(toneSource);
-
-    </script>
     <!-- <script type="text/javascript" src="./src/scripts/song.js"></script> -->
 
 </body>
