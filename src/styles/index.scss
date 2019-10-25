@@ -156,9 +156,9 @@ body h1 {
     color: white;
     background-color: #135183;
 
-
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 600;
+    letter-spacing: 1.5px;
     text-align: center;
 
     border-color:#135183;
@@ -167,15 +167,18 @@ body h1 {
     opacity: 0.8;
 }
 
-input:hover, button:active {
+#select-button:hover {
+    background-color: #16BCCC;
     border: 1px solid white;
+
+    transition-timing-function: ease-out;
     transition: 0.4s;
 }
+
 
 input:visited, input:focus {
     outline: none;
 }
-
 
 #footer-logo {
     position: fixed;
@@ -187,7 +190,6 @@ input:visited, input:focus {
     opacity: 0.8;
 
 }
-
 
 // ---------------------------------------------------------------------------------
 // VISUALIZER
@@ -207,12 +209,12 @@ input:visited, input:focus {
     background-color:lightgrey;
 }
 
-    tone-oscilloscope, tone-fft {
-        width: 100%;
-        height: 44px;
-        border-radius: 22px;
-        background-color: black;
-    }
+tone-oscilloscope, tone-fft {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    background-color: black;
+}
 
 
 // ABOUT OVERLAY
@@ -221,40 +223,54 @@ input:visited, input:focus {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+
     font-size: 2em;
     cursor: pointer;
 }
+
+#open-about-bg:hover {
+    fill: #16BCCC;
+    transition-timing-function: ease-out;
+    transition: 0.4s;
+}
+
+
 .overlay {
     position: fixed;
-    height: 0%;
-    width: 100%;
-    z-index: 50;
     bottom: 0;
     right: 0;
+    height: 0%;
+    width: 100%;
+    z-index: 20;
+
+    
     background-color: rgb(19,81,131);
-    background-color: rgba(19,81,131, 0.8);
+    background-color: rgba(19,81,131, 0.9);
     overflow-y: hidden;
     transition: 0.5s;
 }
 
 .overlay-content {
     position: relative;
-    top: 25%;
+    top: 10%;
     width: 60%;
+
     margin-left: 20%;
     margin-right: 20%;
-    font-size: 1.4em;
-    color: white;
+
+    font-size: 1.2em;
+    line-height: 1.2em;
     text-align: center;
-    margin-top: 30px;
+
+    color: white;
 }
-
-
 
 .overlay h1 {
     margin-bottom: 40px;
 
     font-family: 'Questrial', sans-serif;
+    font-size: 3em;
+
     color: #24b4a4;
 }
 
@@ -264,7 +280,8 @@ input:visited, input:focus {
 
     font-size: 1.3em;
     text-decoration: none;
-        color: #24b4a4;
+
+    color: #24b4a4;
     transition: 0.3s;
 }
 
