@@ -167,19 +167,12 @@ export const generateOrgan = (notesList) => {
     _isPlaying = true;
 
 
-
-
 // ------------------
-    // VISUALIZER TEST
-    // audioCtx = new Tone.Context();
-    // analyser = new Tone.Analyser();
-    // let toneSource = new Tone.FFT();
+    // VISUALIZER 
+    // Currently just doing FFT
 
-    //connect the UI with the components
-    // document.querySelector("tone-oscilloscope").bind(toneSource);
-    // document.querySelector("tone-fft").bind(toneSource);
-
-    const fft = new Tone.Analyser("fft", 2048);
+    let fftNum = 4096;
+    const fft = new Tone.Analyser("fft", fftNum);
     const waveform = new Tone.Analyser("waveform", 1024);
 
     leftSynth.fan(waveform, fft);
@@ -188,66 +181,67 @@ export const generateOrgan = (notesList) => {
     let canvasWidth, canvasHeight;
 
     const fftCanvas = document.getElementById("viz-canvas");
-    const waveCanvas = document.getElementById("viz-canvas");
     const fftContext = fftCanvas.getContext("2d");
+
+    const waveCanvas = document.getElementById("viz-canvas");
     const waveContext = waveCanvas.getContext("2d");
 
     // drawing the FFT
     function drawFFT(values) {
         fftContext.clearRect(0, 0, canvasWidth, canvasHeight);
         let x, y, barWidth, val;
-        for (var i = 0, len = values.length; i < len - 1; i++) {
+        for (let i = 0, len = values.length; i < len - 1; i++) {
             barWidth = canvasWidth / len;
             x = barWidth * i;
             
             val = Math.abs(values[i] / 255);
             y = val * canvasHeight;
-            fftContext.fillStyle = "rgba(0, 0, 0, " + val + ")";
+            fftContext.fillStyle = "rgba(255, 255, 204, " + val + ")";
+
+            // fftContext.fillStyle = "rgba(31, 178, 204, " + val + ")";
             fftContext.fillRect(x, canvasHeight - y, barWidth, canvasHeight);
         }
     }
 
     //the waveform data
-    function drawWaveform(values) {
-        //draw the waveform
-        waveContext.clearRect(0, 0, canvasWidth, canvasHeight);
+    // function drawWaveform(values) {
+    //     //draw the waveform
+    //     waveContext.clearRect(0, 0, canvasWidth, canvasHeight);
 
-        // var values = waveform;
-        waveContext.beginPath();
-        waveContext.lineJoin = "round";
-        waveContext.lineWidth = 3;
-        waveContext.strokeStyle = "#rgb(19,81,131);";
-        waveContext.moveTo(0, ((values[0] )/ 255) * canvasHeight);
+    //     waveContext.beginPath();
+    //     waveContext.lineJoin = "round";
+    //     waveContext.lineWidth = 3;
+    //     waveContext.strokeStyle = "#24b4a4;";
+    //     waveContext.moveTo(0, ((values[0] )/ 255) * canvasHeight);
 
-        for (var i = 1, len = values.length; i < len; i++) {
-            var val = Math.abs((values[i] * 1000) / 255);
-            var x = canvasWidth * (i / len);
-            var y = val * canvasHeight;
-            waveContext.lineTo(x, y);
-        }
-        waveContext.stroke();
-    }
+    //     for (let i = 1, len = values.length; i < len; i++) {
+    //         let val = Math.abs((values[i] * 1000) / 255);
+    //         let x = canvasWidth * (i / len);
+    //         let y = val * canvasHeight;
+    //         waveContext.lineTo(x, y);
+    //     }
+    //     waveContext.stroke();
+    // }
 
     //size the canvases
     function sizeCanvases() {
         canvasWidth = fftCanvas.offsetWidth;
         canvasHeight = fftCanvas.offsetHeight;
-        waveContext.canvas.width = canvasWidth;
         fftContext.canvas.width = canvasWidth;
-        waveContext.canvas.height = canvasHeight;
         fftContext.canvas.height = canvasHeight;
+        // waveContext.canvas.width = canvasWidth;
+        // waveContext.canvas.height = canvasHeight;
     }
 
     function loop() {
         requestAnimationFrame(loop);
             //get the fft data and draw it
-            // drawFFT(fft.getValue());
+            drawFFT(fft.getValue());
             // console.log(fft.getValue());
 
             //get the waveform valeus and draw it
-            drawWaveform(waveform.getValue());
-            console.log(waveform.getValue());
-            // console.log("drawing")
+            // drawWaveform(waveform.getValue());
+            // console.log(waveform.getValue());
 
     }
 
@@ -258,6 +252,6 @@ export const generateOrgan = (notesList) => {
                 loop();
                 clearInterval(synthInterval);
             }
-        }, 100);
+        }, 10);
     
 };

@@ -69,6 +69,8 @@ body h1 {
         -ms-animation: fadein 2s ease-in; /* Internet Explorer */
          -o-animation: fadein 2s ease-in; /* Opera < 12.1 */
             animation: fadein 2s ease-in;
+
+    z-index: 2;
 }
 
 #app {
@@ -90,6 +92,7 @@ body h1 {
     width: 30rem;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
+    z-index: 2;
 }
 
 #station_id {
@@ -108,6 +111,8 @@ body h1 {
     border-radius: 10px;
 
     opacity: 0.8;
+
+
 }
 
 #station-id:hover {
@@ -131,7 +136,11 @@ body h1 {
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
+
+    z-index: 2;
+
 }
+
 .select-css::-ms-expand {
     display: none;
 }
@@ -165,6 +174,9 @@ body h1 {
     border-radius: 10px;
 
     opacity: 0.8;
+
+    z-index: 2;
+
 }
 
 #select-button:hover {
@@ -184,10 +196,12 @@ input:visited, input:focus {
     position: fixed;
     bottom: 2rem;
     left: 2rem;
-    width: 5rem;
+    width: 6rem;
     height: auto;
 
-    opacity: 0.8;
+    opacity: 0.7;
+
+    z-index: 2;
 
 }
 
@@ -197,27 +211,13 @@ input:visited, input:focus {
 
 #viz-canvas {
     position: fixed;
-    top: 250px;
+    top: 0;
     width: 100%;
-    height: 300px;
-    margin: 0 auto;
-    background-color:gray;
-    margin: 0 auto;
+    height: 100vh;
+
     z-index: 1;
-}
 
-#tone-viz {
-    width: 700px;
-    height: 300px;
-    margin: 0 auto;
-    background-color:lightgrey;
-}
-
-tone-oscilloscope, tone-fft {
-    width: 100%;
-    height: 100px;
-    border-radius: 22px;
-    background-color: blue;
+    filter: blur(1.5px);
 }
 
 
@@ -231,6 +231,8 @@ tone-oscilloscope, tone-fft {
 
     font-size: 2em;
     cursor: pointer;
+
+    z-index: 2;
 }
 
 #open-about-bg:hover {
@@ -246,12 +248,13 @@ tone-oscilloscope, tone-fft {
     right: 0;
     height: 0%;
     width: 100%;
-    z-index: 20;
-
+    
     background-color: rgb(19,81,131);
     background-color: rgba(19,81,131, 0.9);
     overflow-y: hidden;
     transition: 0.5s;
+
+    z-index: 20;
 }
 
 .overlay-content {
