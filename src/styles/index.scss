@@ -235,7 +235,7 @@ tone-oscilloscope, tone-fft {
 }
 
 
-.overlay {
+#about-overlay {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -243,7 +243,6 @@ tone-oscilloscope, tone-fft {
     width: 100%;
     z-index: 20;
 
-    
     background-color: rgb(19,81,131);
     background-color: rgba(19,81,131, 0.9);
     overflow-y: hidden;
@@ -265,7 +264,7 @@ tone-oscilloscope, tone-fft {
     color: white;
 }
 
-.overlay h1 {
+#about-overlay h1 {
     margin-bottom: 40px;
 
     font-family: 'Questrial', sans-serif;
@@ -274,7 +273,7 @@ tone-oscilloscope, tone-fft {
     color: #24b4a4;
 }
 
-.overlay a {
+#about-overlay a {
     display: block;
     padding: 8px;
 
@@ -285,11 +284,17 @@ tone-oscilloscope, tone-fft {
     transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
+
+a#inner-overlay-link {
+    display: inline;
+    font-size: 1.2em;
+}
+
+#about-overlay a:hover, #about-overlay a:focus {
     color: #f1f1f1;
 }
 
-.overlay .closebtn {
+#about-overlay .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
@@ -355,9 +360,9 @@ tone-oscilloscope, tone-fft {
 }
 
 @media screen and (max-height: 450px) {
-  .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
+  #about-overlay {overflow-y: auto;}
+  #about-overlay a {font-size: 20px}
+  #about-overlay .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
