@@ -35,7 +35,7 @@
 
         <h1>seaOrganOf</h1>
     
-    <!-- DROPDOWN CONTAINER FOR STATIONS -->
+        <!-- DROPDOWN CONTAINER FOR STATIONS -->
         <form id="dropdown-container">
             <select id="station_id" class="select-css">
                 <option value="" selected>Select U.S. Coastal Station</option>
@@ -65,18 +65,24 @@
                 <br>
                 <input type="button" value="Play Organ" name="submit" id="select-button">
             </form>
-            
+            <section class="button-explanation">
+            </section>
+
+            <section class="intro-explanation">
+                <span id="blue-text">seaOrganOf</span><span> uses Tides & Currents data from NOAA to generate unique audio soundscapes for coastal stations around the United States.<br><br>
+                The organ translates 24 hours of sea level data into a unique set of musical notes and plays them in sequence. <br> <br>
+                Select a U.S. coastal station, then click Play Organ to begin listening.</span>
+            </section>
 
             <canvas id="viz-canvas"> </canvas>
-                
-        
-            <div class="loader"></div>
             
+
+            <div class="loader"></div>
             
             <div class="eq"></div>
             
             <footer>
-                <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo-v5.png" alt="seaOrganOf" id="footer-logo">
+                <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo.png" alt="seaOrganOf" id="footer-logo">
             </footer>
             
             <div id="about-overlay" class="overlay">
@@ -86,7 +92,7 @@
                     
                     <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Zadar, Croatia, which uses the movement of water to power an audio
                     installation underneath large marble steps on the boardwalk in Zadar, creating ethereal, organ-like sounds.</p>
-                    <p>                    The project uses NOAA's tides & currents data for locations around the coastal U.S. to generate audio soundscapes specific to location. Select your location, click play and enjoy!
+                    <p>This project aims to create an immersive audio ecperience by using NOAA's tides & currents data for locations around the coastal U.S. to generate audio soundscapes specific to location. Select your location, click play and enjoy!
                     </p>
                     
                     <p>Created by: <a href="https://www.riocreate.com" target="_blank">Glenn McClanan</a></p>
@@ -102,6 +108,8 @@
 
                 </div>
             </div>
+
+            <!-- END OF CONTENT CONTAINER -->
            
             <span id="open-about" onclick="openAbout()">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">

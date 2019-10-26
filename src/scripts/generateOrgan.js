@@ -83,7 +83,7 @@ export const generateOrgan = (notesList) => {
     delay = Tone.context.createDelay(11.0);
     delayFade = Tone.context.createGain();
 
-    delay.delayTime.value = 5.0;
+    delay.delayTime.value = 4.0;
     delayFade.gain.value = 0.75;
 
     leftSynth.connect(leftPanner);
@@ -121,7 +121,6 @@ export const generateOrgan = (notesList) => {
         return indivTiming;
     }
     
-    // const notes = ["A1", "A2", "A3", "A4", "b1", "b2", "b3", "b4", "b5", "C2", "C3", "C4", "C5", "D2", "D3", "D4", "E2", "E3", "E4", "F2", "F3", "F4", "G2", "G3", "G4"];
     // Use imported list from SetUpSounds
     const notes = notesList;
     
@@ -154,7 +153,6 @@ export const generateOrgan = (notesList) => {
 
     synthPart1.humanize = true;
     synthPart2.humanize = true;
-
 
     synthPart1.start();
     synthPart2.start();
@@ -201,26 +199,6 @@ export const generateOrgan = (notesList) => {
         }
     }
 
-    //the waveform data
-    // function drawWaveform(values) {
-    //     //draw the waveform
-    //     waveContext.clearRect(0, 0, canvasWidth, canvasHeight);
-
-    //     waveContext.beginPath();
-    //     waveContext.lineJoin = "round";
-    //     waveContext.lineWidth = 3;
-    //     waveContext.strokeStyle = "#24b4a4;";
-    //     waveContext.moveTo(0, ((values[0] )/ 255) * canvasHeight);
-
-    //     for (let i = 1, len = values.length; i < len; i++) {
-    //         let val = Math.abs((values[i] * 1000) / 255);
-    //         let x = canvasWidth * (i / len);
-    //         let y = val * canvasHeight;
-    //         waveContext.lineTo(x, y);
-    //     }
-    //     waveContext.stroke();
-    // }
-
     //size the canvases
     function sizeCanvases() {
         canvasWidth = fftCanvas.offsetWidth;
@@ -237,10 +215,6 @@ export const generateOrgan = (notesList) => {
             drawFFT(fft.getValue());
             // console.log(fft.getValue());
 
-            //get the waveform valeus and draw it
-            // drawWaveform(waveform.getValue());
-            // console.log(waveform.getValue());
-
     }
 
  
@@ -253,17 +227,9 @@ export const generateOrgan = (notesList) => {
         }, 10);
 
     Tone.BufferSource.prototype.start = function (time, offset, duration, gain) {
-
         // Prevent buffer playback if we have exceeded max # buffers playing
         // (or if there's no volume... what's the point?
         if (_playingBuffers.length >= MAX_BUFFERS || gain <= 0) return this;
-
-        // // shut down the samples FIFO-style
-        // while (_playingBuffers.length >= MAX_POLYPHONY){
-        // 	let oldestSampleSource = _playingBuffers.shift(); // pulls it off early - onended won't find it
-        // 	oldestSampleSource.stop(Tone.now());
-        // 	//console.log("stopping", oldestSampleSource);
-        // }
 
         _playingBuffers.push(this);
         _numPlayedNotesThisInterval++;

@@ -31,7 +31,7 @@ export const makeSynth = () => {
             filterEnvelope
         },
         voice1: {
-            oscillator: { type: 'triangle' },
+            oscillator: { type: 'cosine' },
             envelope,
             filterEnvelope
         },

@@ -52,7 +52,7 @@ body {
 
 
 body h1 {
-    margin-top: 60px;
+    margin-top: 1.5em;
     margin-bottom: 40px;
     margin-left: -50px;
 
@@ -61,7 +61,7 @@ body h1 {
     font-weight: 200;
     text-align: center;
 
-    color: white;
+    color: #24C6ED;
 
     opacity: 0.8;
      -webkit-animation: fadein 2s ease-in; /* Safari, Chrome and Opera > 12.1 */
@@ -78,14 +78,11 @@ body h1 {
     bottom: 10px;
 
     color: lightgray;
-    
 }
 
 
-
-
 // ---------------------------------------------------------------------------------
-// Dropdown
+// DROPDOWN
 // ---------------------------------------------------------------------------------
 
 #dropdown-container {
@@ -111,8 +108,6 @@ body h1 {
     border-radius: 10px;
 
     opacity: 0.8;
-
-
 }
 
 #station-id:hover {
@@ -138,7 +133,6 @@ body h1 {
     background-size: .65em auto, 100%;
 
     z-index: 2;
-
 }
 
 .select-css::-ms-expand {
@@ -155,7 +149,6 @@ body h1 {
 .select-css:focus {
     outline: none;
 }
-
 
 #select-button {
     width: 10rem;
@@ -192,6 +185,64 @@ input:visited, input:focus {
     outline: none;
 }
 
+.button-explanation {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+    opacity: 0;
+
+    color: white;
+    z-index: 2;
+}
+
+
+.intro-explanation {
+    position: relative;
+    top: 5%;
+    width: 70%;
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: left;
+    opacity: 0;
+
+    color: white;
+    z-index: 2;
+
+    -webkit-animation-name: fadeInOut;
+    -moz-animation-name: fadeInOut;
+    -ms-animation-name: fadeInOut;
+    -o-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+
+    -webkit-animation-duration: 20s;
+    -moz-animation-duration: 20s;
+    -ms-animation-duration: 20s;
+    -o-animation-duration: 20s;
+    animation-duration: 20s;
+
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.intro-explanation span#blue-text {
+    color: #24C6ED;
+    opacity: 100% !important;
+    font-weight: 700;
+}
+
 #footer-logo {
     position: fixed;
     bottom: 2rem;
@@ -202,7 +253,6 @@ input:visited, input:focus {
     opacity: 0.7;
 
     z-index: 2;
-
 }
 
 // ---------------------------------------------------------------------------------
@@ -321,37 +371,54 @@ a#inner-overlay-link {
 // ANIMATIONS
 // ---------------------------------------------------------------------------------
 
+// FADEIN
+
 
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.9; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.9; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.9; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.9; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 0.8; }
+    to   { opacity: 0.9; }
 }
 
+// FADEINOUT
 
+@keyframes fadeInOut {
+    from {
+      animation-timing-function: ease;
+      opacity: 0;
+    }
+    50% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    to {
+      animation-timing-function: ease-out;
+      opacity: 0;
+    }
+}
 
 // ---------------------------------------------------------------------------------
 // MEDIA QUERIES
@@ -359,10 +426,6 @@ a#inner-overlay-link {
 
 
 @media only screen and (max-width: 710px) {
-    #dropdown-container {
-
-
-    }
 
     #station_id {
         width: 25rem;
