@@ -33,8 +33,6 @@ export const setUpSounds = (tideObj) => {
         if (i % 15 === 0) {
             notesList.push("G3");
         }
-        
-
     }
     
     // noteList = allNotes;
