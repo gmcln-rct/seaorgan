@@ -8,7 +8,6 @@ let leftSynth, rightSynth, echo, delay, delayFade;
 
 let audioCtx, analyser, bufferLength, dataArray, canvas, canvasCtx, drawVisual;
 
-
 export let _isPlaying = false;
 
 export const stopOrgan = () => {
@@ -58,7 +57,6 @@ export const stopOrgan = () => {
 
 export const generateOrgan = (notesList) => {
     
-
     const EQUALIZER_CENTER_FREQUENCIES = [
         125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
         1600, 2000, 2500, 3150, 4000, 5000
@@ -151,6 +149,7 @@ export const generateOrgan = (notesList) => {
         "4m"
     );
 
+
     synthPart1.humanize = true;
     synthPart2.humanize = true;
 
@@ -179,8 +178,6 @@ export const generateOrgan = (notesList) => {
     const fftCanvas = document.getElementById("viz-canvas");
     const fftContext = fftCanvas.getContext("2d");
 
-    const waveCanvas = document.getElementById("viz-canvas");
-    const waveContext = waveCanvas.getContext("2d");
 
     // drawing the FFT
     function drawFFT(values) {
@@ -205,8 +202,7 @@ export const generateOrgan = (notesList) => {
         canvasHeight = fftCanvas.offsetHeight;
         fftContext.canvas.width = canvasWidth;
         fftContext.canvas.height = canvasHeight;
-        // waveContext.canvas.width = canvasWidth;
-        // waveContext.canvas.height = canvasHeight;
+
     }
 
     function loop() {

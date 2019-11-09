@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let selection = document.getElementById('station_id');
 
-    StartAudioContext(Tone.context, 'select-button')
 
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
@@ -21,14 +20,29 @@ window.addEventListener("DOMContentLoaded", () => {
             stopOrgan();
         };
 
-        ydayCurrents(result)
-            .then(
-                tideObj => {
-                    console.log("Tide Obj: ", tideObj);
-                    notesList = setUpSounds(tideObj);
-                    generateOrgan(notesList);
-                }
+        StartAudioContext(Tone.context)
+            .then(() => {
+                ydayCurrents(result)
+                    .then(
+                        tideObj => {
+
+                                    console.log("Tide Obj: ", tideObj);
+                                    notesList = setUpSounds(tideObj);
+                                    generateOrgan(notesList);
+                                }
+
+                                )
+
+                        }
             );
+    }
+
+    document.getElementById('stop-button').onclick = function (e) {
+        e.preventDefault();
+        if (_isPlaying) {
+            stopOrgan();
+        };
+
     }
         
     // document.getElementById("app").innerText = "Hello World, I'm index.js!";

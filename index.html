@@ -19,10 +19,15 @@
 
     <!-- Tone Audio Synthesis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
-    <script src="./src/scripts/tonejs-ui.js"></script>
+    <!-- <script src="./src/scripts/tonejs-ui.js"></script> -->
 
     <title>The Sea Organ</title>
     <meta name="description" content="Immersive generative sound project creating music from sea level data, using Tone.js">
+
+    <!-- Tone.js unmute button -->
+    <!-- <script src="https://unpkg.com/unmute" data-add-button="true"></script>
+    <script type="text/javascript" src="https://unpkg.com/tone@next"></script> -->
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47505629-6"></script>
@@ -70,9 +75,12 @@
 
                 <br>
                 <input type="button" value="Play Organ" name="submit" id="select-button">
+                <input type="button" value="Stop Organ" name="stop" id="stop-button">
+
             </form>
-            <section class="button-explanation">
-            </section>
+
+
+            <section class="button-explanation"></section>
 
             <section class="intro-explanation">
                 <span id="blue-text">seaOrganOf</span><span> uses Tides & Currents data from NOAA to generate unique audio soundscapes for coastal stations around the United States.<br><br>
@@ -82,11 +90,10 @@
 
             <canvas id="viz-canvas"> </canvas>
             
-
             <div class="loader"></div>
-            
-            <div class="eq"></div>
-            
+
+            <!-- <div class="eq"></div> -->
+                        
             <footer>
                 <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo.png" alt="seaOrganOf" id="footer-logo">
             </footer>
@@ -133,10 +140,8 @@
 
     <script src="./dist/main.js"></script>
 
-  
+    <!-- ABOUT OVERLAY -->
     <script>
-
-        // ABOUT OVERLAY
         /* Open */
         function openAbout() {
             document.getElementById("about-overlay").style.height = "100%";
