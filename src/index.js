@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let selection = document.getElementById('station_id');
 
-
+    // PLAY AUDIO
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
         result = selection.value;
@@ -26,13 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     .then(
                         tideObj => {
 
-                                    console.log("Tide Obj: ", tideObj);
-                                    notesList = setUpSounds(tideObj);
-                                    generateOrgan(notesList);
-                                }
-
-                                )
-
+                            console.log("Tide Obj: ", tideObj);
+                            notesList = setUpSounds(tideObj);
+                            generateOrgan(notesList);
+                        }
+                         )
                         }
             );
     }

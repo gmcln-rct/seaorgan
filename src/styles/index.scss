@@ -18,6 +18,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
 
+
+    overflow: hidden;
+
     -webkit-animation: bgGradientGenerator 30s ease infinite;
     -moz-animation: bgGradientGenerator 30s ease infinite;
     animation: bgGradientGenerator 30s ease infinite;
@@ -94,6 +97,7 @@ body h1 {
 
 #station_id {
     width: 28rem;
+    max-width:9 0%;
     height: 2.2em;
     margin-bottom: 5px;
     padding: 10px 30px;
@@ -150,10 +154,19 @@ body h1 {
     outline: none;
 }
 
+// BUTTONS
+
+.organ-buttons  {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 28rem;
+}
+
 #select-button, #stop-button {
-    width: 10rem;
-    margin: 1rem 8rem;
-    padding: 10px 5px;
+    width: 12rem;
+    margin: 1rem 1rem;
+    padding: 0.7rem 2rem 0.7rem 0.1rem !important;
 
     color: white;
     background-color: #135183;
@@ -169,10 +182,41 @@ body h1 {
     opacity: 0.8;
 
     z-index: 2;
+}
+
+.input-wrapper-play, .input-wrapper-stop {
+    position: relative;
+    width: 200px;
+}
+ 
+.input-wrapper-play:before, .input-wrapper-stop:before {
+    position: absolute;
+    top: 1.9rem;
+    right: .1rem;
+    padding-right: 0.5em;
+
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: white;
+    font-size: 1.3em;
+    z-index: 3;
+}
+
+.input-wrapper-play:before {
+    content: "\f04b";
 
 }
 
-#select-button:hover {
+.input-wrapper-stop:before {
+    content: "\f04d";
+
+}
+
+
+
+#select-button:hover, #stop-button:hover {
     background-color: #16BCCC;
     border: 1px solid white;
 
@@ -364,6 +408,9 @@ a#inner-overlay-link {
     font-weight: 200;
     color: lightgray;
 }
+
+
+
 
 
 

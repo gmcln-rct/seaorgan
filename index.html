@@ -12,21 +12,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/src/images/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/src/images/images/favicon/site.webmanifest">
 
-    
     <link
         href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
         rel="icon" type="image/x-icon" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Tone Audio Synthesis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
-    <!-- <script src="./src/scripts/tonejs-ui.js"></script> -->
 
-    <title>The Sea Organ</title>
-    <meta name="description" content="Immersive generative sound project creating music from sea level data, using Tone.js">
+    <title>The Sea Organ | Immersive Audio Experience</title>
+    <meta name="description" content="An immersive web app that utilizes tidal current data to generate location-specific, ambient soundscapes. Created by Glenn McClanan.">
+    <meta name=”robots” content=”index, follow”>
+    <!-- <link rel=”canonical” href=”http://example.com/” /> -->
 
-    <!-- Tone.js unmute button -->
-    <!-- <script src="https://unpkg.com/unmute" data-add-button="true"></script>
-    <script type="text/javascript" src="https://unpkg.com/tone@next"></script> -->
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -72,10 +72,20 @@
                 <option value="8573927">Chesapeake Channel LBB 92 - VA</option>
                 <option value="9447130">Seattle - WA</option>
                 <option value="8594900">Washington D.C.</option>
-
+            </select>
                 <br>
-                <input type="button" value="Play Organ" name="submit" id="select-button">
-                <input type="button" value="Stop Organ" name="stop" id="stop-button">
+            <div class="organ-buttons">
+
+                <div class="input-wrapper-play">
+                    <input type="button" value="Play Organ" name="submit" id="select-button" class="input-field">       
+                </div>
+
+                <div class="input-wrapper-stop">
+                    <input type="button" value="Stop Organ" name="stop" id="stop-button" class="input-field">
+                </div>
+            </div>
+
+
 
             </form>
 
@@ -103,14 +113,12 @@
                 <div class="overlay-content">
                     <h1>seaOrganOf</h1>
                     
-                    <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Zadar, Croatia, which uses the movement of water to power an audio
-                    installation underneath large marble steps on the boardwalk in Zadar, creating ethereal, organ-like sounds.</p>
+                    <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Croatia, which uses the movement of the seas to create ethereal, organ-like sounds.</p>
                     <p>This project aims to create an immersive audio ecperience by using NOAA's tides & currents data for locations around the coastal U.S. to generate audio soundscapes specific to location. Select your location, click play and enjoy!
                     </p>
                     
                     <p>Created by: <a href="https://www.riocreate.com" target="_blank">Glenn McClanan</a></p>
-                    <p>Technologies: <a href="https://tonejs.github.io/"
-                            target="_blank">Tone.js</a>
+                    <p>Technologies: <a href="https://tonejs.github.io/" target="_blank">Tone.js</a>
 
                     <p>Inspirations: <a href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js" target="_blank">discreetmusic.js by Tero Parviainen</a>
                         <br />
