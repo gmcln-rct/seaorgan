@@ -1,7 +1,7 @@
 {
   "name": "seaorgan",
   "version": "1.0.0",
-  "description": "Sea organ is audio synthesizer that uses realtime data",
+  "description": "Sea organ is audio synthesizer that uses tidal data to create immersive sound experience",
   "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.6.4",
