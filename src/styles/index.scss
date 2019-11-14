@@ -299,6 +299,7 @@ input:visited, input:focus {
     z-index: 2;
 }
 
+
 // ---------------------------------------------------------------------------------
 // VISUALIZER
 // ---------------------------------------------------------------------------------
@@ -353,7 +354,7 @@ input:visited, input:focus {
 
 .overlay-content {
     position: relative;
-    top: 10%;
+    top: 5%;
     width: 60%;
 
     margin-left: 20%;
@@ -410,7 +411,29 @@ a#inner-overlay-link {
 }
 
 
+.connect-list  {
+    display: flex;
+    justify-content: center;
+    align-content:center;
 
+    width: 250px;
+    margin: 0 auto; 
+}
+
+.connect-list a {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+// Font Awesome Icon
+
+i {
+
+    margin-left: 10px;
+    margin-right: 10px;
+    font-style: normal;
+    font-size: 1.5em;
+}
 
 
 
