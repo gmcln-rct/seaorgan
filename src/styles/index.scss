@@ -214,6 +214,7 @@ body h1 {
 
 
 #select-button:hover, #stop-button:hover {
+    color: #135183;
     background-color: #16BCCC;
     border: 1px solid white;
 
@@ -410,7 +411,6 @@ a#inner-overlay-link {
     color: lightgray;
 }
 
-
 .connect-list  {
     display: flex;
     justify-content: center;
@@ -426,7 +426,6 @@ a#inner-overlay-link {
 }
 
 // Font Awesome Icon
-
 i {
 
     margin-left: 10px;
@@ -434,7 +433,6 @@ i {
     font-style: normal;
     font-size: 1.5em;
 }
-
 
 
 // ---------------------------------------------------------------------------------
