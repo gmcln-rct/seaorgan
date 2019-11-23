@@ -1,6 +1,6 @@
 import Tone from 'tone';
 
-// SETS UP SYNTHESIZER FOR LOP
+// SETS UP SYNTHESIZER FOR LOOP
 
 export const makeSynth = () => {
     let envelope = {

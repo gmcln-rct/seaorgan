@@ -222,7 +222,6 @@ body h1 {
     transition: 0.4s;
 }
 
-
 input:visited, input:focus {
     outline: none;
 }
@@ -286,6 +285,45 @@ input:visited, input:focus {
     color: #24C6ED;
     opacity: 100% !important;
     font-weight: 700;
+}
+
+.audio-explanation {
+    position: absolute;
+
+    bottom: 5%;
+    width: 70%;
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+    text-shadow: 0.5px 0.5px rgba(0,0,0,0.5);
+    opacity: 0;
+
+    color: lightgrey;
+    z-index: 2;
+
+    -webkit-animation-name: fadeInOut;
+    -moz-animation-name: fadeInOut;
+    -ms-animation-name: fadeInOut;
+    -o-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+
+    -webkit-animation-delay: 10s;
+    -moz-animation-delay: 10s;
+    -ms-animation-delay: 10s;
+    -o-animation-delay: 10s;
+    animation-delay: 10s;
+
+    -webkit-animation-duration: 12s;
+    -moz-animation-duration: 12s;
+    -ms-animation-duration: 12s;
+    -o-animation-duration: 12s;
+    animation-duration: 12s;
+
+
 }
 
 #footer-logo {
