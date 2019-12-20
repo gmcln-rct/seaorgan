@@ -15,22 +15,22 @@ window.addEventListener("DOMContentLoaded", () => {
     // PLAY AUDIO
     document.getElementById('select-button').onclick = function (e) {
         e.preventDefault();
+        if (!selection.value) {
+            alert('Please select Coastal Station');
+        }
         result = selection.value;
-        if (_isPlaying) {
-            stopOrgan();
-        };
+ 
 
         StartAudioContext(Tone.context)
             .then(() => {
                 ydayCurrents(result)
                     .then(
-                        tideObj => {
-
-                            console.log("Tide Obj: ", tideObj);
-                            notesList = setUpSounds(tideObj);
-                            generateOrgan(notesList);
-                        }
-                         )
+                            tideObj => {
+                                console.log("Tide Obj: ", tideObj);
+                                notesList = setUpSounds(tideObj);
+                                generateOrgan(notesList);
+                            }
+                        )
                         }
             );
     }
@@ -39,6 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         if (_isPlaying) {
             stopOrgan();
+            // console.log("Larry");
+            // document.getElementById('stop-button').value = "Larry";
+            
         };
 
     }
