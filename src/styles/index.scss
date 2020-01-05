@@ -85,7 +85,6 @@ body h1 {
     color: lightgray;
 }
 
-
 // ---------------------------------------------------------------------------------
 // DROPDOWN
 // ---------------------------------------------------------------------------------
@@ -186,11 +185,11 @@ body h1 {
 }
 
 #select-button {
-        background-color: #135183;
+    background-color: #135183;
 }
+
 .stop-button {
     background-color: darkolivegreen;
-
 }
 
 .input-wrapper-play, .input-wrapper-stop {
@@ -287,7 +286,6 @@ input:visited, input:focus {
     text-align: center;
     text-shadow: 0.5px 0.5px rgba(0,0,0,0.5);
 
-
     opacity: 0;
     color: lightgrey;
     z-index: 2;
@@ -309,8 +307,6 @@ input:visited, input:focus {
     -ms-animation-duration: 12s;
     -o-animation-duration: 12s;
     animation-duration: 12s;
-
-
 }
 
 #footer-logo {
@@ -324,7 +320,6 @@ input:visited, input:focus {
 
     z-index: 2;
 }
-
 
 // ---------------------------------------------------------------------------------
 // VISUALIZER
@@ -361,7 +356,6 @@ input:visited, input:focus {
     transition-timing-function: ease-out;
     transition: 0.4s;
 }
-
 
 #about-overlay {
     position: fixed;
