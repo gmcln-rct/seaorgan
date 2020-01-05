@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!selection.value) {
             alert('Please select Coastal Station');
         } else {
-            elem.className = 'stop-button';
+            elem.setAttribute('class','stop-button');
             elem.value = 'Stop Organ';
             result = selection.value;
  
@@ -35,19 +35,19 @@ window.addEventListener("DOMContentLoaded", () => {
                             }
                 )
             }
+        };
 
-            // STOP AUDIO
-            let elem2 = document.querySelector('.stop-button');
-            elem2.onclick = function (e) {
-                e.preventDefault();
-                if (_isPlaying) {
-                    stopOrgan();
-                    elem2.removeAttribute("class");
-                    elem2.value = 'Play Organ';
-                    selection.selectedIndex = 0;
-                };
-            }
+    // STOP AUDIO
+    let elem2 = document.querySelector('.stop-button');
+    elem2.onclick = function (e) {
+        e.preventDefault();
+        if (_isPlaying) {
+            stopOrgan();
+            elem2.removeAttribute("class");
+            elem2.value = 'Play Organ';
+            selection.selectedIndex = 0;
+        };
+    }
 
-    };
 
 });
