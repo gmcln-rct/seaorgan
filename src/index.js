@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
             alert('Please select Coastal Station');
         } else {
             elem.className = 'stop-button';
-            // elem.value = 'Stop Organ';
+            elem.value = 'Stop Organ';
             result = selection.value;
  
             StartAudioContext(Tone.context,'#select-button')
@@ -33,21 +33,21 @@ window.addEventListener("DOMContentLoaded", () => {
                                 }
                             )
                             }
-                );
-
-            
+                )
             }
+
+                // STOP AUDIO
+                let elem2 = document.querySelector('stop-button');
+                elem2.onclick = function (e) {
+                    e.preventDefault();
+                    // if (Tone.context._context.state = 'running') {
+                    if (_isPlaying) {
+                        stopOrgan();
+                    };
+                }
 
     };
 
-    let elem2;
-    document.querySelector('stop-button').onclick = function (e) {
-        e.preventDefault();
-        if (_isPlaying) {
-            stopOrgan();
 
-        };
-
-    }
         
 });

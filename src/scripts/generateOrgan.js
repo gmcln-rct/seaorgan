@@ -7,6 +7,7 @@ let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;
 
 export let _isPlaying = false;
+// let _isPlaying;
 
 export const stopOrgan = () => {
     if (_isPlaying) {
@@ -58,8 +59,9 @@ export const generateOrgan = (notesList) => {
         1600, 2000, 2500, 3150, 4000, 5000
     ];
 
-     leftSynth = makeSynth();
-     rightSynth = makeSynth();
+    leftSynth = makeSynth();
+    rightSynth = makeSynth();
+    _isPlaying = true;
 
     let leftPanner = new Tone.Panner(-0.5);
     let rightPanner = new Tone.Panner(0.5);
