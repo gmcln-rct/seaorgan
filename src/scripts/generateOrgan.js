@@ -63,8 +63,10 @@ export const generateOrgan = (notesList) => {
     rightSynth = makeSynth();
     // _isPlaying = true;
 
-    let leftPanner = new Tone.Panner(-0.5);
-    let rightPanner = new Tone.Panner(0.5);
+    // let leftPanner = new Tone.Panner(-0.5);
+    // let rightPanner = new Tone.Panner(0.5);
+    let leftPanner = new Tone.Panner3D(-0.5,1,-5);
+    let rightPanner = new Tone.Panner3D(0.5, 1, 5);
 
     let equalizer = EQUALIZER_CENTER_FREQUENCIES.map(frequency => {
         let filter = Tone.context.createBiquadFilter();
