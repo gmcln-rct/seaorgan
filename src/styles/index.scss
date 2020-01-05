@@ -8,7 +8,6 @@
 // ---------------------------------------------------------------------------------
 
 
-
 body {
     font-family: 'Questrial', sans-serif;
 
@@ -172,7 +171,6 @@ body h1 {
     padding: 0.7rem 0.1rem !important;
 
     color: white;
-    background-color: #135183;
 
     font-size: 1.2em;
     font-weight: 600;
@@ -187,14 +185,19 @@ body h1 {
     z-index: 2;
 }
 
+#select-button {
+        background-color: #135183;
+}
+.stop-button {
+    background-color: darkolivegreen;
+
+}
+
 .input-wrapper-play, .input-wrapper-stop {
     position: relative;
     width: 200px;
 }
  
-
-
-
 #select-button:hover, #stop-button:hover {
     color: #135183;
     background-color: #16BCCC;
@@ -265,7 +268,7 @@ input:visited, input:focus {
 }
 
 .intro-explanation span#blue-text {
-    color: #24C6ED;
+    color: #135183;
     opacity: 100% !important;
     font-weight: 900;
 }

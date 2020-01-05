@@ -5,7 +5,6 @@ import {setUpSounds} from './scripts/setUpSounds';
 import {generateOrgan, stopOrgan, _isPlaying} from './scripts/generateOrgan';
 import StartAudioContext from 'startaudiocontext';
 
-
 window.addEventListener("DOMContentLoaded", () => {
     let result;
     let notesList;
@@ -13,38 +12,42 @@ window.addEventListener("DOMContentLoaded", () => {
     let selection = document.getElementById('station_id');
 
     // PLAY AUDIO
-    document.getElementById('select-button').onclick = function (e) {
+    let elem = document.getElementById('select-button');
+    elem.onclick = function (e) {
         e.preventDefault();
         if (!selection.value) {
             alert('Please select Coastal Station');
-        }
-        result = selection.value;
+        } else {
+            elem.className = 'stop-button';
+            // elem.value = 'Stop Organ';
+            result = selection.value;
  
-
-        StartAudioContext(Tone.context)
-            .then(() => {
-                ydayCurrents(result)
-                    .then(
-                            tideObj => {
-                                console.log("Tide Obj: ", tideObj);
-                                notesList = setUpSounds(tideObj);
-                                generateOrgan(notesList);
+            StartAudioContext(Tone.context,'#select-button')
+                .then(() => {
+                    ydayCurrents(result)
+                        .then(
+                                tideObj => {
+                                    console.log("Tide Obj: ", tideObj);
+                                    notesList = setUpSounds(tideObj);
+                                    generateOrgan(notesList);
+                                }
+                            )
                             }
-                        )
-                        }
-            );
-    }
+                );
 
-    document.getElementById('stop-button').onclick = function (e) {
+            
+            }
+
+    };
+
+    let elem2;
+    document.querySelector('stop-button').onclick = function (e) {
         e.preventDefault();
         if (_isPlaying) {
             stopOrgan();
-            // console.log("Larry");
-            // document.getElementById('stop-button').value = "Larry";
-            
+
         };
 
     }
         
-    // document.getElementById("app").innerText = "Hello World, I'm index.js!";
 });

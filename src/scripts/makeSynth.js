@@ -17,14 +17,12 @@ export const makeSynth = () => {
         release: 2000
     };
 
-    // let chorus = new Tone.Chorus(4, 2.5, 0.5);
-
     let tremolo = new Tone.Tremolo(20, 3);
     
     return new Tone.PolySynth({
         harmonicity: 2,
         resonance: 800,
-        volume: -15,
+        volume: -19,
         voice0: {
             oscillator: { type: 'cosine' },
             envelope,

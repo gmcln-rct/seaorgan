@@ -17,9 +17,7 @@ export const makeTiming = (tideObj) => {
         if (i === 1 && newNote > 5) {
             notesList.push(allNotes[noteIdx - 5]);
         }
-        // if (i % 5 === 0) {
-        //     notesList.push([null]);
-        // }
+
         if (i % 4 === 0) {
             notesList.push("C4");
         }
@@ -32,13 +30,6 @@ export const makeTiming = (tideObj) => {
         }
     }
 
-    // noteList = allNotes;
     return notesList;
-    function makeTiming() {
-        let timeIndex;
-        let indivTiming;
-        timeIndex = Math.random(timing.length);
-        indivTiming = timing[timeIndex];
-        return indivTiming;
-    }
+
 }

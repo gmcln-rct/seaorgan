@@ -6,19 +6,15 @@ import Tone from 'tone';
 let synthPart1, synthPart2;
 let leftSynth, rightSynth, echo, delay, delayFade;
 
-let audioCtx, analyser, bufferLength, dataArray, canvas, canvasCtx, drawVisual;
-
 export let _isPlaying = false;
 
 export const stopOrgan = () => {
     if (_isPlaying) {
         console.log("trying to stop...")
 
-
         synthPart1 = new Tone.Sequence();
         synthPart2 = new Tone.Sequence();
  
-        
         synthPart1.removeAll();
         synthPart1.stop();
 
