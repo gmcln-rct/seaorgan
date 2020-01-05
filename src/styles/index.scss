@@ -184,12 +184,24 @@ body h1 {
     z-index: 2;
 }
 
-#select-button {
+.play-button {
     background-color: #135183;
 }
 
 .stop-button {
     background-color: darkslategray;
+    transition: 0.4s;
+}
+.play-button:hover, .stop-button:hover {
+    color: #135183;
+    border: 1px solid white;
+}
+
+.play-button:hover {
+    background-color: #16BCCC;
+}
+.stop-button:hover {
+    background-color: #999;
 }
 
 .input-wrapper-play, .input-wrapper-stop {
@@ -197,14 +209,7 @@ body h1 {
     width: 200px;
 }
  
-#select-button:hover, #stop-button:hover {
-    color: #135183;
-    background-color: #16BCCC;
-    border: 1px solid white;
 
-    transition-timing-function: ease-out;
-    transition: 0.4s;
-}
 
 input:visited, input:focus {
     outline: none;

@@ -12,7 +12,9 @@ window.addEventListener("DOMContentLoaded", () => {
     let selection = document.getElementById('station_id');
 
     // PLAY AUDIO
-    let elem = document.getElementById('select-button');
+    // let elem = document.getElementById('select-button');
+    let elem = document.querySelector('.play-button');
+
     elem.onclick = function (e) {
         e.preventDefault();
         if (!selection.value) {
@@ -35,19 +37,22 @@ window.addEventListener("DOMContentLoaded", () => {
                             }
                 )
             }
+            // STOP AUDIO
+            let elem2 = document.querySelector('.stop-button');
+            elem2.onclick = function (e) {
+                e.preventDefault();
+                if (_isPlaying) {
+                    stopOrgan();
+        
+                    elem2.setAttribute('class', 'play-button');
+                    elem2.value = 'Play Organ';
+                    selection.selectedIndex = 0;
+                };
+            }
+
+            // END OF INITIAL CLICK
         };
 
-    // STOP AUDIO
-    let elem2 = document.querySelector('.stop-button');
-    elem2.onclick = function (e) {
-        e.preventDefault();
-        if (_isPlaying) {
-            stopOrgan();
-            elem2.removeAttribute("class");
-            elem2.value = 'Play Organ';
-            selection.selectedIndex = 0;
-        };
-    }
 
 
 });
