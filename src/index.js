@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 if (_isPlaying) {
                     stopOrgan();
-                    elem2.className = 'select-button';
+                    elem2.removeAttribute("class");
                     elem2.value = 'Play Organ';
                     selection.selectedIndex = 0;
                 };
