@@ -71,7 +71,7 @@ export const generateOrgan = (notesList) => {
         filter.type = 'lowpass';
         filter.frequency.value = frequency;
         filter.Q.value = 4.31;
-        filter.gain.value = 4;
+        filter.gain.value = 2;
         return filter;
     });
 

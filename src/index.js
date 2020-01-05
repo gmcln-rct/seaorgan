@@ -36,15 +36,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 )
             }
 
-                // STOP AUDIO
-                let elem2 = document.querySelector('stop-button');
-                elem2.onclick = function (e) {
-                    e.preventDefault();
-                    // if (Tone.context._context.state = 'running') {
-                    if (_isPlaying) {
-                        stopOrgan();
-                    };
-                }
+            // STOP AUDIO
+            let elem2 = document.querySelector('.stop-button');
+            elem2.onclick = function (e) {
+                e.preventDefault();
+                if (_isPlaying) {
+                    stopOrgan();
+                    elem2.className = 'select-button';
+                    elem2.value = 'Play Organ';
+                    selection.selectedIndex = 0;
+                };
+            }
 
     };
 
