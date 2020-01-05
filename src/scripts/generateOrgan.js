@@ -61,7 +61,7 @@ export const generateOrgan = (notesList) => {
 
     leftSynth = makeSynth();
     rightSynth = makeSynth();
-    _isPlaying = true;
+    // _isPlaying = true;
 
     let leftPanner = new Tone.Panner(-0.5);
     let rightPanner = new Tone.Panner(0.5);
