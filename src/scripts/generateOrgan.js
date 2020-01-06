@@ -24,7 +24,7 @@ export const stopOrgan = () => {
         // Stop Transport
         Tone.Transport.stop();
 
-        // synths
+        // Stop Synths
         console.log("disconnecting synths....")
         leftSynth.disconnect();
         rightSynth.disconnect();
@@ -60,7 +60,6 @@ export const generateOrgan = (notesList) => {
 
     leftSynth = makeSynth();
     rightSynth = makeSynth();
-    // _isPlaying = true;
 
     // let leftPanner = new Tone.Panner(-0.5);
     // let rightPanner = new Tone.Panner(0.5);
@@ -72,7 +71,7 @@ export const generateOrgan = (notesList) => {
         filter.type = 'lowpass';
         filter.frequency.value = frequency;
         filter.Q.value = 4.31;
-        filter.gain.value = 4;
+        filter.gain.value = 4.71;
         return filter;
     });
 
