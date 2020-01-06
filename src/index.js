@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 };
             }
 
-            // END OF INITIAL CLICK
+        // END OF INITIAL CLICK
         };
 
 
