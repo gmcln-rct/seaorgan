@@ -208,7 +208,6 @@ export const generateOrgan = (notesList) => {
             //get the fft data and draw it
             drawFFT(fft.getValue());
             // console.log(fft.getValue());
-
     }
 
  
@@ -220,6 +219,7 @@ export const generateOrgan = (notesList) => {
             }
         }, 10);
 
+    //   END VISUALIZATION  
     Tone.BufferSource.prototype.start = function (time, offset, duration, gain) {
         // Prevent buffer playback if we have exceeded max # buffers playing
         // (or if there's no volume... what's the point?
