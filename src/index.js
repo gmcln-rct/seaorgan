@@ -15,7 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // StartAudioContext(Tone.context, 'select-button');
 
-
     elem.onclick = function (e) {
         e.preventDefault();
         result = selection.value;
