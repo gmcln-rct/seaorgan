@@ -34,22 +34,22 @@ window.addEventListener("DOMContentLoaded", () => {
                                     generateOrgan(notesList);
                                 }
                             )
-                            }
-                )
+                })
+                
             }
             // STOP AUDIO
-        let elem2 = document.querySelector('.stop-button');
-        if (elem2 !== null) {
-            elem2.onclick = function (e) {
-                e.preventDefault();
+        // let elem2 = document.querySelector('.stop-button');
+        // if (elem2 !== null) {
+        //     elem2.onclick = function (e) {
+        //         e.preventDefault();
 
-                stopOrgan();
+        //         stopOrgan();
 
-                elem2.setAttribute('class', 'play-button');
-                elem2.value = 'Play Organ';
+        //         elem2.setAttribute('class', 'play-button');
+        //         elem2.value = 'Play Organ';
 
-            }
-        }
+        //     }
+        // }
 
         // END OF INITIAL CLICK
         };
