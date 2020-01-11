@@ -1,75 +1,41 @@
 import "./styles/index.scss";
 
-import {ydayCurrents} from './scripts/fetchCurrentsData';
-import {setUpSounds} from './scripts/setUpSounds';
-import {generateOrgan, stopOrgan, _isPlaying} from './scripts/generateOrgan';
+import { ydayCurrents } from './scripts/fetchCurrentsData';
+import { setUpSounds } from './scripts/setUpSounds';
+import { generateOrgan, stopOrgan, _isPlaying } from './scripts/generateOrgan';
 import StartAudioContext from 'startaudiocontext';
 
+
 window.addEventListener("DOMContentLoaded", () => {
-    let result;
-    let notesList;
+    let result, notesList, elem;
 
     let selection = document.getElementById('station_id');
 
-    // PLAY AUDIO
-    // let elem = document.getElementById('select-button');
-    let elem = document.querySelector('.play-button');
+    StartAudioContext(Tone.context, 'select-button');
+
+    elem = document.getElementById('select-button');
 
     elem.onclick = function (e) {
         e.preventDefault();
-        if (!selection.value) {
-            alert('Please select Coastal Station');
-        } else {
-            elem.setAttribute('class','stop-button');
-            elem.value = 'Stop Organ';
-            result = selection.value;
- 
-            StartAudioContext(Tone.context,'#select-button')
-                .then(() => {
-                    ydayCurrents(result)
-                        .then(
-                                tideObj => {
-                                    console.log("Tide Obj: ", tideObj);
-                                    notesList = setUpSounds(tideObj);
-                                    generateOrgan(notesList);
-                                }
-                            )
-                })
-                
-            }
-            // STOP AUDIO
-        // let elem2 = document.querySelector('.stop-button');
-        // if (elem2 !== null) {
-        //     elem2.onclick = function (e) {
-        //         e.preventDefault();
-
-        //         stopOrgan();
-
-        //         elem2.setAttribute('class', 'play-button');
-        //         elem2.value = 'Play Organ';
-
-        //     }
-        // }
-
-        // END OF INITIAL CLICK
-        };
-
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-    console.log("second DOMContentLoaded event");
-    let elem2 = document.querySelector('.stop-button');
-    if (elem2 !== null) {
-            elem2.onclick = function (e) {
-        e.preventDefault();
-
+        result = selection.value;
+        if (_isPlaying) {
             stopOrgan();
-
-            elem2.setAttribute('class', 'play-button');
-            elem2.value = 'Play Organ';
             selection.selectedIndex = 0;
-
-    }
+            elem.value = "Play Organ"
+        } else {
+            ydayCurrents(result)
+                .then(
+                    tideObj => {
+                        console.log("Tide Obj: ", tideObj);
+                        notesList = setUpSounds(tideObj);
+                        generateOrgan(notesList);
+                    }
+                )
+                .then(
+                    elem.value = "Stop Organ"
+                );
+        };
+        
     }
 
 });
