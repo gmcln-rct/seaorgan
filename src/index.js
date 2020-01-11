@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
             elem.value = "Play Organ";
             // Stop Transport
         } else {
-            StartAudioContext(Tone.context, 'select-button')
+            StartAudioContext(Tone.context, '#select-button')
                 .then( () => {
                     ydayCurrents(result)
                         .then(
@@ -39,9 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         .then( () => {
                             elem.value = "Stop Organ";
                             elem.setAttribute('class', 'stop-button');
-                        }
-
-                        );
+                        });
                     })
 
         };
