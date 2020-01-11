@@ -54,8 +54,6 @@ window.addEventListener("DOMContentLoaded", () => {
         // END OF INITIAL CLICK
         };
 
-
-
 });
 
 window.addEventListener("DOMContentLoaded", () => {
