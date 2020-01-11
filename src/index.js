@@ -11,9 +11,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let selection = document.getElementById('station_id');
 
-    StartAudioContext(Tone.context, 'select-button');
-
     elem = document.getElementById('select-button');
+
+    // StartAudioContext(Tone.context, 'select-button');
+
 
     elem.onclick = function (e) {
         e.preventDefault();
@@ -21,19 +22,28 @@ window.addEventListener("DOMContentLoaded", () => {
         if (_isPlaying) {
             stopOrgan();
             selection.selectedIndex = 0;
-            elem.value = "Play Organ"
+            elem.setAttribute('class', 'play-button');
+            elem.value = "Play Organ";
+            // Stop Transport
         } else {
-            ydayCurrents(result)
-                .then(
-                    tideObj => {
-                        console.log("Tide Obj: ", tideObj);
-                        notesList = setUpSounds(tideObj);
-                        generateOrgan(notesList);
-                    }
-                )
-                .then(
-                    elem.value = "Stop Organ"
-                );
+            StartAudioContext(Tone.context, 'select-button')
+                .then( () => {
+                    ydayCurrents(result)
+                        .then(
+                            tideObj => {
+                                console.log("Tide Obj: ", tideObj);
+                                notesList = setUpSounds(tideObj);
+                                generateOrgan(notesList);
+                            }
+                        )
+                        .then( () => {
+                            elem.value = "Stop Organ";
+                            elem.setAttribute('class', 'stop-button');
+                        }
+
+                        );
+                    })
+
         };
         
     }
