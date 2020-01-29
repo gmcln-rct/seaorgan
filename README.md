@@ -1,7 +1,7 @@
-![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg "CC BY-NC-ND 2.0 linssimato")
+
 
 # Sea Organ
-
+![seaOrgan Landing Page](https://sea-organ-seeds.s3.amazonaws.com/gifs/seaOrganGif.gif "seaOrgan Landing Page")
     
 <h1>Background and Overview</h1>
 
@@ -16,6 +16,8 @@ Reference on Sea Organ of Zadar:
 Info: http://www.oddmusic.com/gallery/om24550.html
 
 Video: https://www.youtube.com/watch?v=myV3E9uREuI
+
+![Sea Organ of Zadar](https://media.treehugger.com/assets/images/2015/11/sea-organ-zadar-1.jpg.860x0_q70_crop-scale.jpg "CC BY-NC-ND 2.0 linssimato")
 
 
 ---
