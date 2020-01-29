@@ -1,7 +1,7 @@
 
 
 # Sea Organ
-![seaOrgan Landing Page](https://sea-organ-seeds.s3.amazonaws.com/gifs/seaorganGif.gif "seaOrgan Landing Page")
+![seaOrgan Landing Page](https://sea-organ-seeds.s3.amazonaws.com/gifs/seaorganGif.gif)
     
 <h1>Background and Overview</h1>
 
