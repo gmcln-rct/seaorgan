@@ -1,7 +1,7 @@
 
 
 # Sea Organ
-![seaOrgan Landing Page](https://sea-organ-seeds.s3.amazonaws.com/gifs/seaOrganGif2.gif "seaOrgan Landing Page")
+![seaOrgan Landing Page](https://sea-organ-seeds.s3.amazonaws.com/gifs/seaorganGif3.gif "seaOrgan Landing Page")
     
 <h1>Background and Overview</h1>
 
@@ -26,20 +26,17 @@ Video: https://www.youtube.com/watch?v=myV3E9uREuI
 
 Sea Organ should include the following basic functionality.
 
-* User can initiate audio by unmuting.
-
-* User can mute/unmute audio stream.
+* User play/stop audio stream.
 
 * App fetches tidal/current data from external source on recurring, consistent basis (depending on dataset requirements)
 
    * App should be able to handle gaps in data feed
 
-* App 'translates' data into a form to be used by Web Audio API
+* App 'translates' data into a form to be used by Tone.js
 
-* Web Audio API converts the resulting data into continuous organ-like sounds
+* Tone.js converts the resulting frequency data into continuous organ-like sounds and a corresponding audio visualization, intended to look like an ocean tide.
 
-
-Bonus: Ideally, the User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
+* User should be able to select what geographic location to source the tidal/current data from, using a dropdown.
 
 
 <h1>Architectures and Technologies</h1>
