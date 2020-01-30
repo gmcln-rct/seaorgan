@@ -65,7 +65,7 @@ Below is a basic wireframe of the intended web app:
 ---
 
 
-<h1>Timeline</h1>
+<h1> Initial Project Timeline</h1>
 
 
 **Day 1: Skeleton Setup & Webpack**
@@ -99,7 +99,7 @@ Below is a basic wireframe of the intended web app:
  
 **Day 4: TranslateData to Audio & UI**
 
-* Format current data in format needed for Web Audio API
+* Format current data in format needed for Web Audio API / Tone.js
 
 * Attenuate data, as needed, to suit specific audio needs of Web Audio API / Tone.js
 
