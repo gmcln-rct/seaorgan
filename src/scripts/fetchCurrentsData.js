@@ -33,6 +33,8 @@ export const ydayCurrents = async (stationID = "8638901") => {
 
 
 async function getData(ydyDateString, stationID) {
+    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+    let optionURL = "https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json"
     let response = await fetch(`https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=${ydyDateString}&end_date=${ydyDateString}&station=${stationID}&product=water_level&datum=mtl&units=metric&time_zone=gmt&application=web_services&format=json`);
     let data = await response.json();
     return data;
