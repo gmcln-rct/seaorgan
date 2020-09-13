@@ -17,7 +17,7 @@
     "fibers": "^4.0.2",
     "mini-css-extract-plugin": "^0.8.2",
     "minimist": "^1.2.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "requirejs": "^2.3.6",
