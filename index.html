@@ -1,169 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>The Sea Organ | Immersive Audio Experience</title>
-    <meta name="description"
-        content='An immersive web app that utilizes tidal current data to generate location-specific, ambient soundscapes. Created by Glenn McClanan.'>
-    <meta name=”robots” content='index, follow'>
-    <link rel=”canonical” href='https://seaorgan.net' />
+    <meta
+      name="description"
+      content="An immersive web app that utilizes tidal current data to generate location-specific, ambient soundscapes. Created by Glenn McClanan."
+    />
+    <meta name="”robots”" content="index, follow" />
+    <link rel="”canonical”" href="https://seaorgan.net" />
 
     <!-- FACEBOOK CARD -->
-    <meta property="og:title" content='Sea Organ Immersive Audio Experience' />
-    <meta property=”og:url” content='https://seaorgan.net' />
-    <meta property=”og:description” content='seaOrgan is an immersive audio app that uses Tides & Currents data from NOAA to generate
-        soundscapes specific to each coastal location. The project was created by Glenn McClanan.' />
-    <meta property=”og:image” content='https://sea-organ-seeds.s3.amazonaws.com/images/seaOrgan-ogimage.jpg'/> 
-    <meta property=”og:type” content="website" />
-    <meta property=”og:site_name” content='seaOrgan' />
+    <meta property="og:title" content="Sea Organ Immersive Audio Experience" />
+    <meta property="”og:url”" content="https://seaorgan.net" />
+    <meta
+      property="”og:description”"
+      content="seaOrgan is an immersive audio app that uses Tides & Currents data from NOAA to generate
+        soundscapes specific to each coastal location. The project was created by Glenn McClanan."
+    />
+    <meta
+      property="”og:image”"
+      content="https://sea-organ-seeds.s3.amazonaws.com/images/seaOrgan-ogimage.jpg"
+    />
+    <meta property="”og:type”" content="website" />
+    <meta property="”og:site_name”" content="seaOrgan" />
 
     <!-- TWITTER CARD -->
-    <meta name="twitter:card" content='Sea Organ Immersive Audio Experience'>
-    <meta name="twitter:site" content='@glennmcclanan'>
-    <meta name="twitter:title" content='seaOrgan'>
-    <meta name="twitter:description"
-        content='seaOrgan is an immersive audio-visual experience that uses Tides & Currents data from NOAA coastal stations to generate soundscapes specific to each location.'>
-    <meta name="twitter:creator" content='@glennmcclanan'>
-    <meta name="twitter:image" content='https://sea-organ-seeds.s3.amazonaws.com/images/seaOrgan-TwitterCard.jpg'>
+    <meta name="twitter:card" content="Sea Organ Immersive Audio Experience" />
+    <meta name="twitter:site" content="@glennmcclanan" />
+    <meta name="twitter:title" content="seaOrgan" />
+    <meta
+      name="twitter:description"
+      content="seaOrgan is an immersive audio-visual experience that uses Tides & Currents data from NOAA coastal stations to generate soundscapes specific to each location."
+    />
+    <meta name="twitter:creator" content="@glennmcclanan" />
+    <meta
+      name="twitter:image"
+      content="https://sea-organ-seeds.s3.amazonaws.com/images/seaOrgan-TwitterCard.jpg"
+    />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/src/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/src/images/favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/src/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/src/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
 
     <!-- STYLING -->
-    <link rel="stylesheet" type="text/css" href="./dist/main.css">
+    <link rel="stylesheet" type="text/css" href="./dist/main.css" />
 
     <link
-        href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
-        rel="icon" type="image/x-icon" />
+      href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA"
+      rel="icon"
+      type="image/x-icon"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.css"
-        integrity="sha256-hIzRfkDG8yoX/o/xO8mmqvlHMAOHQsUetvMFu3Fa/vY=" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.css"
+      integrity="sha256-hIzRfkDG8yoX/o/xO8mmqvlHMAOHQsUetvMFu3Fa/vY="
+      crossorigin="anonymous"
+    />
 
     <!-- Tone Audio Synthesis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47505629-6"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-47505629-6"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'UA-47505629-6');
+      gtag("config", "UA-47505629-6");
     </script>
-
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="main-content-container">
+      <!-- <h1>seaOrganOf</h1> -->
+      <h1>seaOrgan<span id="of-blue">Of</span></h1>
 
-        <!-- <h1>seaOrganOf</h1> -->
-        <h1>seaOrgan<span id="of-blue">Of</span></h1>
-    
-        <!-- DROPDOWN CONTAINER FOR STATIONS -->
-        <form id="dropdown-container">
-            <select id="station_id" class="select-css">
-                <option value="" selected>Select U.S. Coastal Station</option>
-                <option value="8737048">Mobile State Dock Pier E - AL</option>
-                <option value="8737048">Bridgeport - CT</option>
-                <option value="9414290">San Francisco - CA</option>
-                <option value="9410660">Los Angeles - CA</option>
-                <option value="8726607">Old Port Tampa - FL</option>
-                <option value="8726384">Port Manatee - FL</option>
-                <option value="8724580">Key West - FL</option>
-                <option value="8670870">Fort Pulaski - GA</option>
-                <option value="1612340">Honolulu - HI</option>
-                <option value="8767816">Lake Charles City Docks - LA</option>
-                <option value="8761927">New Orleans - LA</option>
-                <option value="8443970">Boston - MA</option>
-                <option value="8575512">Annapolis - MD</option>
-                <option value="8418150">Portland - ME</option>
-                <option value="8518750">The Battery, New York City - NY</option>
-                <option value="8545240">Philadelphia - PA</option>
-                <option value="8771013">Galveston Bay - TX</option>
-                <option value="8775296">Corpus Christi Bay - TX</option>
-                <option value="8637689">Yorktown - VA</option>
-                <option value="8573927">Chesapeake Channel - VA</option>
-                <option value="9447130">Seattle - WA</option>
-                <option value="8594900">Washington D.C.</option>
-            </select>
-            <br>
-            <div class="organ-buttons">
-
-                <div class="input-wrapper-play">
-                    <input type="button" value="Play Organ" name="submit" id="select-button" class="play-button">       
-                </div>
-
-            </div>
-        </form>
-
-            <section class="button-explanation"></section>
-
-            <section class="intro-explanation">
-                <span id="blue-text">seaOrgan</span><span> uses Tides & Currents data from NOAA coastal stations to generate soundscapes specific to each location. The organ translates 24 hours of sea level data from the previous day into a unique set of musical notes, then plays these notes in sequence.<br> <br>
-                Select a U.S. coastal station, then click Play Organ to begin listening.</span>
-            </section>
-
-            <section class="audio-explanation">
-                Designed for Chrome on Desktop/Laptop. <br>
-                Audio best experienced with headphones. 
-            </section>
-
-            <canvas id="viz-canvas"> </canvas>
-            
-            <div class="loader"></div>
-
-                        
-            <footer>
-                <img src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo.png" alt="seaOrganOf" id="footer-logo">
-            </footer>
-            
-            <div id="about-overlay" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeAbout()">&times;</a>
-                <div class="overlay-content">
-                    <h1>seaOrganOf</h1>
-                    
-                    <p>seaOrganOf is inspired by the<span><a href="https://www.youtube.com/watch?v=myV3E9uREuI" id="inner-overlay-link" target="_blank">Sea Organ of Zadar</a></span>in Croatia, which uses the movement of the seas to create ethereal, organ-like sounds.</p>
-                    <p>This project creates an immersive audio experience by translating NOAA's tides & currents data into notes played in sequence using Tone.js. Each soundscape is specific to the individual day and location.</p>
-
-                    
-                    <p>Created by: <a href="https://www.glennmcclanan.com/" target="_blank">Glenn McClanan</a></p>
-                    <span class="connect-list">
-                        <a href="https://www.linkedin.com/in/glennmcclanan/" target="_blank" alt="Glenn McClanan - LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/gmcln-rct" target="_blank" alt="Glenn McClanan - GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://angel.co/glennmcclanan" target="_blank" alt="Glenn McClanan - AngelList"><i class="fab fa-angellist"></i></a>
-                    </span>
-                        
-                    <p>Technologies: <a href="https://tonejs.github.io/" target="_blank">Tone.js</a>
-
-                    <p>Inspirations: <a href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js" target="_blank">discreetmusic.js by Tero Parviainen</a>
-                        <br />
-                        Source Data: <a href="https://tidesandcurrents.noaa.gov/web_services_info.html" target="_blank">NOAA</a></p>
-                        <div id="about-footer">Best experienced with headphones. <br>
-                        (Audio optimized for Chrome desktop/laptop, disabled on iOS.)</div>
-                </div>
-            </div>
-
-            <!-- END OF CONTENT CONTAINER -->
-           
-            <span id="open-about" onclick="openAbout()">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
-                    <path id="open-about-bg" fill="#135183" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
-                    <path fill="#fff"
-                        d="M22 22h4v11h-4V22zM26.5 16.5c0 1.379-1.121 2.5-2.5 2.5s-2.5-1.121-2.5-2.5S22.621 14 24 14 26.5 15.121 26.5 16.5z">
-                    </path>
-                </svg>
-            </span>
+      <!-- DROPDOWN CONTAINER FOR STATIONS -->
+      <form id="dropdown-container">
+        <select id="station_id" class="select-css">
+          <option value="" selected>Select U.S. Coastal Station</option>
+          <option value="8737048">Mobile State Dock Pier E - AL</option>
+          <option value="8737048">Bridgeport - CT</option>
+          <option value="9414290">San Francisco - CA</option>
+          <option value="9410660">Los Angeles - CA</option>
+          <option value="8726607">Old Port Tampa - FL</option>
+          <option value="8726384">Port Manatee - FL</option>
+          <option value="8724580">Key West - FL</option>
+          <option value="8670870">Fort Pulaski - GA</option>
+          <option value="1612340">Honolulu - HI</option>
+          <option value="8767816">Lake Charles City Docks - LA</option>
+          <option value="8761927">New Orleans - LA</option>
+          <option value="8443970">Boston - MA</option>
+          <option value="8575512">Annapolis - MD</option>
+          <option value="8418150">Portland - ME</option>
+          <option value="8518750">The Battery, New York City - NY</option>
+          <option value="8545240">Philadelphia - PA</option>
+          <option value="8771013">Galveston Bay - TX</option>
+          <option value="8775296">Corpus Christi Bay - TX</option>
+          <option value="8637689">Yorktown - VA</option>
+          <option value="8573927">Chesapeake Channel - VA</option>
+          <option value="9447130">Seattle - WA</option>
+          <option value="8594900">Washington D.C.</option>
+        </select>
+        <br />
+        <div class="organ-buttons">
+          <div class="input-wrapper-play">
+            <input
+              type="button"
+              value="Play Organ"
+              name="submit"
+              id="select-button"
+              class="play-button"
+            />
+          </div>
         </div>
+      </form>
 
-            
+      <section class="button-explanation"></section>
+
+      <section class="intro-explanation">
+        <span id="blue-text">seaOrgan</span
+        ><span>
+          uses Tides & Currents data from NOAA coastal stations to generate
+          location-specific soundscapes. The organ translates.<br />
+          <br />
+          Select a coastal station, then click Play Organ to begin
+          listening.</span
+        >
+      </section>
+
+      <section class="audio-explanation">
+        Designed for Chrome on Desktop/Laptop. <br />
+        Soundscape audio best experienced with headphones.
+      </section>
+
+      <canvas id="viz-canvas"> </canvas>
+
+      <div class="loader"></div>
+
+      <footer>
+        <img
+          src="https://sea-organ-seeds.s3.amazonaws.com/images/aA-JSP-logo.png"
+          alt="seaOrganOf"
+          id="footer-logo"
+        />
+      </footer>
+
+      <div id="about-overlay" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeAbout()"
+          >&times;</a
+        >
+        <div class="overlay-content">
+          <h1>seaOrganOf</h1>
+
+          <p>
+            seaOrganOf is inspired by the<span
+              ><a
+                href="https://www.youtube.com/watch?v=myV3E9uREuI"
+                id="inner-overlay-link"
+                target="_blank"
+                >Sea Organ of Zadar</a
+              ></span
+            >in Croatia, which uses the movement of the seas to create ethereal,
+            organ-like sounds.
+          </p>
+          <p>
+            This project creates an immersive audio experience by translating
+            NOAA's tides & currents data into notes played in sequence using
+            Tone.js. Each soundscape is specific to the individual day and
+            location.
+          </p>
+
+          <p>
+            Created by:
+            <a href="https://www.glennmcclanan.com/" target="_blank"
+              >Glenn McClanan</a
+            >
+          </p>
+          <span class="connect-list">
+            <a
+              href="https://www.linkedin.com/in/glennmcclanan/"
+              target="_blank"
+              alt="Glenn McClanan - LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/gmcln-rct"
+              target="_blank"
+              alt="Glenn McClanan - GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://angel.co/glennmcclanan"
+              target="_blank"
+              alt="Glenn McClanan - AngelList"
+              ><i class="fab fa-angellist"></i
+            ></a>
+          </span>
+
+          <p>
+            Technologies:
+            <a href="https://tonejs.github.io/" target="_blank">Tone.js</a>
+          </p>
+
+          <p>
+            Inspirations:
+            <a
+              href="https://teropa.info/blog/2016/07/28/javascript-systems-music.html#setting-up-discreetmusic-js"
+              target="_blank"
+              >discreetmusic.js by Tero Parviainen</a
+            >
+            <br />
+            Source Data:
+            <a
+              href="https://tidesandcurrents.noaa.gov/web_services_info.html"
+              target="_blank"
+              >NOAA</a
+            >
+          </p>
+          <div id="about-footer">
+            Best experienced with headphones. <br />
+            (Audio optimized for Chrome desktop/laptop, disabled on iOS.)
+          </div>
+        </div>
+      </div>
+
+      <!-- END OF CONTENT CONTAINER -->
+
+      <span id="open-about" onclick="openAbout()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+        >
+          <path
+            id="open-about-bg"
+            fill="#135183"
+            d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
+          ></path>
+          <path
+            fill="#fff"
+            d="M22 22h4v11h-4V22zM26.5 16.5c0 1.379-1.121 2.5-2.5 2.5s-2.5-1.121-2.5-2.5S22.621 14 24 14 26.5 15.121 26.5 16.5z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+
     <!-- KEEP FOR APP -->
     <div id="app"></div>
 
@@ -171,16 +286,15 @@
 
     <!-- ABOUT OVERLAY -->
     <script>
-        /* Open */
-        function openAbout() {
-            document.getElementById("about-overlay").style.height = "100%";
-        }
-        
-        /* Close */
-        function closeAbout() {
-            document.getElementById("about-overlay").style.height = "0%";
-        }
-    </script>
+      /* Open */
+      function openAbout() {
+        document.getElementById("about-overlay").style.height = "100%";
+      }
 
-</body>
+      /* Close */
+      function closeAbout() {
+        document.getElementById("about-overlay").style.height = "0%";
+      }
+    </script>
+  </body>
 </html>
