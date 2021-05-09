@@ -1,88 +1,104 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Open+Sans:300,400,600,700,800|Quicksand:300,400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Open+Sans:300,400,600,700,800|Quicksand:300,400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Sarala:400,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Sarala:400,700&display=swap");
 
 // ---------------------------------------------------------------------------------
 
-
 body {
-    font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
 
-    background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: linear-gradient(358deg, #016699, #24b4a4, #1f8acc) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
+  overflow: hidden;
 
-    overflow: hidden;
+  -webkit-animation: bgGradientGenerator 30s ease infinite;
+  -moz-animation: bgGradientGenerator 30s ease infinite;
+  animation: bgGradientGenerator 30s ease infinite;
 
-    -webkit-animation: bgGradientGenerator 30s ease infinite;
-    -moz-animation: bgGradientGenerator 30s ease infinite;
-    animation: bgGradientGenerator 30s ease infinite;
-
-    @-webkit-keyframes bgGradientGenerator {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+  @-webkit-keyframes bgGradientGenerator {
+    0% {
+      background-position: 0% 50%;
     }
-    @-moz-keyframes bgGradientGenerator {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+    50% {
+      background-position: 100% 50%;
     }
-    @keyframes bgGradientGenerator {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+    100% {
+      background-position: 0% 50%;
     }
+  }
+  @-moz-keyframes bgGradientGenerator {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes bgGradientGenerator {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 .main-content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
 
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 body h1 {
-    margin-top: 1.1em;
-    margin-bottom: 30px;
-    margin-left: -50px;
+  margin-top: 1.1em;
+  margin-bottom: 30px;
+  margin-left: -50px;
 
-    font-family: 'Questrial', sans-serif;
-    font-size: 4em;
-    font-weight: 200;
-    text-align: center;
+  font-family: "Questrial", sans-serif;
+  font-size: 4em;
+  font-weight: 200;
+  text-align: center;
 
-    color: #40D9FF;
+  color: #40d9ff;
 
-    opacity: 0.9;
-     -webkit-animation: fadein 2s ease-in; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s ease-in; /* Firefox < 16 */
-        -ms-animation: fadein 2s ease-in; /* Internet Explorer */
-         -o-animation: fadein 2s ease-in; /* Opera < 12.1 */
-            animation: fadein 2s ease-in;
+  opacity: 0.9;
+  -webkit-animation: fadein 2s ease-in; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s ease-in; /* Firefox < 16 */
+  -ms-animation: fadein 2s ease-in; /* Internet Explorer */
+  -o-animation: fadein 2s ease-in; /* Opera < 12.1 */
+  animation: fadein 2s ease-in;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 #of-blue {
-    color: white;
-    opacity: 0.9;
+  color: white;
+  opacity: 0.9;
 }
 
 #app {
-    position: fixed;
-    bottom: 10px;
+  position: fixed;
+  bottom: 10px;
 
-    color: lightgray;
+  color: lightgray;
 }
 
 // ---------------------------------------------------------------------------------
@@ -90,238 +106,242 @@ body h1 {
 // ---------------------------------------------------------------------------------
 
 #dropdown-container {
-    width: 30rem;
-    margin: 0 auto;
-    font-family: 'Lato', sans-serif;
-    z-index: 2;
+  width: 30rem;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  z-index: 2;
 }
 
 #station_id {
-    width: 28rem;
-    max-width:9 0%;
-    height: 2.2em;
-    margin-bottom: 5px;
-    padding: 10px 30px;
+  width: 28rem;
+  max-width: 9 0%;
+  height: 2.2em;
+  margin-bottom: 5px;
+  padding: 10px 30px;
 
-    color: #084769;
-    background-color: #084769;
+  color: #084769;
+  background-color: #084769;
 
-    font-size: 1.5em;
-    font-weight: 700;
-    text-align: center;
-    border-color: #838f96;
-    border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  border-color: #838f96;
+  border-radius: 10px;
 
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 #station-id:hover {
-    border: 2px solid #16BCCC;
+  border: 2px solid #16bccc;
 }
 
 #station_id:focus {
-    outline: none;
+  outline: none;
 }
 
 .select-css {
-    box-sizing: border-box;
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: .5em;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
-    background-size: .65em auto, 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 .select-css::-ms-expand {
-    display: none;
+  display: none;
 }
 .select-css:hover {
-    border-color: #888;
+  border-color: #888;
 }
 
 .select-css option {
-    font-weight:normal;
+  font-weight: normal;
 }
 
 .select-css:focus {
-    outline: none;
+  outline: none;
 }
 
 // BUTTONS
 
-.organ-buttons  {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 27rem;
+.organ-buttons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 27rem;
 }
 
-#select-button, #stop-button {
-    width: 10rem;
-    margin: 1rem 1.2rem;
-    padding: 0.7rem 0.1rem !important;
+#select-button,
+#stop-button {
+  width: 10rem;
+  margin: 1rem 1.2rem;
+  padding: 0.7rem 0.1rem !important;
 
-    color: white;
+  color: white;
 
-    font-size: 1.2em;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-align: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
 
-    border-color:#135183;
-    border-radius: 10px;
+  border-color: #135183;
+  border-radius: 10px;
 
-    opacity: 0.8;
+  opacity: 0.8;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 .play-button {
-    background-color: #135183;
+  background-color: #135183;
 }
 
 .stop-button {
-    background-color: #444;
-    transition: 0.4s;
+  background-color: #444;
+  transition: 0.4s;
 }
-.play-button:hover, .stop-button:hover {
-    color: #135183;
-    border: 1px solid white;
+.play-button:hover,
+.stop-button:hover {
+  color: #135183;
+  border: 1px solid white;
 }
 
 .play-button:hover {
-    background-color: #16BCCC;
+  background-color: #16bccc;
 }
 .stop-button:hover {
-    background-color: #999;
+  background-color: #999;
 }
 
-.input-wrapper-play, .input-wrapper-stop {
-    position: relative;
-    width: 200px;
+.input-wrapper-play,
+.input-wrapper-stop {
+  position: relative;
+  width: 200px;
 }
- 
-input:visited, input:focus {
-    outline: none;
+
+input:visited,
+input:focus {
+  outline: none;
 }
 
 // EXPLANATION
 
 .button-explanation {
-    font-size: 1.5em;
-    line-height: 1.2em;
-    text-align: center;
-    opacity: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  text-align: center;
+  opacity: 0;
 
-    color: white;
-    z-index: 2;
+  color: white;
+  z-index: 2;
 }
 
 .intro-explanation {
-    position: relative;
-    top: 5%;
-    width: 70%;
+  position: relative;
+  top: 5%;
+  width: 70%;
 
-    margin-left: 15%;
-    margin-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
 
-    font-size: 2em;
-    letter-spacing: 0.2px;
-    line-height: 1.2em;
-    text-align: left;
-    text-shadow: 1px 1px rgba(0,0,0,0.5);
-    opacity: 0;
+  font-size: 2em;
+  letter-spacing: 0.2px;
+  line-height: 1.2em;
+  text-align: left;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
 
-    color: white;
-    z-index: 2;
+  color: white;
+  z-index: 2;
 
-    -webkit-animation-name: fadeInOut;
-     -moz-animation-name: fadeInOut;
-      -ms-animation-name: fadeInOut;
-       -o-animation-name: fadeInOut;
-    animation-name: fadeInOut;
+  -webkit-animation-name: fadeInOut;
+  -moz-animation-name: fadeInOut;
+  -ms-animation-name: fadeInOut;
+  -o-animation-name: fadeInOut;
+  animation-name: fadeInOut;
 
-    -webkit-animation-delay: 1s;
-     -moz-animation-delay: 1s;
-      -ms-animation-delay: 1s;
-       -o-animation-delay: 1s;
-    animation-delay: 1s;
+  -webkit-animation-delay: 0.5;
+  -moz-animation-delay: 0.5;
+  -ms-animation-delay: 0.5;
+  -o-animation-delay: 0.5;
+  animation-delay: 0.5;
 
-    -webkit-animation-duration: 20s;
-     -moz-animation-duration: 20s;
-      -ms-animation-duration: 20s;
-       -o-animation-duration: 20s;
-    animation-duration: 20s;
+  -webkit-animation-duration: 20s;
+  -moz-animation-duration: 20s;
+  -ms-animation-duration: 20s;
+  -o-animation-duration: 20s;
+  animation-duration: 20s;
 
-    -webkit-animation-iteration-count: 1;
-     -moz-animation-iteration-count: 1;
-      -ms-animation-iteration-count: 1;
-       -o-animation-iteration-count: 1;
-    animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
 .intro-explanation span#blue-text {
-    color: #40D9FF;
-    opacity: 100% !important;
-    font-weight: 900;
+  color: #40d9ff;
+  opacity: 100% !important;
+  font-weight: 900;
 }
 
 .audio-explanation {
-    position: absolute;
+  position: absolute;
 
-    bottom: 5%;
-    width: 70%;
+  bottom: 5%;
+  width: 70%;
 
-    margin-left: 15%;
-    margin-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
 
-    font-size: 1.5em;
-    font-style: italic;
-    line-height: 1.2em;
-    text-align: center;
-    text-shadow: 0.5px 0.5px rgba(0,0,0,0.5);
+  font-size: 1.5em;
+  font-style: italic;
+  line-height: 1.2em;
+  text-align: center;
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.5);
 
-    opacity: 0;
-    color: lightgrey;
-    z-index: 2;
+  opacity: 0;
+  color: lightgrey;
+  z-index: 2;
 
-    -webkit-animation-name: fadeInOut;
-     -moz-animation-name: fadeInOut;
-      -ms-animation-name: fadeInOut;
-       -o-animation-name: fadeInOut;
-    animation-name: fadeInOut;
+  -webkit-animation-name: fadeInOut;
+  -moz-animation-name: fadeInOut;
+  -ms-animation-name: fadeInOut;
+  -o-animation-name: fadeInOut;
+  animation-name: fadeInOut;
 
-    -webkit-animation-delay: 13s;
-    -moz-animation-delay: 13s;
-    -ms-animation-delay: 13s;
-    -o-animation-delay: 13s;
-    animation-delay: 13s;
+  -webkit-animation-delay: 13s;
+  -moz-animation-delay: 13s;
+  -ms-animation-delay: 13s;
+  -o-animation-delay: 13s;
+  animation-delay: 13s;
 
-    -webkit-animation-duration: 12s;
-    -moz-animation-duration: 12s;
-    -ms-animation-duration: 12s;
-    -o-animation-duration: 12s;
-    animation-duration: 12s;
+  -webkit-animation-duration: 12s;
+  -moz-animation-duration: 12s;
+  -ms-animation-duration: 12s;
+  -o-animation-duration: 12s;
+  animation-duration: 12s;
 }
 
 #footer-logo {
-    position: fixed;
-    bottom: 2rem;
-    left: 2rem;
-    width: 6rem;
-    height: auto;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 6rem;
+  height: auto;
 
-    opacity: 0.7;
+  opacity: 0.7;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 // ---------------------------------------------------------------------------------
@@ -329,130 +349,130 @@ input:visited, input:focus {
 // ---------------------------------------------------------------------------------
 
 #viz-canvas {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
 
-    z-index: 1;
+  z-index: 1;
 
-    filter: blur(1.5px);
+  filter: blur(1.5px);
 }
 
 // ---------------------------------------------------------------------------------
 // ABOUT OVERLAY
 // ---------------------------------------------------------------------------------
 #open-about {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 
-    font-size: 2em;
-    cursor: pointer;
+  font-size: 2em;
+  cursor: pointer;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 #open-about-bg:hover {
-    fill: #16BCCC;
-    transition-timing-function: ease-out;
-    transition: 0.4s;
+  fill: #16bccc;
+  transition-timing-function: ease-out;
+  transition: 0.4s;
 }
 
 #about-overlay {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 0%;
-    width: 100%;
-    
-    background-color: rgb(19,81,131);
-    background-color: rgba(19,81,131, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 0%;
+  width: 100%;
 
-    z-index: 20;
+  background-color: rgb(19, 81, 131);
+  background-color: rgba(19, 81, 131, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+
+  z-index: 20;
 }
 
 .overlay-content {
-    position: relative;
-    top: 5%;
-    width: 60%;
+  position: relative;
+  top: 5%;
+  width: 60%;
 
-    margin-left: 20%;
-    margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
 
-    font-size: 1.2em;
-    line-height: 1.2em;
-    text-align: center;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  text-align: center;
 
-    color: white;
+  color: white;
 }
 
 #about-overlay h1 {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 
-    font-family: 'Questrial', sans-serif;
-    font-size: 3em;
+  font-family: "Questrial", sans-serif;
+  font-size: 3em;
 
-    color: #24b4a4;
+  color: #24b4a4;
 }
 
 #about-overlay a {
-    display: block;
-    padding: 8px;
+  display: block;
+  padding: 8px;
 
-    font-size: 1.3em;
-    text-decoration: none;
+  font-size: 1.3em;
+  text-decoration: none;
 
-    color: #24b4a4;
-    transition: 0.3s;
+  color: #24b4a4;
+  transition: 0.3s;
 }
 
 a#inner-overlay-link {
-    display: inline;
-    font-size: 1.2em;
+  display: inline;
+  font-size: 1.2em;
 }
 
-#about-overlay a:hover, #about-overlay a:focus {
-    color: #f1f1f1;
+#about-overlay a:hover,
+#about-overlay a:focus {
+  color: #f1f1f1;
 }
 
 #about-overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
 }
 
 #about-footer {
-    font-size: 1em;
-    font-weight: 200;
-    color: lightgray;
+  font-size: 1em;
+  font-weight: 200;
+  color: lightgray;
 }
 
-.connect-list  {
-    display: flex;
-    justify-content: center;
-    align-content:center;
+.connect-list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
-    width: 250px;
-    margin: 0 auto; 
+  width: 250px;
+  margin: 0 auto;
 }
 
 .connect-list a {
-    margin-top: -10px;
-    margin-bottom: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 // Font Awesome Icon
 i {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-style: normal;
-    font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-style: normal;
+  font-size: 1.5em;
 }
-
 
 // ---------------------------------------------------------------------------------
 // ANIMATIONS
@@ -460,51 +480,70 @@ i {
 
 // FADEIN
 
-
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 // FADEINOUT
 
 @keyframes fadeInOut {
-    from {
-      animation-timing-function: ease;
-      opacity: 0;
-    }
-    50% {
-      animation-timing-function: ease-in;
-      opacity: 1;
-    }
-    to {
-      animation-timing-function: ease-out;
-      opacity: 0;
-    }
+  from {
+    animation-timing-function: ease;
+    opacity: 0;
+  }
+  50% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  to {
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
 }
 
 // ---------------------------------------------------------------------------------
@@ -512,55 +551,57 @@ i {
 // ---------------------------------------------------------------------------------
 
 @media only screen and (max-width: 710px) {
-    * {
-        transition: 0.4s;
-    }
+  * {
+    transition: 0.4s;
+  }
 
-    #station_id {
-        width: 25rem;
-        height: 2.2em;
+  #station_id {
+    width: 25rem;
+    height: 2.2em;
 
-        font-size: 1.3em;
-        opacity: 0.8;
-    }
+    font-size: 1.3em;
+    opacity: 0.8;
+  }
 
-    .intro-explanation {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 1.6em;
-    }
+  .intro-explanation {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 1.6em;
+  }
 
-    #footer-logo {
-        opacity: 0 !important;
-    }
+  #footer-logo {
+    opacity: 0 !important;
+  }
 
-    .organ-buttons  {
-
-        width: 23rem;
-    }
+  .organ-buttons {
+    width: 23rem;
+  }
 }
 
 // Small Screens
 
 @media screen and (max-width: 450px) {
-    * {
-        transition: 0.4s;
-    }
+  * {
+    transition: 0.4s;
+  }
 
-    body h1 {
-        margin-top: 0.5em;
+  body h1 {
+    margin-top: 0.5em;
 
-        font-size: 2em;
+    font-size: 2em;
+  }
 
-    }
+  .intro-explanation {
+    font-size: 1em;
+  }
 
-    .intro-explanation {
-        font-size: 1em;
-    }
-
-  #about-overlay {overflow-y: auto;}
-  #about-overlay a {font-size: 20px}
+  #about-overlay {
+    overflow-y: auto;
+  }
+  #about-overlay a {
+    font-size: 20px;
+  }
   #about-overlay .closebtn {
     font-size: 40px;
     top: 15px;
